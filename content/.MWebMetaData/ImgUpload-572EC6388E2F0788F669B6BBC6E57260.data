@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>6C01276209EB443ADB7A2542FC79B41E</key>
+	<array>
+		<dict>
+			<key>localURL</key>
+			<string>media/DiskSpeedTest.png</string>
+			<key>remoteURL</key>
+			<string>https://lib.azfs.com.cn/DiskSpeedTest.png-note</string>
+		</dict>
+	</array>
+	<key>selectedItem</key>
+	<string>6C01276209EB443ADB7A2542FC79B41E</string>
+</dict>
+</plist>
