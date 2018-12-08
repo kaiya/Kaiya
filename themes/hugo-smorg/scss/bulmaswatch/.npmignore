@@ -1,0 +1,12 @@
+_layouts
+_includes
+_themes
+assets
+*.yml
+gulpfile.js
+*.html
+_site
+.sass-cache
+.jekyll-metadata
+node_modules
+*.lock

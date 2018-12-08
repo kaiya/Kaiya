@@ -1,0 +1,12 @@
+{
+  "name": "chroma-sass-themes",
+  "repo": "solutionroute/chroma-sass-themes",
+  "description": "Sass styles to produce Chroma and Pygments themes.",
+  "version": "0.0.1",
+  "keywords": ["chroma", "pygments", "sass", "scss", "bulma", "hugo", "theme"],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "_chroma.scss",
+  "files": ["_chroma.scss", "bulma-theme.scss"]
+}
