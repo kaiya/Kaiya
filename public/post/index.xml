@@ -6,10 +6,65 @@
     <description>Recent content in Posts on Kaiya Xiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Dec 2018 13:09:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Dec 2018 21:09:53 +0800</lastBuildDate>
     
 	<atom:link href="https://kaiyai.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello</title>
+      <link>https://kaiyai.com/post/hello/</link>
+      <pubDate>Mon, 10 Dec 2018 21:09:53 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hello/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>demo</title>
+      <link>https://kaiyai.com/post/demo/</link>
+      <pubDate>Sun, 09 Dec 2018 01:14:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/demo/</guid>
+      <description> The Disk Speed Test of My RMBP SSD Disk </description>
+    </item>
+    
+    <item>
+      <title>毕业论文写作计划</title>
+      <link>https://kaiyai.com/post/thesisplan/</link>
+      <pubDate>Sat, 08 Dec 2018 01:32:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/thesisplan/</guid>
+      <description>一、基于身份的代理重加密在区块链中的应用方案研究 阅读代理重加密早期论文及身份基代理重加密论文 阅读代理重加密在大数据云计算环境中应用的论文 思考</description>
+    </item>
+    
+    <item>
+      <title>阅读与写作</title>
+      <link>https://kaiyai.com/post/readwrite/</link>
+      <pubDate>Sat, 08 Dec 2018 00:27:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/readwrite/</guid>
+      <description>首先我就告诉你，所有的文如泉涌和才思敏捷都归根于大量的阅读。 你以为别人每天都能写上万字是轻轻松松吗？全是因为他或者她过人的文笔吗？ 如果你这样</description>
+    </item>
+    
+    <item>
+      <title>极客学院视频</title>
+      <link>https://kaiyai.com/post/jike/</link>
+      <pubDate>Thu, 06 Dec 2018 22:55:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jike/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>China Administrative</title>
+      <link>https://kaiyai.com/post/china/</link>
+      <pubDate>Thu, 06 Dec 2018 12:30:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/china/</guid>
+      <description> here is the map of current China Administrative
+ </description>
+    </item>
     
     <item>
       <title>My Girlfriend</title>
