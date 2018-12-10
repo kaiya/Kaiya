@@ -145,50 +145,6 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/hello/">Hello</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-12-10 </span>
-      
-      <span class="more-meta"> 0 words </span>
-      <span class="more-meta"> 0 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      
-    </div>
-    <div class="read-more">
-      <a href="/post/hello/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/demo/">demo</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-12-09 </span>
-      
-      <span class="more-meta"> 9 words </span>
-      <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-       The Disk Speed Test of My RMBP SSD Disk 
-    </div>
-    <div class="read-more">
-      <a href="/post/demo/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/thesisplan/">毕业论文写作计划</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-12-08 </span>
@@ -241,9 +197,9 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/jike/">极客学院视频</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/girlfriend/">My Girlfriend</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-12-06 </span>
+      <span class="post-time"> 2018-12-04 </span>
       
       <span class="more-meta"> 0 words </span>
       <span class="more-meta"> 0 mins read </span>
@@ -252,10 +208,64 @@
   
   <div class="post-content">
     <div class="post-summary">
-       
+      
     </div>
     <div class="read-more">
-      <a href="/post/jike/" class="read-more-link">Read more..</a>
+      <a href="/post/girlfriend/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/tfcnn/">CNN in Tensorflow</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-08-14 </span>
+      <div class="post-category">
+          
+            <a href="/categories/tensorflow/"> Tensorflow </a>
+          
+        </div>
+      <span class="more-meta"> 321 words </span>
+      <span class="more-meta"> 2 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      import tensorflow as tf from tensorflow.examples.tutorials.mnist import input_data # number 1 to 10 data mnist = input_data.read_data_sets('MNIST_data', one_hot=True) def compute_accuracy(v_xs, v_ys): # validation xs and validation ys global prediction y_pre = sess.run(prediction, feed_dict={xs: v_xs, keep_prob: 1}) correct_prediction = tf.equal(tf.arg_max(y_pre, 1), tf.arg_max(v_ys, 1)) accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys, keep_prob: 1}) return result def weight_variable(shape): initial = tf.truncated_normal(shape, stddev=0.1) return tf.Variable(initial) def bias_variable(shape): initial = tf.constant(0.1, shape=shape) return tf.
+    </div>
+    <div class="read-more">
+      <a href="/post/tfcnn/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/tensorflow/">Tensorflow</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-08-12 </span>
+      <div class="post-category">
+          
+            <a href="/categories/tensorflow/"> Tensorflow </a>
+          
+            <a href="/categories/tech/"> Tech </a>
+          
+        </div>
+      <span class="more-meta"> 422 words </span>
+      <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。 教程官网 刚刚看了Tensorflow的
+    </div>
+    <div class="read-more">
+      <a href="/post/tensorflow/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -291,7 +301,7 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://pages.coding.me">Coding Pages</a>
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://netlify.com">Netlify</a>
   </span>
 
   
@@ -308,6 +318,7 @@
       
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
