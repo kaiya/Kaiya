@@ -6,34 +6,70 @@
     (function() {
       // Don't ever inject Disqus on localhost--it creates unwanted
       // discussions from 'localhost:1313' on your Disqus account...
-      if (window.location.hostname === 'localhost') return;
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = '{{ .Site.DisqusShortname }}';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      // if (window.location.hostname === 'localhost') return;
+
+
+      window.disqusProxy = {
+          username:'kyxiong',  // 你的 Disqus username
+          server: 'disqus.kaiyai.com', // 你的 VPS IP
+          port: 80, // 这个 repo 的服务端对应的端口
+          identifier: window.location.href // 页面 identifier, 一般就是页面 url
+        };
+        window.disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.location.href;
+        };
+        var s = document.createElement('script');
+        s.src = '/dist/disqus.js'; //引用 static 文件夹下面的 JS
+        s.async = true;
+        document.body.appendChild(s);
+
+
+    //   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    //   var disqus_shortname = '{{ .Site.DisqusShortname }}';
+    //   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       
-      // detect whether user can access disqus's network
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
-      xhr.timeout = 3000;
-      xhr.onreadystatechange = function(){
-        if (xhr.readyState == 4 && xhr.status == 200){
-          // load disqus
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); 
-        }
-      }
-      xhr.onetimeout = function(){
-        xhr.abort();
-        //load myself comments frame
-      }
-      xhr.onerror = function(){
-        //load myself comments frame
-      }
-      xhr.send(null);
+    //   // detect whether user can access disqus's network
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
+    //   xhr.timeout = 1000;
+    //   xhr.onreadystatechange = function(){
+    //     if (xhr.readyState == 4 && xhr.status == 200){
+    //       // load disqus
+    //     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); 
+    //     }
+    //   }
+    //   xhr.onetimeout = function(){
+    //     xhr.abort();
+    //     alert("disqus timed out!!")
+    //     //load myself comments frame
+    
+        
+    //   }
+    //   xhr.onerror = function(){
+    //     //load myself comments frame
+    //     window.disqusProxy = {
+    //       username:'kyxiong',  // 你的 Disqus username
+    //       server: 'disqus.kaiyai.com', // 你的 VPS IP
+    //       port: 443, // 这个 repo 的服务端对应的端口
+    //       identifier: window.location.href // 页面 identifier, 一般就是页面 url
+    //     };
+    //     window.disqus_config = function () {
+    //       this.page.url = window.location.href;
+    //       this.page.identifier = window.location.href;
+    //     };
+    //     var s = document.createElement('script');
+    //     s.src = '/dist/disqus.js'; //引用 static 文件夹下面的 JS
+    //     s.async = true;
+    //     document.body.appendChild(s);
+    //   }
+    //   xhr.send(null);
       
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   {{- end -}}
+
 
   <!-- changyan -->
   {{- if and .Site.Params.changyanAppid .Site.Params.changyanAppkey -}}

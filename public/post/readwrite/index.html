@@ -55,6 +55,11 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/dist/disqus.css"> 
+
+
 
 
 
@@ -286,29 +291,64 @@
     (function() {
       
       
-      if (window.location.hostname === 'localhost') return;
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'kyxiong';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       
+
+
+      window.disqusProxy = {
+          username:'kyxiong',  
+          server: 'disqus.kaiyai.com', 
+          port: 80, 
+          identifier: window.location.href 
+        };
+        window.disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.location.href;
+        };
+        var s = document.createElement('script');
+        s.src = '/dist/disqus.js'; 
+        s.async = true;
+        document.body.appendChild(s);
+
+
+    
+    
+    
       
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
-      xhr.timeout = 3000;
-      xhr.onreadystatechange = function(){
-        if (xhr.readyState == 4 && xhr.status == 200){
-          
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); 
-        }
-      }
-      xhr.onetimeout = function(){
-        xhr.abort();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
-      }
-      xhr.onerror = function(){
-        
-      }
-      xhr.send(null);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
       
     })();
     </script>

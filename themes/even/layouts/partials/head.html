@@ -76,6 +76,11 @@
   {{ if .Site.Params.fancybox }}<link href="{{ "lib/fancybox/jquery.fancybox-3.1.20.min.css" | relURL }}" rel="stylesheet">{{ end }}
 {{- end }}
 
+<!-- Disqus custom -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 引用 static 文件夹下面的 CSS -->
+<link rel="stylesheet" href="/dist/disqus.css"> 
+
 <!-- Start of Twitter -->
 <!-- {{ if .Site.Params.twitter_card_whitelisted }}
     {{ if .Params.twitter_summary }}
