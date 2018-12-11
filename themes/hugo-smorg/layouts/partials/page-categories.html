@@ -1,2 +1,0 @@
-{{- range $i, $value := sort . -}}{{ if $i }}, {{ end -}}
-<a href="{{ "categories/" | absLangURL }}{{ $value | urlize }}">{{ $value }}</a>{{- end -}}

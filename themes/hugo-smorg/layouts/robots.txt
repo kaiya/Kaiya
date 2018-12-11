@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /secretloginpage
-
-Sitemap: {{.Site.BaseURL}}sitemap.xml
