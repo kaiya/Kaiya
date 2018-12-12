@@ -139,8 +139,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.reward]                                         # 文章打赏
     enable = true
-    wechat = "/img/wechat-qr-code.png"           # 微信二维码
-    alipay = "/img/alipay-qr-code.png"           # 支付宝二维码
+    wechat = "https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/img/reward/wechat-qr-code.png"           # 微信二维码
+    alipay = "https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/img/reward/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
     a-email = "mailto:me@kaiyai.com"
