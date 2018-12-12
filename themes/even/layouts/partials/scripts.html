@@ -11,6 +11,7 @@
   {{ if .Site.Params.fancybox }}<script type="text/javascript" src="{{ "lib/fancybox/jquery.fancybox-3.1.20.min.js" | relURL }}"></script>{{ end }}
 {{- end -}}
 
+
 <!-- timeago.JS -->
 {{- if and (or .Params.enableOutdatedInfoWarning (and .Site.Params.outdatedInfoWarning.enable (ne .Params.enableOutdatedInfoWarning false))) (or .IsPage .IsHome) }}
   {{- if .Site.Params.publicCDN.enable }}
@@ -114,6 +115,7 @@
 {{ range .Site.Params.customJS }}
 <script src="{{ "/js/" | relURL }}{{ . }}"></script>
 {{ end }}
+
 <!-- InstantClick -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/instantclick@3.1.0-2/dist/instantclick.min.js" data-no-instant></script>
 <script data-no-instant>
