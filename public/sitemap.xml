@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://kaiyai.com/categories/tech/</loc>
-    <lastmod>2018-08-12T01:03:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kaiyai.com/tags/tech/</loc>
     <lastmod>2018-08-12T01:03:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -156,14 +149,21 @@
   </url>
   
   <url>
-    <loc>https://kaiyai.com/categories/tensorflow/</loc>
-    <lastmod>2018-08-14T01:03:09+08:00</lastmod>
+    <loc>https://kaiyai.com/categories/tech/</loc>
+    <lastmod>2018-08-12T01:03:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kaiyai.com/tags/tensorflow/</loc>
+    <lastmod>2018-08-14T01:03:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaiyai.com/categories/tensorflow/</loc>
     <lastmod>2018-08-14T01:03:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -184,13 +184,6 @@
   </url>
   
   <url>
-    <loc>https://kaiyai.com/categories/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</loc>
-    <lastmod>2018-12-08T01:32:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kaiyai.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</loc>
     <lastmod>2018-12-08T01:32:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -198,14 +191,21 @@
   </url>
   
   <url>
-    <loc>https://kaiyai.com/categories/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2018-12-08T00:27:00+08:00</lastmod>
+    <loc>https://kaiyai.com/categories/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</loc>
+    <lastmod>2018-12-08T01:32:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kaiyai.com/tags/%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2018-12-08T00:27:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaiyai.com/categories/%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2018-12-08T00:27:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
