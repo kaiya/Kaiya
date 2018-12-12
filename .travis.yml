@@ -20,3 +20,27 @@ deploy:
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master 
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "Kaiya"
+  - git config user.email "xiongkaiya@gmail.com"
+  - git add .
+  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master 
+  # Coding Pages
+  - git push --force --quiet "https://Kaiya:${CODING_TOKEN}@${CO_REF}" master:master
+  - git tag v0.0.$TRAVIS_BUILD_NUMBER -a -m "Auto Taged By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master --tags
+  # Coding Pages
+  - git push --quiet "https://Kaiya:${CODING_TOKEN}@${CO_REF}" master:master --tags
+
+env:
+ global:
+   # Github Pages
+   - GH_REF: github.com/Kaiya/kaiya.git
+   # Coding Pages
+   - CO_REF: git.coding.net/Kaiya/Kaiya.git
