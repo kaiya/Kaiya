@@ -17,7 +17,8 @@
       <pubDate>Sat, 08 Dec 2018 01:32:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/thesisplan/</guid>
-      <description>一、基于身份的代理重加密在区块链中的应用方案研究 阅读代理重加密早期论文及身份基代理重加密论文 阅读代理重加密在大数据云计算环境中应用的论文 思考</description>
+      <description>一、基于身份的代理重加密在区块链中的应用方案研究
+ 阅读代理重加密早期论文及身份基代理重加密论文 阅读代理重加密在大数据云计算环境中应用的论文 思考研究代理重加密在区块链中的应用方案 详细设计应用方案 算法相关实现  二、上述方案在基于区块链的征信系统中的应用场景及其相关实现</description>
     </item>
     
     <item>
@@ -26,7 +27,24 @@
       <pubDate>Sat, 08 Dec 2018 00:27:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/readwrite/</guid>
-      <description>首先我就告诉你，所有的文如泉涌和才思敏捷都归根于大量的阅读。 你以为别人每天都能写上万字是轻轻松松吗？全是因为他或者她过人的文笔吗？ 如果你这样</description>
+      <description>首先我就告诉你，所有的文如泉涌和才思敏捷都归根于大量的阅读。
+你以为别人每天都能写上万字是轻轻松松吗？全是因为他或者她过人的文笔吗？
+如果你这样想的话，那你真是天真的可笑，甚至可悲！
+要知道，没有谁不需要努力就可以得到自己想要的，也没有人懒惰到不收集阅览大量资料就对一件事情了解的那么巨细，就可以写出上万字的文章！
+你说他或者她，文笔实在太好，所以能够天马行空。你说自己是因为没有他或者她那样的天赋。要不然我也可以写字出书。
+要知道，全世界百分之九十五以上甚至更多的人都还达不到可以拼天赋的程度！只有懒惰鬼才张口闭口把天赋挂念着。
+你所谓的“天赋”，只不过是他或者她从小就看书所累集的华丽词藻。只不过是他或者她，空闲就记录生活细节的习惯。
+你说你的生活太无聊，无事可写，无事值得记录！
+谁的生活又能够百分百有趣呢，无趣，只不过是你没有善于发现善于欣赏的眼睛，没有足够细腻的心思。
+你又说，我一个大男人，心思要那么细腻干嘛？
+我说，心思细腻要足够心思缜密才行啊。你逻辑思维够足吗？这时你就呆了！还是拼天赋嘛！
+你错了，逻辑思维是可以培养出来的。只有不努力思考的人，没有蠢人。逻辑思维的培养，比如你可以多看看心理学啊，逻辑思维书籍啊等等。
+所以，关键还在于阅读。
+邓超说，知识改变命运！
+于莎莎说，芝士改变命运！
+现在你笑了～
+对的，知识改变命运，改变不了也可以改变我们的思维方式。而获取知识最快捷的方法就是阅读！
+现在明白了吧，所有的文如泉涌和才思敏捷都源于一个人的大量阅读。就是简单的字面意思，多阅读才能有好文才！</description>
     </item>
     
     <item>
@@ -53,7 +71,10 @@
       <pubDate>Sun, 12 Aug 2018 01:03:09 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/tensorflow/</guid>
-      <description>最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。 教程官网 刚刚看了Tensorflow的</description>
+      <description>最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。
+教程官网
+刚刚看了Tensorflow的讲解，记录一下：
+import tensorflow as tf import numpy as np # create data x_data = np.random.rand(100).astype(np.float32) y_data = x_data*0.1 + 0.3 Weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0)) biases = tf.Variable(tf.zeros([1])) y = Weights*x_data + biases loss = tf.reduce_mean(tf.square(y-y_data)) optimizer = tf.train.GradientDescentOptimizer(0.5) train = optimizer.minimize(loss) init = tf.global_variables_initializer() sess = tf.Session() sess.run(init) # Very important for step in range(201): sess.run(train) if step % 20 == 0: print(step, sess.run(Weights), sess.run(biases))  首先，使用numpy生成100个随机数，然后制定他们的标签符合公式$y = 0.</description>
     </item>
     
     <item>
@@ -62,7 +83,28 @@
       <pubDate>Mon, 23 Jul 2018 01:10:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/summary_zh/</guid>
-      <description>量化Javascript中可检测的BUG paper 这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和</description>
+      <description>量化Javascript中可检测的BUG paper
+这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和Microsoft的Typescript的比较。这些静态系统是否真的能够检测到BUG？
+静态动态之争 开发语言中有动态类型和静态类型语言一分，动态类型也称弱类型语言，如Javascript，Python等。动态类型语言对类型要求不严格，在运行时做数据类型检查，这样可以写出干净（clean）的代码、开发灵活、可扩展，但是有些代码BUG不能及时发现。相反，静态类型语言也称为强类型语言，如C、C++、Java等。静态类型语言对数据类型要求严格，在编译时做数据类型检查，这样可以及时在编译时发现代码BUG，优化编译器等。
+Javascript是动态类型语言，而Flow和Typescript分别是Facebook和Microsoft针对Javascript推出的静态系统，是Javascript的超集，即将Javascript在一定程度上变成静态类型语言。
+作者研究了GitHub中现实世界中JavaScript项目中的历史bug。如果开发者当时一直在利用Typescript或Flow，那么这个BUG会不会通过类型检查器呢？如果不通过的话就可以合理地假设这个BUG从一开始就不会被开发人员提交到库(repo)中。
+下面是一个类型注释可以检测出来的BUG： BUG评估 为了弄清楚Typescript和Flow可以检测到多少这样的bug，需要一些规则来说明添加类型注释是否可行，并且这些BUG需要人工去注释，添加类型注释需要花费多长时间。一项针对78个bug的小样本的初步研究表明，在绝大多数时候（90%），可以在10分钟内得出结论，所以作者设定允许花在注释一个bug上的最长时间被设定为10分钟。
+每个bug都用Typescript 2.0和Flow 0.30进行评估。为了减少类型系统对学习效果的影响，随机选择要先尝试的类型系统。然后，读取BUG的错误报告和BUG修复情况，并用10分钟的时间人工添加类型注释。有时，即使不加注释工具都可以检测到BUG，但也有一些BUG的结果报告表明这个BUG错误与类型无关，在这种情况下，BUG将被标记为无法检测。
+实验结果 在本文评估的400个公共BUG中，Flow成功地检测到了其中的59个BUG，而Typescript检测到了其中的58个BUG。评估过程中遇到的主要障碍包括：复杂的模块依赖关系、某些模块缺少带注释的接口、程序的理解一般很困难。
+本文将所有400个BUG标记为：可检测的和在Flow和TypeScript中无法检测到的。在总共60个BUG中，Flow检测了一个，Typescript检测到了另外两个。对结果进行测试表明，在95%置信水平，Flow和Typescript可检测的BUG真实百分比为11.5%、18.5%，平均为15%。
+Typescript和Flow哪个更好？ 这两个系统可以检测到的BUG大部分都是重叠的，只有3个BUG只有Typescript才能检测到，3个BUG只有Flow才能检测到。
+Typescript未能检测的所有三BUG都String类型的null值，或undefined有关。Flow无法检测到的三个BUG中的两个是由于流不完全支持在索引中使用string。
+结论 本文作者评估了静态类型系统为Javascript代码提供的BUG检测优势。结果表明，使用Flow或Typescript可以有效减少Github上公开项目的15%的BUG。此工作是第一个在公开成熟的代码上对Javascript的静态类型系统进行性能评估的。通过本文的研究，从业者可以通过对Flow和Typescript能够检测到的BUG进行分类，发现两者之间的差异，并决定是否在实践项目中为Javascript采用此静态类型系统。
+静态检测Javascript中Web API请求 介绍 本文提出了一种用Javascript静态检查Web API请求的方法：首先将请求中的URL、HTTP请求方法、请求数据提取出来，然后检查是否符合Web API规范（如API提供者编写的Swagger文档）。因为Web API规范要求：Javascript程序对Web API执行的HTTP请求，请求内容需包括：请求地址URL，HTTP请求方法，和正确的请求数据。但是Javascript的编译时无法检查构造的请求是否符合Web API的要求。本文通过从Github收集Javascript文件中的Web API请求进行实验验证。从收集到的6575个请求中，本文使用的方法确定请求的URL和HTTP方法是否与Web API规范是否一致，实验结果表明，方法的识别精确度为96.0%。对实验结果进行分析发现，其中很多都是由于在请求客户端的代码中写了错误的代码造成的。
+应用程序通过使用其支持的HTTP方法之一（包括GET、POST、PUT、DELETE等）向服务端URL发送HTTP请求来调用Web API；而所需的请求数据作为查询或路径参数发送，或在HTTP请求体（request body）中发送。需要发送的URL、HTTP方法和请求数据基本上都是字符串，由应用程序构造。当请求的目标是不存在的URL或发送不符合Web API需求的数据时，会发生运行时错误。但是在客户端编写代码时并不会有类型安全检查，即客户端必须单独进行运行时测试，才能知道编写的HTTP请求代码是否正确。
+检测过程 检测过程的目的是将静态分析产生的信息与相应的Web API规范相匹配，从而发现客户端HTTP请求的实现和规范之间的不一致。通常，请求信息包括：(1)要调用的Web API的URL，包括endpoint和路径，和一个可选的查询参数字符串；(2)HTTP方法，包括GET、POST、PUT、DELETE等；(3)在请求的有效负载(payload)中发送的请求数据。实际中，本实验会采用多个URL值、HTTP方法和请求数据来检索单个请求，只要有任意一个这些数据的组合符合Web API规范即认为没有问题，不会报告错误，以此来避免部分false positive的错误。
+1. 检查endpoint 该过程主要是将请求的endpoint和API规范中定义的endpoint相比较。首先检查给定请求的任何URL是否以已知的API规范的任何协议开头：比如，HTTP或HTTPS。然后，该过程尝试将请求的endpoint中的路径和规范中定义的路径相比较。为了匹配路径，该过程获取请求的每个UR，并将其与之前与该请求匹配的每个路径定义相比较。然后，通过检查每个路径的部分(由&amp;quot;/&amp;quot;分隔)，将剩下的路径字符串与规范中的路径定义进行比较。最后，该过程确定HTTP方法是否符合规范，如HTTP请求的header是否符合Web API开发者制定的API规范。
+2. 检查请求数据 对于可以匹配API规范中的endpoint的请求，该过程会检查请求数据（如果有）的有效性。请求数据有两种：1. 在请求体中发送的数据（HTTP方法通常是：POST、PUT、或PATCH）；2. 在查询字符串中发送的数据。
+(1). 检查有效负载数据：在HTTP请求的有效负载中发送的数据可以是任何格式。由于静态分析关注的是Javascript，并且因为JavaScript对象表示法(JSON)也是Web API中流行的数据格式，因此本文关注的是JSON中的数据。Swagger规范中允许定义有效负载数据，关于特定路径的或是针对特定endpoint的都可以。如果有已匹配到的规范在匹配到的endpoint中定义了有效负载的格式，那么这个过程将确定请求信息中报告的有效负载是否遵循这个格式。
+(2). 检查查询参数：查询数据被编码为key-value键值对。在API规范中，查询参数可以定义为可选的。然后，检查过程可以确定请求中是否存在所有必需的查询参数。同样，该过程考虑了规范中不同位置的查询参数的定义。该过程将查询参数解析为请求报告的所有URL的查询字符串。然后，该过程检查找到的任何参数集是否与匹配请求的任何端点定义中找到的参数定义相匹配。
+结论 本文利用基于框架的Javascript Web应用程序的静态分析的现有研究，创建了一个能够提取与Web API请求相关的字符串的分析工具。本文作者利用这些提取的请求数据作为检查器的输入，而检查器来确定请求是否和Web API开发者制定的API规范是否一致。本文对6575个请求的检查结果进行了定性分析，结果显示，大多数不一致都是由于客户端代码中的错误，比如，调用已废弃的API、URL中的错误、数据有效负载定义中的错误和不完整的Swagger规范。这些结果表明，此工具能够警告程序员源代码中包含不一致的Web API请求。因此该工具可以与支持开发人员使用Web API的现有工具进行集成。
+开发者如何修复跨项目相关的BUG？ 介绍 GitHub是目前开源世界中最大的代码存储库，它已经培育出了各种软件生态系统，在这些系统中，项目相互依赖。这个生态系统中的项目通常具有复杂的相互依赖关系，这种依赖关系给BUG查找和修复带来了新的挑战。本文对交叉项目的相关BUG进行了实证研究，将相关的BUG报告给不同的项目，本文主要关注两个方面：1. 开发者如何跟踪导致项目BUG的根本原因？2. 下游开发人员如何协调处理上游BUG。本研究揭示了开发人员常见的实践方式以及修复跨项目BUG的各种因素。这些发现为未来系统范围内的软件BUG分析提供了提示，同时也阐明了issue追踪器对此类BUG的需求。
+Github为每个存储库(repo)提供了一个问题(issue)追踪系统，用于报告和讨论关于BUG的问题，因此多个关联项目BUG之间的关系非常可能存在于这些issue追踪系统之中。</description>
     </item>
     
     <item>
@@ -71,7 +113,10 @@
       <pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/instantclick/</guid>
-      <description>Instanclick usage in Hugo 看了Showfom大神的博客，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术</description>
+      <description> Instanclick usage in Hugo 看了Showfom大神的博客，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术是不是相同的。
+找了一圈live template没找到，最后打开大神的博客，F12看了一波，发现加载了一个instanclick的js文件，随后了解到就是使用这个js库实现的不刷新加载页面，其实是预加载链接pre-load。
+Hugo中的实现 对于我使用的主题hugo-smorg，在主题文件夹中的layouts/partials中的js-body-bottom.html中添加如下代码即可：
+&amp;lt;script src=&amp;quot;https://cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js&amp;quot; data-no-instant&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script data-no-instant&amp;gt;InstantClick.init();&amp;lt;/script&amp;gt;  </description>
     </item>
     
     <item>
@@ -80,7 +125,8 @@
       <pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/latex/</guid>
-      <description>Sublime Text中LaTex环境的配置 工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路</description>
+      <description>Sublime Text中LaTex环境的配置 工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路径不能有空格，不然会报路径中找不到latexmk命令。当使用CTex套件安装MiKTex时，其中latexmk包的版本可能比较低，会导致latexing无法打开日志文件等错误。
+1. LaTexing插件配置 { &amp;quot;debug&amp;quot;: false, &amp;quot;fallback_encoding&amp;quot;: &amp;quot;utf_8&amp;quot;, &amp;quot;open_pdf_on_load&amp;quot;: false, &amp;quot;build_arguments&amp;quot;: [&amp;quot;-shell-escape&amp;quot;], &amp;quot;quick_build&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;Default Build: latexmk&amp;quot;, &amp;quot;primary&amp;quot;: true, &amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;] }, { &amp;quot;name&amp;quot;: &amp;quot;Quick Build 1: xelatex + bibtex + xelatex (2x)&amp;quot;, &amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;bibtex&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;] }, { &amp;quot;name&amp;quot;: &amp;quot;Quick Build 2: xelatex + biber + xelatex (2x)&amp;quot;, &amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;biber&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;] } ], &amp;quot;typeset_on_save&amp;quot;: true }  2. 配置中文Snippet &amp;lt;snippet&amp;gt; &amp;lt;content&amp;gt;&amp;lt;![CDATA[ %!</description>
     </item>
     
     <item>
@@ -89,7 +135,10 @@
       <pubDate>Wed, 18 Jul 2018 21:10:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/bible/</guid>
-      <description>新约 马太福音 第一章 耶稣的母亲马利亚许配了约瑟，他们还没有成亲，马利亚就从圣灵怀了孕。 主的使者在梦中向他显现，说：“大卫的子孙约瑟，只管放胆把</description>
+      <description> 新约 马太福音 第一章 耶稣的母亲马利亚许配了约瑟，他们还没有成亲，马利亚就从圣灵怀了孕。
+主的使者在梦中向他显现，说：“大卫的子孙约瑟，只管放胆把你的妻子马利亚迎娶过来，因为她怀的孕是从圣灵来的。她必生一个儿子，你要给他起名叫耶稣，因为他要把自己的子民从罪恶中拯救出来。”
+ 必有童女怀孕生子，他的名要叫以马内利。以马内利就是神与我们同在的意思。
+ </description>
     </item>
     
     <item>
@@ -110,7 +159,11 @@ Abstract  ML was used in image processing, natural language processing, pattern 
       <pubDate>Tue, 17 Jul 2018 21:47:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/qiniu/</guid>
-      <description>感觉被七牛云存储坑了一波。 七牛对开启HTTPS功能的对象存储收费均按照HTTPS计算，即使你是使用HTTP方式访问的也是按照HTTPS收费。</description>
+      <description>感觉被七牛云存储坑了一波。
+七牛对开启HTTPS功能的对象存储收费均按照HTTPS计算，即使你是使用HTTP方式访问的也是按照HTTPS收费。。。
+记录一下
+于是我专门建立了一个域名用于HTTP请求（大文件），小图片文件就都走HTTPS吧。
+ libnos.azfs.com.cn 用于HTTP访问 pbnysx2de.bkt.clouddn.com 对象存储默认域名 lib.azfs.com.cn 用于HTTPS访问  </description>
     </item>
     
     <item>
@@ -119,7 +172,52 @@ Abstract  ML was used in image processing, natural language processing, pattern 
       <pubDate>Tue, 17 Jul 2018 18:10:20 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/lhls/</guid>
-      <description>流水像清得没带半颗沙 前身被搁在上游风化 但那天经过那条提坝 斜阳又返照闪一下 遇上一朵落花 相遇就此拥着最爱归家 生活别过份地童话化 故事假使短过这五月</description>
+      <description> 流水像清得没带半颗沙
+前身被搁在上游风化
+但那天经过那条提坝
+斜阳又返照闪一下
+遇上一朵落花
+相遇就此拥着最爱归家
+生活别过份地童话化
+故事假使短过这五月落霞
+没有需要惊诧
+流水很清楚惜花这个责任
+真的身份不过送运
+这趟旅行若算开心
+亦是无负这一生
+水点蒸发变做白云
+花瓣飘落下游生根
+淡淡交会过各不留下印
+流水在山谷下再次分岔
+情感渐化做淡然优雅
+自觉心境已有如明镜
+为何为天降的稀客
+泛过一点浪花
+天下并非只是有这朵花
+不用为故事下文牵挂
+要是彼此都有些既定路程
+学会洒脱好吗
+流水很清楚惜花这个责任
+真的身份不过送运
+这趟旅行若算开心
+亦是无负这一生
+水点蒸发变做白云
+花瓣飘落下游生根
+命运敲定了要这么发生
+讲分开可否不再
+用憾事的口吻
+习惯无常才会庆幸
+讲真天涯途上谁是客
+散席时怎么分
+流水很清楚惜花这个责任
+真的身份不过送运
+这趟旅行若算开心
+亦是无负这一生
+水点蒸发变做白云
+花瓣飘落下游生根
+淡淡交会过各不留下印
+但是经历过最温柔共震
+ </description>
     </item>
     
     <item>
@@ -128,7 +226,9 @@ Abstract  ML was used in image processing, natural language processing, pattern 
       <pubDate>Mon, 16 Jul 2018 21:10:00 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/reports/</guid>
-      <description>第四周 第五周 第六周 第七周 第八周 第九周 第十周 第十一周 第十二周 第十三周 第十四周 第十五周 第十六周 [slides]()</description>
+      <description> 第四周 第五周 第六周 第七周 第八周 第九周 第十周 第十一周 第十二周 第十三周 第十四周 第十五周 第十六周
+ [slides]()
+  </description>
     </item>
     
   </channel>

@@ -2,225 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>高级软件工程论文总结😂 - Kaiya Xiong&#39;s Blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Kaiya Xiong" />
-  <meta name="description" content="量化Javascript中可检测的BUG paper 这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和" />
-
-  <meta name="keywords" content="Kaiya, Xiong, Blog" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.49 Kaiya Xiong" />
-
-
-<link rel="canonical" href="https://kaiyai.com/post/summary_zh/" />
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="red">
-
-
-<link rel="shortcut icon" href="https://kaiyai.com/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Kaiya Xiong">
-<meta name="application-name" content="Kaiya Xiong">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="https://kaiyai.com/browserconfig.xml">
-
-
-
-
-
-
-
-
-
-<link href="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/even.min.css?v=3.2.0" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-
-
-
-
-
-
-
-
-<meta property="og:title" content="高级软件工程论文总结😂" />
-<meta property="og:description" content="量化Javascript中可检测的BUG paper 这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://kaiyai.com/post/summary_zh/" /><meta property="article:published_time" content="2018-07-23T01:10:00&#43;08:00"/>
-<meta property="article:modified_time" content="2018-07-23T01:10:00&#43;08:00"/>
-
-<meta itemprop="name" content="高级软件工程论文总结😂">
-<meta itemprop="description" content="量化Javascript中可检测的BUG paper 这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和">
-
-
-<meta itemprop="datePublished" content="2018-07-23T01:10:00&#43;08:00" />
-<meta itemprop="dateModified" content="2018-07-23T01:10:00&#43;08:00" />
-<meta itemprop="wordCount" content="4778">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="高级软件工程论文总结😂"/>
-<meta name="twitter:description" content="量化Javascript中可检测的BUG paper 这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Kaiya Xiong</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Kaiya Xiong</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">高级软件工程论文总结😂</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2018-07-23 </span>
-        
-        <span class="more-meta"> 4778 words </span>
-        <span class="more-meta"> 10 mins read </span>
-        
-      </div>
-    </header>
-
-    
-    
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#量化javascript中可检测的bug">量化Javascript中可检测的BUG</a>
-<ul>
-<li>
-<ul>
-<li><a href="#静态动态之争">静态动态之争</a></li>
-<li><a href="#bug评估">BUG评估</a></li>
-<li><a href="#实验结果">实验结果</a></li>
-<li><a href="#typescript和flow哪个更好">Typescript和Flow哪个更好？</a></li>
-<li><a href="#结论">结论</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#静态检测javascript中web-api请求">静态检测Javascript中Web API请求</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#检测过程">检测过程</a>
-<ul>
-<li>
-<ul>
-<li><a href="#1-检查endpoint">1. 检查endpoint</a></li>
-<li><a href="#2-检查请求数据">2. 检查请求数据</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#结论-1">结论</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#开发者如何修复跨项目相关的bug">开发者如何修复跨项目相关的BUG？</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介绍-1">介绍</a></li>
-<li><a href="#结论-2">结论</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
+  <title>高级软件工程论文总结😂 - Kaiya Xiong&#39;s Blog</title>
+  
+  <meta name="description" content="量化Javascript中可检测的BUG paper
+这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和Microsoft的Typescript的比较。这些静态系统是否真的能够检测到BUG？
+静态动态之争 开发语言中有动态类型和静态类型语言一分，动态类型也称弱类型语言，如Javascript，Python等。动态类型语言对类型要求不严格，在运行时做数据类型检查，这样可以写出干净（clean）的代码、开发灵活、可扩展，但是有些代码BUG不能及时发现。相反，静态类型语言也称为强类型语言，如C、C&#43;&#43;、Java等。静态类型语言对数据类型要求严格，在编译时做数据类型检查，这样可以及时在编译时发现代码BUG，优化编译器等。
+Javascript是动态类型语言，而Flow和Typescript分别是Facebook和Microsoft针对Javascript推出的静态系统，是Javascript的超集，即将Javascript在一定程度上变成静态类型语言。
+作者研究了GitHub中现实世界中JavaScript项目中的历史bug。如果开发者当时一直在利用Typescript或Flow，那么这个BUG会不会通过类型检查器呢？如果不通过的话就可以合理地假设这个BUG从一开始就不会被开发人员提交到库(repo)中。
+下面是一个类型注释可以检测出来的BUG： BUG评估 为了弄清楚Typescript和Flow可以检测到多少这样的bug，需要一些规则来说明添加类型注释是否可行，并且这些BUG需要人工去注释，添加类型注释需要花费多长时间。一项针对78个bug的小样本的初步研究表明，在绝大多数时候（90%），可以在10分钟内得出结论，所以作者设定允许花在注释一个bug上的最长时间被设定为10分钟。
+每个bug都用Typescript 2.0和Flow 0.30进行评估。为了减少类型系统对学习效果的影响，随机选择要先尝试的类型系统。然后，读取BUG的错误报告和BUG修复情况，并用10分钟的时间人工添加类型注释。有时，即使不加注释工具都可以检测到BUG，但也有一些BUG的结果报告表明这个BUG错误与类型无关，在这种情况下，BUG将被标记为无法检测。
+实验结果 在本文评估的400个公共BUG中，Flow成功地检测到了其中的59个BUG，而Typescript检测到了其中的58个BUG。评估过程中遇到的主要障碍包括：复杂的模块依赖关系、某些模块缺少带注释的接口、程序的理解一般很困难。
+本文将所有400个BUG标记为：可检测的和在Flow和TypeScript中无法检测到的。在总共60个BUG中，Flow检测了一个，Typescript检测到了另外两个。对结果进行测试表明，在95%置信水平，Flow和Typescript可检测的BUG真实百分比为11.5%、18.5%，平均为15%。
+Typescript和Flow哪个更好？ 这两个系统可以检测到的BUG大部分都是重叠的，只有3个BUG只有Typescript才能检测到，3个BUG只有Flow才能检测到。
+Typescript未能检测的所有三BUG都String类型的null值，或undefined有关。Flow无法检测到的三个BUG中的两个是由于流不完全支持在索引中使用string。
+结论 本文作者评估了静态类型系统为Javascript代码提供的BUG检测优势。结果表明，使用Flow或Typescript可以有效减少Github上公开项目的15%的BUG。此工作是第一个在公开成熟的代码上对Javascript的静态类型系统进行性能评估的。通过本文的研究，从业者可以通过对Flow和Typescript能够检测到的BUG进行分类，发现两者之间的差异，并决定是否在实践项目中为Javascript采用此静态类型系统。
+静态检测Javascript中Web API请求 介绍 本文提出了一种用Javascript静态检查Web API请求的方法：首先将请求中的URL、HTTP请求方法、请求数据提取出来，然后检查是否符合Web API规范（如API提供者编写的Swagger文档）。因为Web API规范要求：Javascript程序对Web API执行的HTTP请求，请求内容需包括：请求地址URL，HTTP请求方法，和正确的请求数据。但是Javascript的编译时无法检查构造的请求是否符合Web API的要求。本文通过从Github收集Javascript文件中的Web API请求进行实验验证。从收集到的6575个请求中，本文使用的方法确定请求的URL和HTTP方法是否与Web API规范是否一致，实验结果表明，方法的识别精确度为96.0%。对实验结果进行分析发现，其中很多都是由于在请求客户端的代码中写了错误的代码造成的。
+应用程序通过使用其支持的HTTP方法之一（包括GET、POST、PUT、DELETE等）向服务端URL发送HTTP请求来调用Web API；而所需的请求数据作为查询或路径参数发送，或在HTTP请求体（request body）中发送。需要发送的URL、HTTP方法和请求数据基本上都是字符串，由应用程序构造。当请求的目标是不存在的URL或发送不符合Web API需求的数据时，会发生运行时错误。但是在客户端编写代码时并不会有类型安全检查，即客户端必须单独进行运行时测试，才能知道编写的HTTP请求代码是否正确。
+检测过程 检测过程的目的是将静态分析产生的信息与相应的Web API规范相匹配，从而发现客户端HTTP请求的实现和规范之间的不一致。通常，请求信息包括：(1)要调用的Web API的URL，包括endpoint和路径，和一个可选的查询参数字符串；(2)HTTP方法，包括GET、POST、PUT、DELETE等；(3)在请求的有效负载(payload)中发送的请求数据。实际中，本实验会采用多个URL值、HTTP方法和请求数据来检索单个请求，只要有任意一个这些数据的组合符合Web API规范即认为没有问题，不会报告错误，以此来避免部分false positive的错误。
+1. 检查endpoint 该过程主要是将请求的endpoint和API规范中定义的endpoint相比较。首先检查给定请求的任何URL是否以已知的API规范的任何协议开头：比如，HTTP或HTTPS。然后，该过程尝试将请求的endpoint中的路径和规范中定义的路径相比较。为了匹配路径，该过程获取请求的每个UR，并将其与之前与该请求匹配的每个路径定义相比较。然后，通过检查每个路径的部分(由&quot;/&quot;分隔)，将剩下的路径字符串与规范中的路径定义进行比较。最后，该过程确定HTTP方法是否符合规范，如HTTP请求的header是否符合Web API开发者制定的API规范。
+2. 检查请求数据 对于可以匹配API规范中的endpoint的请求，该过程会检查请求数据（如果有）的有效性。请求数据有两种：1. 在请求体中发送的数据（HTTP方法通常是：POST、PUT、或PATCH）；2. 在查询字符串中发送的数据。
+(1). 检查有效负载数据：在HTTP请求的有效负载中发送的数据可以是任何格式。由于静态分析关注的是Javascript，并且因为JavaScript对象表示法(JSON)也是Web API中流行的数据格式，因此本文关注的是JSON中的数据。Swagger规范中允许定义有效负载数据，关于特定路径的或是针对特定endpoint的都可以。如果有已匹配到的规范在匹配到的endpoint中定义了有效负载的格式，那么这个过程将确定请求信息中报告的有效负载是否遵循这个格式。
+(2). 检查查询参数：查询数据被编码为key-value键值对。在API规范中，查询参数可以定义为可选的。然后，检查过程可以确定请求中是否存在所有必需的查询参数。同样，该过程考虑了规范中不同位置的查询参数的定义。该过程将查询参数解析为请求报告的所有URL的查询字符串。然后，该过程检查找到的任何参数集是否与匹配请求的任何端点定义中找到的参数定义相匹配。
+结论 本文利用基于框架的Javascript Web应用程序的静态分析的现有研究，创建了一个能够提取与Web API请求相关的字符串的分析工具。本文作者利用这些提取的请求数据作为检查器的输入，而检查器来确定请求是否和Web API开发者制定的API规范是否一致。本文对6575个请求的检查结果进行了定性分析，结果显示，大多数不一致都是由于客户端代码中的错误，比如，调用已废弃的API、URL中的错误、数据有效负载定义中的错误和不完整的Swagger规范。这些结果表明，此工具能够警告程序员源代码中包含不一致的Web API请求。因此该工具可以与支持开发人员使用Web API的现有工具进行集成。
+开发者如何修复跨项目相关的BUG？ 介绍 GitHub是目前开源世界中最大的代码存储库，它已经培育出了各种软件生态系统，在这些系统中，项目相互依赖。这个生态系统中的项目通常具有复杂的相互依赖关系，这种依赖关系给BUG查找和修复带来了新的挑战。本文对交叉项目的相关BUG进行了实证研究，将相关的BUG报告给不同的项目，本文主要关注两个方面：1. 开发者如何跟踪导致项目BUG的根本原因？2. 下游开发人员如何协调处理上游BUG。本研究揭示了开发人员常见的实践方式以及修复跨项目BUG的各种因素。这些发现为未来系统范围内的软件BUG分析提供了提示，同时也阐明了issue追踪器对此类BUG的需求。
+Github为每个存储库(repo)提供了一个问题(issue)追踪系统，用于报告和讨论关于BUG的问题，因此多个关联项目BUG之间的关系非常可能存在于这些issue追踪系统之中。">
+  <meta name="author" content="">
+  
+  <link href="https://fonts.loli.net/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link href="https://kaiyai.com/css/style.css" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" href="https://kaiyai.com/img/apple-touch-icon.png">
+  <link rel="icon" href="https://kaiyai.com/img/favicon.ico">
+  
+  <meta name="generator" content="Hugo 0.49">
+  
+  <link rel="alternate" type="application/atom+xml" href="https://kaiyai.com/index.xml" title="Kaiya Xiong&#39;s Blog">
+</head>
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://kaiyai.com/">Kaiya Xiong&#39;s Blog</a></p>
+    
+    <button class="menu-toggle" type="button"></button>
+    <nav class="menu">
+      <ul>
+        
+        
+        <li class="">
+          <a href="/about/">About</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
 
-    
-    
-
-    
-    <div class="post-content">
-      
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">高级软件工程论文总结😂</h1>
+    <p class="post-meta">2018.7.23</p>
+  </header>
+  <div class="post-content">
 
 <h2 id="量化javascript中可检测的bug">量化Javascript中可检测的BUG</h2>
 
@@ -308,173 +155,47 @@
 <h4 id="结论-2">结论</h4>
 
 <p>本文研究了开发人员如何修复交叉项目相关的BUG，例如。在GitHub的生态系统中，在不同的项目中，有一对因果相关的BUG。本文主要关注两个方面：1. 跨项目根源跟踪；2. BUG修复过程中上下游项目之间的协调。本文作者手动识别和检查了scientific Python生态系统中的271对跨项目BUG。实验结果揭示了开发人员在修复跨项目BUG时的常见做法。</p>
-
-    </div>
-
-    
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">Kaiya Xiong</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">2018-07-23</span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
 </div>
-
+  <footer class="post-footer">
     
-    
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">Reward</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/img/reward/wechat-qr-code.png">
-        <span>wechat</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/img/reward/alipay-qr-code.png">
-        <span>alipay</span>
-      </label>
-  </div>
-</div>
-
-    <footer class="post-footer">
-      
-
-      
-      <nav class="post-nav">
-        
-          <a class="prev" href="/post/tensorflow/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Tensorflow</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        
-          <a class="next" href="/post/instantclick/">
-            <span class="next-text nav-default">Instantclick</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
+  </footer>
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/iDisqus.min.css" />
-    
-    <div id="comment"></div>
-    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/iDisqus.min.js"></script>
-    <script type="text/javascript">
-    (function() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
-      var disq = new iDisqus('comment', {
-        forum: 'kyxiong',
-        api: 'https://dqproxy.herokuapp.com/',
-        site: 'https://kaiyai.com',
-        mode: 1,
-        timeout: 1000,
-        init: true
-      });
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
   
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:me@kaiyai.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/KaiyaXiong" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/Kaiya" class="iconfont icon-github" title="github"></a>
-      <a href="http://weibo.com/773846787" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="https://zhihu.com/people/KaiyaXiong" class="iconfont icon-zhihu" title="zhihu"></a>
-      <a href="https://www.douban.com/people/83405959/" class="iconfont icon-douban" title="douban"></a>
-  <a href="https://kaiyai.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://netlify.com">Netlify</a>
-  </span>
-
   
-
-  <span class="copyright-year">
-    &copy; 
-    
-      2017 - 
-    2018
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Kaiya Xiong</span>
-      
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
   
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2018 Kaiya Xiong&#39;s Blog 🎉</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" target="_blank">Hugo️️</a> ❤️</span>
+</footer>
+<script src="https://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js" data-no-instant></script>
 
-<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/lib/highlight/highlight.pack.js?v=20171001"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/even.min.js?v=3.2.0"></script>
-
-
-
-
-
-
-
-
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+<script data-no-instant>
+  hljs.initHighlightingOnLoad();
+  addMenuListener();
+  InstantClick.on('change', function() {
+    var blocks = document.querySelectorAll('pre code');
+    for (var i = 0; i < blocks.length; i++) {
+      hljs.highlightBlock(blocks[i]);
+    }
+    addMenuListener();
+    if (typeof MathJax !== 'undefined') 
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  });
+  function addMenuListener() {
+    var $toggle = document.querySelector('.menu-toggle');
+    var $body = document.querySelector('body');
+    $toggle.addEventListener('click', function() {
+      $body.classList.toggle('noscroll');
+    }, false);
+  }
+</script>
 </body>
 </html>
+

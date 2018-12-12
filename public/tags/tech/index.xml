@@ -17,7 +17,10 @@
       <pubDate>Sun, 12 Aug 2018 01:03:09 +0800</pubDate>
       
       <guid>https://kaiyai.com/post/tensorflow/</guid>
-      <description>最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。 教程官网 刚刚看了Tensorflow的</description>
+      <description>最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。
+教程官网
+刚刚看了Tensorflow的讲解，记录一下：
+import tensorflow as tf import numpy as np # create data x_data = np.random.rand(100).astype(np.float32) y_data = x_data*0.1 + 0.3 Weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0)) biases = tf.Variable(tf.zeros([1])) y = Weights*x_data + biases loss = tf.reduce_mean(tf.square(y-y_data)) optimizer = tf.train.GradientDescentOptimizer(0.5) train = optimizer.minimize(loss) init = tf.global_variables_initializer() sess = tf.Session() sess.run(init) # Very important for step in range(201): sess.run(train) if step % 20 == 0: print(step, sess.run(Weights), sess.run(biases))  首先，使用numpy生成100个随机数，然后制定他们的标签符合公式$y = 0.</description>
     </item>
     
   </channel>
