@@ -1,4 +1,6 @@
 #!/bin/bash
+# generate items
+hugo --minify
 # add changed files to commit auto
 git add .
 # commit the chages
@@ -9,3 +11,5 @@ git pull origin master
 git push origin master 
 # push the local master branch to coding pages repo
 git push mirror master:master
+# deploy to firebase
+firebase deploy
