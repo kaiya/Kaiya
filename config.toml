@@ -23,24 +23,30 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 [[menu.main]]             # config your menu              # 配置目录
   name = "Home"
-  weight = 10
+  weight = 40
   identifier = "home"
   url = "/"
 [[menu.main]]
   name = "Archives"
-  weight = 20
+  weight = 30
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
   name = "Tags"
-  weight = 30
+  weight = 20
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
   name = "Categories"
-  weight = 40
+  weight = 10
   identifier = "categories"
   url = "/categories/"
+[[menu.main]]
+  name = "About"
+  weight = 30
+  identifier = "about"
+  url = "/about/"
+
 
 [params]
   version = "3.x"           # Used to give a friendly message when you have an incompatible update
