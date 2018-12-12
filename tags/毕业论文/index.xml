@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>毕业论文 on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</link>
+    <description>Recent content in 毕业论文 on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Dec 2018 01:32:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>毕业论文写作计划</title>
+      <link>https://kaiyai.com/post/thesisplan/</link>
+      <pubDate>Sat, 08 Dec 2018 01:32:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/thesisplan/</guid>
+      <description>一、基于身份的代理重加密在区块链中的应用方案研究 阅读代理重加密早期论文及身份基代理重加密论文 阅读代理重加密在大数据云计算环境中应用的论文 思考</description>
+    </item>
+    
+  </channel>
+</rss>
