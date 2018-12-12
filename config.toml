@@ -23,29 +23,24 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 [[menu.main]]             # config your menu              # 配置目录
   name = "Home"
-  weight = 40
+  weight = 10
   identifier = "home"
   url = "/"
 [[menu.main]]
   name = "Archives"
-  weight = 30
+  weight = 20
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
   name = "Tags"
-  weight = 20
+  weight = 30
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
   name = "Categories"
-  weight = 10
+  weight = 40
   identifier = "categories"
   url = "/categories/"
-[[menu.main]]
-  name = "About"
-  weight = 30
-  identifier = "about"
-  url = "/about/"
 
 
 [params]
