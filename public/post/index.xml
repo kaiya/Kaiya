@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kaiya Xiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Dec 2018 01:32:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Dec 2018 16:50:00 +0800</lastBuildDate>
     
 	<atom:link href="https://kaiyai.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disqus科学使用方式</title>
+      <link>https://kaiyai.com/post/disqus/</link>
+      <pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/disqus/</guid>
+      <description>前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的</description>
+    </item>
     
     <item>
       <title>毕业论文写作计划</title>
