@@ -2,54 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Survey on Security and Privacy of Machine Learning - Kaiya Xiong&#39;s Blog</title>
-  
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Kaiya Xiong" />
   <meta name="description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
 Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
   And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
- Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks.">
-  <meta name="author" content="">
-  
-  <link href="https://fonts.loli.net/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
-  <link href="https://kaiyai.com/css/style.css" rel="stylesheet">
-  
-  <link rel="apple-touch-icon" href="https://kaiyai.com/img/apple-touch-icon.png">
-  <link rel="icon" href="https://kaiyai.com/img/favicon.ico">
-  
-  <meta name="generator" content="Hugo 0.49">
-  
-  <link rel="alternate" type="application/atom+xml" href="https://kaiyai.com/index.xml" title="Kaiya Xiong&#39;s Blog">
-</head>
-<body class="single">
-  <header class="header">
-    
-    <p class="title"><a href="https://kaiyai.com/">Kaiya Xiong&#39;s Blog</a></p>
-    
-    <button class="menu-toggle" type="button"></button>
-    <nav class="menu">
-      <ul>
-        
-        
-        <li class="">
-          <a href="/about/">About</a>
-        </li>
-        
-      </ul>
-    </nav>
-  </header>
-  <main class="main">
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks." />
 
-<article class="post post-view">
-  <header class="post-header">
-    <h1 class="post-title">Survey on Security and Privacy of Machine Learning</h1>
-    <p class="post-meta">2018.7.18</p>
-  </header>
-  <div class="post-content">
+  <meta name="keywords" content="Kaiya, Xiong, Blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.49 Kaiya Xiong" />
+
+
+<link rel="canonical" href="https://kaiyai.com/post/survey/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="red">
+
+
+<link rel="shortcut icon" href="https://kaiyai.com/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Kaiya Xiong">
+<meta name="application-name" content="Kaiya Xiong">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://kaiyai.com/browserconfig.xml">
+
+
+
+
+
+
+
+
+
+<link href="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Survey on Security and Privacy of Machine Learning" />
+<meta property="og:description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaiyai.com/post/survey/" /><meta property="article:published_time" content="2018-07-18T09:10:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-18T09:10:00&#43;08:00"/>
+
+<meta itemprop="name" content="Survey on Security and Privacy of Machine Learning">
+<meta itemprop="description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks.">
+
+
+<meta itemprop="datePublished" content="2018-07-18T09:10:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-18T09:10:00&#43;08:00" />
+<meta itemprop="wordCount" content="2375">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Survey on Security and Privacy of Machine Learning"/>
+<meta name="twitter:description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kaiya Xiong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kaiya Xiong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Survey on Security and Privacy of Machine Learning</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-07-18 </span>
+        
+        <span class="more-meta"> 2375 words </span>
+        <span class="more-meta"> 12 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#survey-on-security-and-privacy-of-machine-learning">Survey on Security and Privacy of Machine Learning</a>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-basic-concept-model-taxonomy">2. Basic Concept, Model, Taxonomy</a>
+<ul>
+<li><a href="#1-basic-of-machine-learning">1. Basic of Machine Learning</a></li>
+<li><a href="#2-adversarial-model">2. Adversarial Model</a></li>
+<li><a href="#3-security-threats-taxonomy">3. Security threats taxonomy</a>
+<ul>
+<li><a href="#1-influence-on-classifiers">1. Influence on classifiers</a></li>
+<li><a href="#2-security-violation">2. Security violation</a></li>
+<li><a href="#3-attack-specificity">3. Attack specificity</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-security-threats-towards-machine-learning">3. Security Threats towards machine learning</a>
+<ul>
+<li><a href="#1-training-phase">1. Training Phase</a>
+<ul>
+<li><a href="#1-poisoning-without-modifying-features-or-labels">1) Poisoning without modifying features or labels</a></li>
+<li><a href="#2-poisoning-with-modifying-features-or-lables">2) Poisoning with modifying features or lables</a></li>
+</ul></li>
+<li><a href="#2-testing-or-inferring-phase">2. Testing or Inferring Phase</a></li>
+<li><a href="#3-summary-of-adversarial-attacks-against-machine-learning">3. Summary of Adversarial attacks against machine learning</a></li>
+</ul></li>
+<li><a href="#4-defensive-techniques-of-machine-learning">4. Defensive Techniques of Machine Learning</a>
+<ul>
+<li><a href="#1-security-assessment-mechanisms">1. Security assessment mechanisms</a></li>
+<li><a href="#2-countermeasures-in-training-phase">2. Countermeasures in Training phase</a></li>
+<li><a href="#3-countermeasures-in-testing-inferring-phase">3. Countermeasures in Testing/Inferring phase</a></li>
+<li><a href="#4-data-security-and-privacy">4. Data security and privacy</a></li>
+</ul></li>
+<li><a href="#5-challenges-and-future-opportunities">5. Challenges and future opportunities</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
 
 <h2 id="survey-on-security-and-privacy-of-machine-learning">Survey on Security and Privacy of Machine Learning</h2>
 
@@ -299,47 +481,176 @@ Fig. 5 illustrates an example of proactive security assessment considering data 
 <li>Secure deep learning is a new growth point in the ﬁeld of machine learning security.</li>
 <li>Jointly optimizing security, generalization performance and overhead is required to design secure learning algorithms.</li>
 </ol>
-</div>
-  <footer class="post-footer">
-    
-  </footer>
-  
-  
-  
-  
-</article>
-</main>
-<footer class="footer">
-  <span>&copy; 2018 Kaiya Xiong&#39;s Blog 🎉</span>
-  <span>&middot;</span>
-  <span>Powered by <a href="https://gohugo.io/" target="_blank">Hugo️️</a> ❤️</span>
-</footer>
-<script src="https://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
-<script data-no-instant>InstantClick.init();</script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js" data-no-instant></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
-<script data-no-instant>
-  hljs.initHighlightingOnLoad();
-  addMenuListener();
-  InstantClick.on('change', function() {
-    var blocks = document.querySelectorAll('pre code');
-    for (var i = 0; i < blocks.length; i++) {
-      hljs.highlightBlock(blocks[i]);
-    }
-    addMenuListener();
-    if (typeof MathJax !== 'undefined') 
-      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-  });
-  function addMenuListener() {
-    var $toggle = document.querySelector('.menu-toggle');
-    var $body = document.querySelector('body');
-    $toggle.addEventListener('click', function() {
-      $body.classList.toggle('noscroll');
-    }, false);
-  }
-</script>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Kaiya Xiong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-07-18</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/img/reward/wechat-qr-code.png">
+        <span>wechat</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/img/reward/alipay-qr-code.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/bible/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Bible</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/qiniu/">
+            <span class="next-text nav-default">七牛融合CDN的坑</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/iDisqus.min.css" />
+    
+    <div id="comment"></div>
+    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/iDisqus.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+      var disq = new iDisqus('comment', {
+        forum: 'kyxiong',
+        api: 'https://dqproxy.herokuapp.com/',
+        site: 'https://kaiyai.com',
+        mode: 1,
+        timeout: 1000,
+        init: true
+      });
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:me@kaiyai.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/KaiyaXiong" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/Kaiya" class="iconfont icon-github" title="github"></a>
+      <a href="http://weibo.com/773846787" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://zhihu.com/people/KaiyaXiong" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/people/83405959/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://kaiyai.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://netlify.com">Netlify</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kaiya Xiong</span>
+      
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/themes/even/static/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
-
