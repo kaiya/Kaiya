@@ -15,7 +15,7 @@
 &lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
 &lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>jsdelivr介绍</title><link>https://kaiyai.com/post/jsdelivr/</link><pubDate>Thu, 13 Dec 2018 19:52:00 +0800</pubDate><guid>https://kaiyai.com/post/jsdelivr/</guid><description>
+&lt;/ul&gt;</description></item><item><title>jsdelivr</title><link>https://kaiyai.com/post/jsdelivr/</link><pubDate>Thu, 13 Dec 2018 19:52:00 +0800</pubDate><guid>https://kaiyai.com/post/jsdelivr/</guid><description>
 &lt;h3 id=&#34;引&#34;&gt;引&lt;/h3&gt;
 &lt;p&gt;​ 今天，在研究本博客采用的主题时发现，一些NPM Package文件采用的CDN是&lt;code&gt;jsdelivr&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;之前了解过也在项目中用过一些常规的CDN服务来加速&lt;code&gt;js&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;文件的获取。&lt;/p&gt;
@@ -28,7 +28,7 @@
 &lt;h3 id=&#34;介绍&#34;&gt;介绍&lt;/h3&gt;
 &lt;p&gt;这次了解了&lt;code&gt;jsdelivr&lt;/code&gt;之后发现这个加速库好强大，速度好快，而且还能加速任意Github Repo里的文件。&lt;/p&gt;
 &lt;p&gt;上一下官网的截图吧：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lib.azfs.com.cn/20181213154470254417585.png&#34; alt=&#34;20181213154470254417585.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lib.azfs.com.cn/20181213154470254417585.png-m&#34; alt=&#34;20181213154470254417585.png&#34; /&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;支持npm package&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;支持Github Repo&lt;/p&gt;&lt;/li&gt;
