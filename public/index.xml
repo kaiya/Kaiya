@@ -152,7 +152,7 @@ init: true
 &lt;p&gt;于莎莎说，芝士改变命运！&lt;/p&gt;
 &lt;p&gt;现在你笑了～&lt;/p&gt;
 &lt;p&gt;对的，知识改变命运，改变不了也可以改变我们的思维方式。而获取知识最快捷的方法就是阅读！&lt;/p&gt;
-&lt;p&gt;现在明白了吧，所有的文如泉涌和才思敏捷都源于一个人的大量阅读。就是简单的字面意思，多阅读才能有好文才！&lt;/p&gt;</description></item><item><title>My Girlfriend</title><link>https://kaiyai.com/post/girlfriend/</link><pubDate>Tue, 04 Dec 2018 13:09:00 +0800</pubDate><guid>https://kaiyai.com/post/girlfriend/</guid><description>&lt;p&gt;&lt;img src=&#34;https://driveindex.herokuapp.com/Girlfriend.jpg?thumbnails=small&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description></item><item><title>CNN in Tensorflow</title><link>https://kaiyai.com/post/tfcnn/</link><pubDate>Tue, 14 Aug 2018 01:03:09 +0800</pubDate><guid>https://kaiyai.com/post/tfcnn/</guid><description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import tensorflow as tf
+&lt;p&gt;现在明白了吧，所有的文如泉涌和才思敏捷都源于一个人的大量阅读。就是简单的字面意思，多阅读才能有好文才！&lt;/p&gt;</description></item><item><title>My Girlfriend</title><link>https://kaiyai.com/post/girlfriend/</link><pubDate>Tue, 04 Dec 2018 13:09:00 +0800</pubDate><guid>https://kaiyai.com/post/girlfriend/</guid><description>&lt;p&gt;&lt;img src=&#34;https://driveindex.herokuapp.com/Girlfriend.jpg?thumbnails=small&#34; alt=&#34;My Girl Friend!&#34; /&gt;&lt;/p&gt;</description></item><item><title>CNN in Tensorflow</title><link>https://kaiyai.com/post/tfcnn/</link><pubDate>Tue, 14 Aug 2018 01:03:09 +0800</pubDate><guid>https://kaiyai.com/post/tfcnn/</guid><description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 # number 1 to 10 data
 mnist = input_data.read_data_sets(&#39;MNIST_data&#39;, one_hot=True)
