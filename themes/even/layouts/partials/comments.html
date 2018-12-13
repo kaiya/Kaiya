@@ -10,7 +10,7 @@
     (function() {
       // Don't ever inject Disqus on localhost--it creates unwanted
       // discussions from 'localhost:1313' on your Disqus account...
-      // if (window.location.hostname === 'localhost') return;
+      if (window.location.hostname === 'localhost') return;
       var disq = new iDisqus('comment', {
         forum: 'kyxiong',
         api: 'https://disqus.kaiyai.com/api/',
