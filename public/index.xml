@@ -15,7 +15,42 @@
 &lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
 &lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Disqus科学使用方式</title><link>https://kaiyai.com/post/disqus/</link><pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate><guid>https://kaiyai.com/post/disqus/</guid><description>
+&lt;/ul&gt;</description></item><item><title>jsdelivr介绍</title><link>https://kaiyai.com/post/jsdelivr/</link><pubDate>Thu, 13 Dec 2018 19:52:00 +0800</pubDate><guid>https://kaiyai.com/post/jsdelivr/</guid><description>
+&lt;h3 id=&#34;引&#34;&gt;引&lt;/h3&gt;
+&lt;p&gt;​ 今天，在研究本博客采用的主题时发现，一些NPM Package文件采用的CDN是&lt;code&gt;jsdelivr&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;之前了解过也在项目中用过一些常规的CDN服务来加速&lt;code&gt;js&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;文件的获取。&lt;/p&gt;
+&lt;p&gt;主要有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;又拍云的公共js库: &lt;a href=&#34;http://jscdn.upai.com/&#34;&gt;http://jscdn.upai.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;七牛的&lt;a href=&#34;staticfile.org&#34;&gt;staticfile.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cdnjs.com&#34;&gt;CDNJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;介绍&#34;&gt;介绍&lt;/h3&gt;
+&lt;p&gt;这次了解了&lt;code&gt;jsdelivr&lt;/code&gt;之后发现这个加速库好强大，速度好快，而且还能加速任意Github Repo里的文件。&lt;/p&gt;
+&lt;p&gt;上一下官网的截图吧：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lib.azfs.com.cn/20181213154470254417585.png&#34; alt=&#34;20181213154470254417585.png&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;支持npm package&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;支持Github Repo&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;支持wordpress&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;github-cdn&#34;&gt;Github CDN&lt;/h3&gt;
+&lt;p&gt;这里主要讲一下Github库文件的分发：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jsdelivr&lt;/code&gt;支持指定任意版本，任一commit，如果文件本身没有压缩，在&lt;code&gt;js&lt;/code&gt;或&lt;code&gt;css&lt;/code&gt;文件后加上&lt;code&gt;.min&lt;/code&gt;则&lt;code&gt;jsdevlir&lt;/code&gt;自动帮你压缩并生成map文件。另外还可以通过&lt;code&gt;https://www.jsdelivr.com/package/gh/user/repo&lt;/code&gt;这个地址打开专属你的github repo的文件列表界面，好看哈哈哈~&lt;/p&gt;
+&lt;p&gt;官方的README中如下描述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All packages hosted on npm and tagged releases on GitHub are automatically available on jsDelivr.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;举个栗子：
+如官网所描述，如果github库中有release则可以通过这个地址 &lt;code&gt;https://cdn.jsdelivr.net/gh/user/repo@version/file&lt;/code&gt;获取到github仓库中的文件，并且可以在路径中指定相应的relaese版本号&lt;/p&gt;
+&lt;p&gt;但是如果一个repo如果没有release版本，则可直接输入master分支的文件路径进行访问，地址如
+&lt;code&gt;https://cdn.jsdelivr.net/gh/user/repo/file&lt;/code&gt;
+另外，也可通过指定&lt;code&gt;commit hash&lt;/code&gt;来指定获取某次&lt;code&gt;commit&lt;/code&gt;的文件，如：
+&lt;a href=&#34;https://cdn.jsdelivr.net/gh/kaiya/homepage@88fa8cd6a49cca64473437ee9f812abb44c180fc/js/search.js&#34;&gt;指定commit hash的地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对于本博客的&lt;a href=&#34;https://github.com/kaiya/kaiya&#34;&gt;Github Repo&lt;/a&gt; 有两个分支：&lt;code&gt;master&lt;/code&gt;和&lt;code&gt;gh-pages&lt;/code&gt;分支，并且将&lt;code&gt;gh-pages&lt;/code&gt;分支中的文件tag成release版本，则通过&lt;a href=&#34;https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.34/dist/even.min.js&#34;&gt;这个地址&lt;/a&gt; 则可访问到对应的js文件。&lt;/p&gt;
+&lt;p&gt;这样，无论一个repo有几个分支或者有没有relaese版本都可对其文件进行加速！&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;jsdelivr&lt;/code&gt;真好用哈哈哈哈哈😂&lt;/p&gt;</description></item><item><title>Disqus科学使用方式</title><link>https://kaiyai.com/post/disqus/</link><pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate><guid>https://kaiyai.com/post/disqus/</guid><description>
 &lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的情况：基于Hugo静态博客生成器、使用&lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Hugo Even&lt;/a&gt;主题。网上有很多教程一般都需要有一个自己的VPS来运行转发程序，但是我发现使用Heroku来跑这个转发程序效果还不错。
 总体架构：&lt;/p&gt;
@@ -261,114 +296,4 @@ print(step, sess.run(Weights), sess.run(biases))
 &lt;p&gt;对于我使用的主题&lt;code&gt;hugo-smorg&lt;/code&gt;，在主题文件夹中的layouts/partials中的js-body-bottom.html中添加如下代码即可：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script src=&amp;quot;https://cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js&amp;quot; data-no-instant&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script data-no-instant&amp;gt;InstantClick.init();&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>LaTex on Sublime Text</title><link>https://kaiyai.com/post/latex/</link><pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate><guid>https://kaiyai.com/post/latex/</guid><description>
-&lt;h3 id=&#34;sublime-text中latex环境的配置&#34;&gt;Sublime Text中LaTex环境的配置&lt;/h3&gt;
-&lt;p&gt;工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路径不能有空格，不然会报路径中找不到latexmk命令。当使用CTex套件安装MiKTex时，其中latexmk包的版本可能比较低，会导致latexing无法打开日志文件等错误。&lt;/p&gt;
-&lt;h4 id=&#34;1-latexing插件配置&#34;&gt;1. LaTexing插件配置&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-&amp;quot;debug&amp;quot;: false,
-&amp;quot;fallback_encoding&amp;quot;: &amp;quot;utf_8&amp;quot;,
-&amp;quot;open_pdf_on_load&amp;quot;: false,
-&amp;quot;build_arguments&amp;quot;: [&amp;quot;-shell-escape&amp;quot;],
-&amp;quot;quick_build&amp;quot;: [
-{
-&amp;quot;name&amp;quot;: &amp;quot;Default Build: latexmk&amp;quot;,
-&amp;quot;primary&amp;quot;: true,
-&amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;]
-},
-{
-&amp;quot;name&amp;quot;: &amp;quot;Quick Build 1: xelatex + bibtex + xelatex (2x)&amp;quot;,
-&amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;bibtex&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;]
-},
-{
-&amp;quot;name&amp;quot;: &amp;quot;Quick Build 2: xelatex + biber + xelatex (2x)&amp;quot;,
-&amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;biber&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;]
-}
-],
-&amp;quot;typeset_on_save&amp;quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;2-配置中文snippet&#34;&gt;2. 配置中文Snippet&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;snippet&amp;gt;
-&amp;lt;content&amp;gt;&amp;lt;![CDATA[
-%!TEX program = xelatex
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-\\documentclass[a4paper]{article}
-\\usepackage[UTF8, heading = false, scheme = plain]{ctex}
-\\usepackage{graphicx}
-\\usepackage{cite}
-\\usepackage{geometry}
-\\geometry{left=2.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
-\\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}
-\\usepackage{subfig}
-\\usepackage{caption}
-\\captionsetup{font={scriptsize}}
-\\renewcommand\figurename{图}
-\\makeatletter
-\\let\@afterindentfalse\@afterindenttrue
-\\@afterindenttrue
-\\makeatother
-\\setlength{\parindent}{2em}
-\\linespread{1.4}
-\\setlength{\parskip}{0.5\baselineskip}
-\\title{${1:this}}
-\\author{Kaiya Xiong}
-\\date{\today}
-\\begin{document}
-\\maketitle
-$0
-\\end{document}
-]]&amp;gt;&amp;lt;/content&amp;gt;
-&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
-&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;
-&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
-&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
-&amp;lt;tabTrigger&amp;gt;zh&amp;lt;/tabTrigger&amp;gt;
-&amp;lt;scope&amp;gt;text.tex.latex&amp;lt;/scope&amp;gt;
-&amp;lt;description&amp;gt;zh basic article &amp;lt;/description&amp;gt;&amp;lt;/snippet&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;3-配置beamer-snippet&#34;&gt;3. 配置Beamer Snippet&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;snippet&amp;gt;
-&amp;lt;content&amp;gt;&amp;lt;![CDATA[
-%!TEX program = xelatex
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-\\documentclass[aspectratio=169]{beamer}
-\\usepackage[UTF8, heading = false, scheme = plain]{ctex}
-\\usepackage{silence}
-\\WarningFilter{biblatex}{Patching footnotes failed}
-\\usepackage[hyperref=true,backend=biber,sorting=none,backref=true,style=ieee]{biblatex}
-\\addbibresource{references.bib}
-\\renewcommand{\footnotesize}{\tiny}
-\\usepackage{graphicx}
-\\usepackage{subfig}
-\\usepackage{caption}
-\\captionsetup{font={scriptsize}}
-\\renewcommand\figurename{图}
-\\newcommand\blfootnote[1]{
-\begingroup
-\renewcommand\thefootnote{}\footnote{#1}
-\addtocounter{footnote}{-1}
-\endgroup
-}
-% \usepackage{tikz}
-\\title{${1:this}}
-\\author{Kaiya Xiong}
-\\date{\today}
-\\institute[JNU]{Jinan University}
-\\begin{document}
-\\begin{frame}
-\\titlepage
-\\end{frame}
-$0
-\\end{document}
-]]&amp;gt;&amp;lt;/content&amp;gt;
-&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
-&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;
-&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
-&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
-&amp;lt;tabTrigger&amp;gt;beamer&amp;lt;/tabTrigger&amp;gt;
-&amp;lt;scope&amp;gt;text.tex.latex&amp;lt;/scope&amp;gt;
-&amp;lt;description&amp;gt;zh basic beamer &amp;lt;/description&amp;gt;&amp;lt;/snippet&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>
