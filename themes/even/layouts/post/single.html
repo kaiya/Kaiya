@@ -33,6 +33,16 @@
     <!-- Content -->
     <div class="post-content">
       
+      <!-- detect if a post has images -->
+      <!--featured_image-->
+        $scratch := newScratch
+
+        {{ $images := findRE "<img src=\"[^\"|\\\"]*\"" .Content -}}
+        {{ if ge (len $images) 1}}
+            {{ $.Scratch.Set "postHasImages" true }}
+        {{ end }}
+
+      <!-- lazyload -->
       {{ $reAltIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)?\" />" }}
       {{ $reAltOut :=  ( printf "<figure><img src=\"/img/ring.svg\" data-sizes=\"auto\" data-src=\"$1\" alt=\"$2\" class=\"lazyload\"><figcaption class=\"image-caption\">$2</figcaption></figure>") }}
       {{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}

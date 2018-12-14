@@ -74,12 +74,24 @@
 
 <link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya/dist/even.min.css?v=3.2.0" | relURL }}" rel="stylesheet">
 <!-- <link href="{{ "dist/even.min.css?v=3.2.0" | relURL }}" rel="stylesheet"> -->
-{{ if .Site.Params.publicCDN.enable -}}
+
+<!-- {{ if .Site.Params.publicCDN.enable -}}
   {{ if .Site.Params.fancybox }}{{ .Site.Params.publicCDN.fancyboxCss | safeHTML }}{{ end }}
 {{- else -}}
   {{ if .Site.Params.fancybox }}<link href="{{ "lib/fancybox/jquery.fancybox-3.1.20.min.css" | relURL }}" rel="stylesheet">{{ end }}
-{{- end }}
+{{- end }} -->
 
+<!-- replace fancybox with lightGallery -->
+<link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya/lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">
+
+{{ $postHasImages :=  .Scratch.Get "postHasImages"}}
+
+{{ if $postHasImages }}
+{{ if .Site.Params.publicCDN.enable -}}
+  {{ if .Site.Params.lightGallery }}{{ .Site.Params.publicCDN.lightGalleryCss | safeHTML }}{{ end}}
+  {{ if .Site.Params.lightGallery }}<link href="{{ "lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">{{ end }}
+{{- end }}
+{{ end }}
 
 <!-- Start of Twitter -->
 <!-- {{ if .Site.Params.twitter_card_whitelisted }}
