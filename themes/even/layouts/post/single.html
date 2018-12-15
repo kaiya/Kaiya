@@ -35,7 +35,7 @@
       
       <!-- detect if a post has images -->
       <!--featured_image-->
-        $scratch := newScratch
+        {{ $scratch := newScratch }}
 
         {{ $images := findRE "<img src=\"[^\"|\\\"]*\"" .Content -}}
         {{ if ge (len $images) 1}}
