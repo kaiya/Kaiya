@@ -72,7 +72,7 @@
 <!-- Styles -->
 <!-- use jsdelivr CDN-->
 
-<link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya/dist/even.min.css?v=3.2.0" | relURL }}" rel="stylesheet">
+<link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/even.min.css" | relURL }}" rel="stylesheet">
 <!-- <link href="{{ "dist/even.min.css?v=3.2.0" | relURL }}" rel="stylesheet"> -->
 
 <!-- {{ if .Site.Params.publicCDN.enable -}}
@@ -82,7 +82,7 @@
 {{- end }} -->
 
 <!-- replace fancybox with lightGallery -->
-<link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya/lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">
+<link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">
 
 
 {{ $postHasImages :=  .Scratch.Get "postHasImages"}}

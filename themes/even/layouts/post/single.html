@@ -44,7 +44,7 @@
 
       <!-- lazyload -->
       {{ $reAltIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)?\" />" }}
-      {{ $reAltOut :=  ( printf "<figure><img src=\"/img/ring.svg\" data-sizes=\"auto\" data-src=\"$1\" alt=\"$2\" class=\"lazyload\"><div class=\"forcaptioncenter\"><figcaption class=\"image-caption\">$2</figcaption></div></figure>") }}
+      {{ $reAltOut :=  ( printf "<figure class=\"figureforimg\"><img src=\"/img/ring.svg\" data-sizes=\"auto\" data-src=\"$1\" alt=\"$2\" class=\"lazyload\"><div class=\"forcaptioncenter\"><figcaption class=\"image-caption\">$2</figcaption></div></figure>") }}
       {{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}
 
       {{ $reAltTitleIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)?\" title=\"([^\"]+)?\" />" }}

@@ -142,7 +142,7 @@ Even._initToc = function () {
 // replace fancybox with lightGallery
 Even.lightGallery = function (){
 let items = [];
-$('.post-content figure').each(function() {
+$('.post-content .figureforimg').each(function() {
    if ($(this).attr('class') == 'gallery-ignore') return true; // ignore any figures where class="pswp-ignore"
    // get properties from child a/img/figcaption elements,
    let $figure = $(this),
