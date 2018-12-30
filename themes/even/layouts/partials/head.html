@@ -88,8 +88,6 @@
 {{ $postHasImages :=  .Scratch.Get "postHasImages"}}
 
 {{ if $postHasImages }}
-<div id="postHasImages">this post has images</div>
-<meta name="postHasImages" content="true">
 {{ if .Site.Params.publicCDN.enable -}}
   {{ if .Site.Params.lightGallery }}{{ .Site.Params.publicCDN.lightGalleryCss | safeHTML }}{{ end}}
   {{ if .Site.Params.lightGallery }}<link href="{{ "lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">{{ end }}
