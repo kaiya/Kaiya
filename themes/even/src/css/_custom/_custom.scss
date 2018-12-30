@@ -5,7 +5,6 @@
 
 .post-content {
 figure {
-      text-align: center;
       img:hover{
           cursor: zoom-in;
       }
@@ -21,6 +20,9 @@ figure {
       font-size: 14px;
       color: #969696;
       line-height: 1.7;
+  }
+  .forcaptioncenter {
+      text-align: center;
   }
 
   img {

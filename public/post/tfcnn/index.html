@@ -83,7 +83,7 @@ for i in range(10000):
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
     if i % 500 == 0:
         print(compute_accuracy(mnist.test.images[:1000], mnist.test.labels[:1000]))
-</code></pre><p>Accuracy:<figure><img src=/img/ring.svg data-sizes=auto data-src=https://ws3.sinaimg.cn/large/006tNbRwgy1fu8kjwzuqvj31es0ragot.jpg alt=Accuracy class=lazyload><figcaption class=image-caption>Accuracy</figcaption></figure></p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+</code></pre><p>Accuracy:<figure><img src=/img/ring.svg data-sizes=auto data-src=https://ws3.sinaimg.cn/large/006tNbRwgy1fu8kjwzuqvj31es0ragot.jpg alt=Accuracy class=lazyload><div class=forcaptioncenter><figcaption class=image-caption>Accuracy</figcaption></div></figure></p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content>Kaiya Xiong</span></p><p class=copyright-item><span class=item-title>LastMod</span>
 <span class=item-content>2018-08-14</span></p><p class=copyright-item><span class=item-title>License</span>
 <span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
