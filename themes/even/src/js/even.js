@@ -180,7 +180,7 @@ $('.post-content .figureforimg').each(function() {
   
    var index = items.length;
    items.push(item);
-
+   
    $figure.on('click', function(event) {
        event.preventDefault(); 
        $(this).lightGallery({
@@ -191,6 +191,7 @@ $('.post-content .figureforimg').each(function() {
            index: index
        })
    });
+
 });
 }
 

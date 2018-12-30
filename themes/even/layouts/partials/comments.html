@@ -2,10 +2,10 @@
   <!-- Disqus -->
   {{- if .Site.DisqusShortname -}}
     <!-- import disqus css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya/dist/iDisqus.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.css" />
     <!-- <div id="disqus_thread"></div> -->
     <div id="comment"></div>
-    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/dist/iDisqus.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js"></script>
     <script type="text/javascript">
       function loadDiyDisqus(){
         if (window.location.hostname === 'localhost') return;
@@ -21,7 +21,7 @@
       if (typeof iDisqus == 'undefined'){
         var script=document.createElement("script");
         script.type="text/javascript";
-        script.src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/dist/iDisqus.min.js";
+        script.src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js";
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); 
         script.onload=function(){
           loadDiyDisqus();
