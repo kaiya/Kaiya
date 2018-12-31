@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/</link>
+    <description>Recent content on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Aug 2018 21:38:52 +0800</lastBuildDate>
+    
+        <atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://kaiyai.com/about/</link>
+      <pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/about/</guid>
+      <description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
+
+&lt;p&gt;My research interest:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Security and Privacy of Machine Learning&lt;/li&gt;
+&lt;li&gt;Blockchain Consensus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Homepage:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/xiong&#34;&gt;Google Sites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://about.kaiyai.com&#34;&gt;Academic Homepage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Reach me at:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Huangpu Avenue West No.601 Jinan University, Guangzhou, China, 510632&lt;/li&gt;
+&lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
+&lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
+&lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Disqus科学使用方式</title>
+      <link>https://kaiyai.com/post/disqus/</link>
+      <pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/disqus/</guid>
+      <description>
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的情况：基于Hugo静态博客生成器、使用&lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Hugo Even&lt;/a&gt;主题。网上有很多教程一般都需要有一个自己的VPS来运行转发程序，但是我发现使用Heroku来跑这个转发程序效果还不错。
+总体架构：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lib.azfs.com.cn/20181212154460512397630.png-l&#34; alt=&#34;图片来源:blog.fooleap.org&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此处利用了一个PHP程序来转发Disqus API请求 &lt;a href=&#34;https://github.com/fooleap/disqus-php-api&#34;&gt;https://github.com/fooleap/disqus-php-api&lt;/a&gt;。
+首先JS检测用户网络是否能够访问Disqus，如果能就直接访问原版Disqus。如果不能则请求自己的服务器通过PHP程序转发Disqus API请求，并显示自制的Disqus评论框。&lt;/p&gt;
+
+&lt;h3 id=&#34;一-disqus&#34;&gt;一、Disqus&lt;/h3&gt;
+
+&lt;p&gt;使用 API 实现匿名评论功能，需在 Disqus 后台&lt;a href=&#34;https://disqus.com/admin/settings/community/&#34;&gt;网站设置&lt;/a&gt;，设置相关选项。
+* 开启匿名评论，Guest Commenting 项中勾选 Allow guests to comment。
+* 若需评论免审，Pre-moderation 项选中 None。&lt;/p&gt;
+
+&lt;p&gt;必须在 &lt;a href=&#34;https://disqus.com/api/applications/&#34;&gt;Disqus API&lt;/a&gt; 申请注册一个 App，取得相关的公钥（&lt;strong&gt;API Key&lt;/strong&gt;）、私钥（&lt;strong&gt;API Secret&lt;/strong&gt;），并填写于后端的配置文件 &lt;code&gt;config.php&lt;/code&gt; 中。&lt;/p&gt;
+
+&lt;p&gt;App 设置方面，回调链接请填写 &lt;code&gt;login.php&lt;/code&gt; 文件的绝对地址，可根据自己情况填写。&lt;/p&gt;
+
+&lt;h3 id=&#34;二-heroku&#34;&gt;二、Heroku&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;首先在&lt;a href=&#34;https://heroku.com&#34;&gt;Heroku&lt;/a&gt;注册账号，可以直接通过Github登录；&lt;/li&gt;
+&lt;li&gt;新建一个App，填写App名字，选择位置如下图：
+&lt;img src=&#34;https://lib.azfs.com.cn/2018121215446058857644.png-l&#34; alt=&#34;2018121215446058857644.png&#34; /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;选择Deploy部署，可以通过Heroku CLI部署或者通过关联Github Repo部署，很方便。但是这里不建议通过Github部署，因为PHP文件里有些敏感信息，所以建议通过Heroku CLI部署。Heroku CLI安装过程省略，官网上有。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ heroku login                      //调起浏览器登录Heroku账号
+$ heroku git:clone -a disqusproxy   //克隆Heroku的Git仓库，将disqusproxy替换为你自己的App名字
+$ cd disqusproxy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将&lt;a href=&#34;https://github.com/fooleap/disqus-php-api&#34;&gt;PHP程序&lt;/a&gt;下载下来，将api文件夹内的文件都放到这个文件夹内，修改config.php文件，将上面获取的API Key、API Secret填入配置文件中，在根据配置文件提示填入你的Disqus账号信息。另外由于Gravatar在国内也不太稳定可以将配置文件下面的Gravatar CDN修改为&lt;code&gt;//gravatar.loli.net/avatar/&lt;/code&gt;，配置文件如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lib.azfs.com.cn/20181212154460966999228.png-l&#34; alt=&#34;20181212154460966999228.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;修改完后使用Git推送到heroku&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git add .     
+$ git commit -am &amp;quot;make it better&amp;quot;
+$ git push heroku master            //Git工作流，推送到Heroku的Git仓库
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可以测试访问https://{app name}.herokuapp.com/login.php判断是否安装成功。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;三-前端&#34;&gt;三、前端&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将&lt;a href=&#34;https://github.com/fooleap/disqus-php-api&#34;&gt;PHP程序&lt;/a&gt;Repo里的iDisqus.min.css和iDisqus.min.js文件下载下来放入static文件夹内。&lt;/li&gt;
+&lt;li&gt;由于本博客采用的主题有Disqus功能，所以要先把以前的Div元素和涉及Disqus的代码清除。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引入CSS&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;path/to/iDisqus.min.css&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注：由于本博客采用的是&lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Even主题&lt;/a&gt;，所以以下针对前端的修改在&lt;code&gt;themes/even/layouts/partials/comments.html&lt;/code&gt;中，不同主题请自行修改。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;创建容器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;comment&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引入JS&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;path/to/iDisqus.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;创建实例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var disq = new iDisqus(&#39;comment&#39;, {
+        forum: &#39;kyxiong&#39;,
+        api: &#39;https://dqproxy.herokuapp.com/&#39;,
+        site: &#39;https://kaiyai.com&#39;,
+        mode: 1,
+        timeout: 3000,
+        init: true
+      });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lib.azfs.com.cn/20181212154461004878666.png-l&#34; alt=&#34;20181212154461004878666.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;参数解释：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;forum&lt;/code&gt;: disqus中forum的shortname&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;api&lt;/code&gt;: 上文中PHP转发程序的地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;site&lt;/code&gt;: 欲开启Disqus科学评论的网站地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mode&lt;/code&gt;: 模式：
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1&lt;/code&gt;: 检测能否访问 Disqus，若能则加载 Disqus 原生评论框，超时则加载简易评论框&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&lt;/code&gt;: 仅加载简易评论框&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3&lt;/code&gt;: 同时加载两种评论框，先显示简易评论框，Disqus 加载完成则切换至 Disqus 评论框&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout&lt;/code&gt;: 超时时间设置，检测用户网络，如果连接原生Disqus超过这个时间则开启本转发程序转发Disqus API请求。单位毫秒。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;init&lt;/code&gt;: 是否自动初始化&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;四-大功告成&#34;&gt;四、大功告成！&lt;/h3&gt;
+
+&lt;p&gt;使用Hugo生成静态网站预览，记得本地预览默认是关闭Disqus的，要注释掉comments中的代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if (window.location.hostname === &#39;localhost&#39;) return;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;放到生产环境后记得再注释回来哟。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>毕业论文写作计划</title>
+      <link>https://kaiyai.com/post/thesisplan/</link>
+      <pubDate>Sat, 08 Dec 2018 01:32:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/thesisplan/</guid>
+      <description>&lt;p&gt;一、基于身份的代理重加密在区块链中的应用方案研究&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;阅读代理重加密早期论文及身份基代理重加密论文&lt;/li&gt;
+&lt;li&gt;阅读代理重加密在大数据云计算环境中应用的论文&lt;/li&gt;
+&lt;li&gt;思考研究代理重加密在区块链中的应用方案&lt;/li&gt;
+&lt;li&gt;详细设计应用方案&lt;/li&gt;
+&lt;li&gt;算法相关实现&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;二、上述方案在基于区块链的征信系统中的应用场景及其相关实现&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>阅读与写作</title>
+      <link>https://kaiyai.com/post/readwrite/</link>
+      <pubDate>Sat, 08 Dec 2018 00:27:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/readwrite/</guid>
+      <description>&lt;p&gt;首先我就告诉你，所有的文如泉涌和才思敏捷都归根于大量的阅读。&lt;/p&gt;
+
+&lt;p&gt;你以为别人每天都能写上万字是轻轻松松吗？全是因为他或者她过人的文笔吗？&lt;/p&gt;
+
+&lt;p&gt;如果你这样想的话，那你真是天真的可笑，甚至可悲！&lt;/p&gt;
+
+&lt;p&gt;要知道，没有谁不需要努力就可以得到自己想要的，也没有人懒惰到不收集阅览大量资料就对一件事情了解的那么巨细，就可以写出上万字的文章！&lt;/p&gt;
+
+&lt;p&gt;你说他或者她，文笔实在太好，所以能够天马行空。你说自己是因为没有他或者她那样的天赋。要不然我也可以写字出书。&lt;/p&gt;
+
+&lt;p&gt;要知道，全世界百分之九十五以上甚至更多的人都还达不到可以拼天赋的程度！只有懒惰鬼才张口闭口把天赋挂念着。&lt;/p&gt;
+
+&lt;p&gt;你所谓的“天赋”，只不过是他或者她从小就看书所累集的华丽词藻。只不过是他或者她，空闲就记录生活细节的习惯。&lt;/p&gt;
+
+&lt;p&gt;你说你的生活太无聊，无事可写，无事值得记录！&lt;/p&gt;
+
+&lt;p&gt;谁的生活又能够百分百有趣呢，无趣，只不过是你没有善于发现善于欣赏的眼睛，没有足够细腻的心思。&lt;/p&gt;
+
+&lt;p&gt;你又说，我一个大男人，心思要那么细腻干嘛？&lt;/p&gt;
+
+&lt;p&gt;我说，心思细腻要足够心思缜密才行啊。你逻辑思维够足吗？这时你就呆了！还是拼天赋嘛！&lt;/p&gt;
+
+&lt;p&gt;你错了，逻辑思维是可以培养出来的。只有不努力思考的人，没有蠢人。逻辑思维的培养，比如你可以多看看心理学啊，逻辑思维书籍啊等等。&lt;/p&gt;
+
+&lt;p&gt;所以，关键还在于阅读。&lt;/p&gt;
+
+&lt;p&gt;邓超说，知识改变命运！&lt;/p&gt;
+
+&lt;p&gt;于莎莎说，芝士改变命运！&lt;/p&gt;
+
+&lt;p&gt;现在你笑了～&lt;/p&gt;
+
+&lt;p&gt;对的，知识改变命运，改变不了也可以改变我们的思维方式。而获取知识最快捷的方法就是阅读！&lt;/p&gt;
+
+&lt;p&gt;现在明白了吧，所有的文如泉涌和才思敏捷都源于一个人的大量阅读。就是简单的字面意思，多阅读才能有好文才！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Girlfriend</title>
+      <link>https://kaiyai.com/post/girlfriend/</link>
+      <pubDate>Tue, 04 Dec 2018 13:09:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/girlfriend/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://driveindex.herokuapp.com/Girlfriend.jpg?thumbnails=small&#34; alt=&#34;My Girl Friend!&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CNN in Tensorflow</title>
+      <link>https://kaiyai.com/post/tfcnn/</link>
+      <pubDate>Tue, 14 Aug 2018 01:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/tfcnn/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+
+# number 1 to 10 data
+mnist = input_data.read_data_sets(&#39;MNIST_data&#39;, one_hot=True)
+
+
+def compute_accuracy(v_xs, v_ys):  # validation xs and validation ys
+    global prediction
+    y_pre = sess.run(prediction, feed_dict={xs: v_xs, keep_prob: 1})
+    correct_prediction = tf.equal(tf.arg_max(y_pre, 1), tf.arg_max(v_ys, 1))
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys, keep_prob: 1})
+    return result
+
+
+def weight_variable(shape):
+    initial = tf.truncated_normal(shape, stddev=0.1)
+    return tf.Variable(initial)
+
+
+def bias_variable(shape):
+    initial = tf.constant(0.1, shape=shape)
+    return tf.Variable(initial)
+
+
+def conv2d(x, W):
+    # stride [1, x_movement, y_movement, 1]
+    # must have strides[0] = stride[4] = 1
+    return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding=&#39;SAME&#39;)
+
+
+def max_pool_2x2(x):
+    # stride [1, x_movement, y_movement, 1]
+    return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#39;SAME&#39;)
+
+
+# define placeholder for inputs to network
+
+xs = tf.placeholder(tf.float32, [None, 784])/255  # 28x28
+ys = tf.placeholder(tf.float32, [None, 10])
+keep_prob = tf.placeholder(tf.float32)
+x_image = tf.reshape(xs, [-1, 28, 28, 1])
+
+# conv1 layer #
+W_conv1 = weight_variable([5, 5, 1, 32])  # patch 5x5, insize 1, outsize 32
+b_conv1 = bias_variable([32])
+h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)  # output size 28x28x32
+h_pool1 = max_pool_2x2(h_conv1)  # output size 14x14x32
+
+# conv2 layer #
+W_conv2 = weight_variable([5, 5, 32, 64])  # patch 5x5, insize 32, outsize 64
+b_conv2 = bias_variable([64])
+h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)  # output size 14x14x64
+h_pool2 = max_pool_2x2(h_conv2)  # output size 7x7x64
+
+# func1 layer #
+W_fc1 = weight_variable([7*7*64, 1024])
+b_fc1 = bias_variable([1024])
+# [n_samples, 7 ,7, 64] -&amp;gt;&amp;gt; [n_samples, 7*7*64]
+h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
+h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
+h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
+
+
+# func2 layer #
+W_fc2 = weight_variable([1024, 10])
+b_fc2 = bias_variable([10])
+prediction = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)
+
+
+# the error between prediction and real data
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction), reduction_indices=[1]))  # loss
+train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
+
+sess = tf.Session()
+# important step
+sess.run(tf.global_variables_initializer())
+
+for i in range(10000):
+    batch_xs, batch_ys = mnist.train.next_batch(100)
+    sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
+    if i % 500 == 0:
+        print(compute_accuracy(mnist.test.images[:1000], mnist.test.labels[:1000]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Accuracy:
+&lt;img src=&#34;https://ws3.sinaimg.cn/large/006tNbRwgy1fu8kjwzuqvj31es0ragot.jpg&#34; alt=&#34;Accuracy&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://kaiyai.com/post/tensorflow/</link>
+      <pubDate>Sun, 12 Aug 2018 01:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/tensorflow/</guid>
+      <description>&lt;p&gt;最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://morvanzhou.github.io/&#34;&gt;教程官网&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;刚刚看了Tensorflow的讲解，记录一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import tensorflow as tf
+import numpy as np
+
+# create data
+x_data = np.random.rand(100).astype(np.float32)
+y_data = x_data*0.1 + 0.3
+
+Weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
+biases = tf.Variable(tf.zeros([1]))
+
+y = Weights*x_data + biases
+
+loss = tf.reduce_mean(tf.square(y-y_data))
+optimizer = tf.train.GradientDescentOptimizer(0.5)
+train = optimizer.minimize(loss)
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)          # Very important
+
+for step in range(201):
+    sess.run(train)
+    if step % 20 == 0:
+        print(step, sess.run(Weights), sess.run(biases))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;首先，使用numpy生成100个随机数，然后制定他们的标签符合公式$y = 0.1*x + 0.3$，目的是让程序学习到这个公式，
+然后使用tensorflow生成随机-1到1之间的数作为权重，[1]表示生成的是一维数，偏置初始设置为0.&lt;/p&gt;
+
+&lt;p&gt;y就为预测的y值. 损失函数为y和y_data之间的平方差，优化函数为梯度下降算法，0.5为学习速率.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;train = optimizer.minimize(loss)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这句代码道出了机器学习的精髓：训练就是使用优化算法最小化损失函数！！&lt;/p&gt;
+
+&lt;p&gt;接着，tf初始化，tf创建session，session运行初始化。&lt;/p&gt;
+
+&lt;p&gt;这个程序跑201步，每一步都在session中运行训练，然后每20个输出一个当前步、权重和偏置。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>高级软件工程论文总结😂</title>
+      <link>https://kaiyai.com/post/summary_zh/</link>
+      <pubDate>Mon, 23 Jul 2018 01:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/summary_zh/</guid>
+      <description>
+
+&lt;h2 id=&#34;量化javascript中可检测的bug&#34;&gt;量化Javascript中可检测的BUG&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ieeexplore.ieee.org/document/7985711/&#34;&gt;paper&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这篇文章探讨了是否值得为&lt;code&gt;Javascript&lt;/code&gt;项目添加静态类型注释，以及Facebook的&lt;code&gt;Flow&lt;/code&gt;和Microsoft的&lt;code&gt;Typescript&lt;/code&gt;的比较。这些静态系统是否真的能够检测到BUG？&lt;/p&gt;
+
+&lt;h4 id=&#34;静态动态之争&#34;&gt;静态动态之争&lt;/h4&gt;
+
+&lt;p&gt;开发语言中有动态类型和静态类型语言一分，动态类型也称弱类型语言，如Javascript，Python等。动态类型语言对类型要求不严格，在运行时做数据类型检查，这样可以写出干净（clean）的代码、开发灵活、可扩展，但是有些代码BUG不能及时发现。相反，静态类型语言也称为强类型语言，如C、C++、Java等。静态类型语言对数据类型要求严格，在编译时做数据类型检查，这样可以及时在编译时发现代码BUG，优化编译器等。&lt;/p&gt;
+
+&lt;p&gt;Javascript是动态类型语言，而Flow和Typescript分别是Facebook和Microsoft针对Javascript推出的静态系统，是Javascript的超集，即将Javascript在一定程度上变成静态类型语言。&lt;/p&gt;
+
+&lt;p&gt;作者研究了GitHub中现实世界中JavaScript项目中的历史bug。如果开发者当时一直在利用Typescript或Flow，那么这个BUG会不会通过类型检查器呢？如果不通过的话就可以合理地假设这个BUG从一开始就不会被开发人员提交到库(repo)中。&lt;/p&gt;
+
+&lt;p&gt;下面是一个类型注释可以检测出来的BUG：
+&lt;img src=&#34;https://ws2.sinaimg.cn/large/006tNc79gy1ftgm0plxxlj30j40eywgw.jpg&#34; alt=&#34;类型注释可以检测出来的BUG&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;bug评估&#34;&gt;BUG评估&lt;/h4&gt;
+
+&lt;p&gt;为了弄清楚Typescript和Flow可以检测到多少这样的bug，需要一些规则来说明添加类型注释是否可行，并且这些BUG需要人工去注释，添加类型注释需要花费多长时间。一项针对78个bug的小样本的初步研究表明，在绝大多数时候（90%），可以在10分钟内得出结论，所以作者设定允许花在注释一个bug上的最长时间被设定为10分钟。&lt;/p&gt;
+
+&lt;p&gt;每个bug都用Typescript 2.0和Flow 0.30进行评估。为了减少类型系统对学习效果的影响，随机选择要先尝试的类型系统。然后，读取BUG的错误报告和BUG修复情况，并用10分钟的时间人工添加类型注释。有时，即使不加注释工具都可以检测到BUG，但也有一些BUG的结果报告表明这个BUG错误与类型无关，在这种情况下，BUG将被标记为无法检测。&lt;/p&gt;
+
+&lt;h4 id=&#34;实验结果&#34;&gt;实验结果&lt;/h4&gt;
+
+&lt;p&gt;在本文评估的400个公共BUG中，Flow成功地检测到了其中的59个BUG，而Typescript检测到了其中的58个BUG。评估过程中遇到的主要障碍包括：复杂的模块依赖关系、某些模块缺少带注释的接口、程序的理解一般很困难。&lt;/p&gt;
+
+&lt;p&gt;本文将所有400个BUG标记为：可检测的和在Flow和TypeScript中无法检测到的。在总共60个BUG中，Flow检测了一个，Typescript检测到了另外两个。对结果进行测试表明，在95%置信水平，Flow和Typescript可检测的BUG真实百分比为11.5%、18.5%，平均为15%。&lt;/p&gt;
+
+&lt;h4 id=&#34;typescript和flow哪个更好&#34;&gt;Typescript和Flow哪个更好？&lt;/h4&gt;
+
+&lt;p&gt;这两个系统可以检测到的BUG大部分都是重叠的，只有3个BUG只有Typescript才能检测到，3个BUG只有Flow才能检测到。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ws1.sinaimg.cn/large/006tNc79gy1fthyvbpwnzj30k20cewk6.jpg&#34; alt=&#34;image-20180722004944862&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Typescript未能检测的所有三BUG都String类型的&lt;code&gt;null&lt;/code&gt;值，或&lt;code&gt;undefined&lt;/code&gt;有关。Flow无法检测到的三个BUG中的两个是由于流不完全支持在索引中使用&lt;code&gt;string&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;结论&#34;&gt;结论&lt;/h4&gt;
+
+&lt;p&gt;本文作者评估了静态类型系统为Javascript代码提供的BUG检测优势。结果表明，使用Flow或Typescript可以有效减少Github上公开项目的15%的BUG。此工作是第一个在公开成熟的代码上对Javascript的静态类型系统进行性能评估的。通过本文的研究，从业者可以通过对Flow和Typescript能够检测到的BUG进行分类，发现两者之间的差异，并决定是否在实践项目中为Javascript采用此静态类型系统。&lt;/p&gt;
+
+&lt;h2 id=&#34;静态检测javascript中web-api请求&#34;&gt;静态检测Javascript中Web API请求&lt;/h2&gt;
+
+&lt;h4 id=&#34;介绍&#34;&gt;介绍&lt;/h4&gt;
+
+&lt;p&gt;本文提出了一种用Javascript静态检查Web API请求的方法：首先将请求中的URL、HTTP请求方法、请求数据提取出来，然后检查是否符合Web API规范（如API提供者编写的Swagger文档）。因为Web API规范要求：Javascript程序对Web API执行的HTTP请求，请求内容需包括：请求地址URL，HTTP请求方法，和正确的请求数据。但是Javascript的编译时无法检查构造的请求是否符合Web API的要求。本文通过从Github收集Javascript文件中的Web API请求进行实验验证。从收集到的6575个请求中，本文使用的方法确定请求的URL和HTTP方法是否与Web API规范是否一致，实验结果表明，方法的识别精确度为96.0%。对实验结果进行分析发现，其中很多都是由于在请求客户端的代码中写了错误的代码造成的。&lt;/p&gt;
+
+&lt;p&gt;应用程序通过使用其支持的HTTP方法之一（包括GET、POST、PUT、DELETE等）向服务端URL发送HTTP请求来调用Web API；而所需的请求数据作为查询或路径参数发送，或在HTTP请求体（request body）中发送。需要发送的URL、HTTP方法和请求数据基本上都是字符串，由应用程序构造。当请求的目标是不存在的URL或发送不符合Web API需求的数据时，会发生运行时错误。但是在客户端编写代码时并不会有类型安全检查，即客户端必须单独进行运行时测试，才能知道编写的HTTP请求代码是否正确。&lt;/p&gt;
+
+&lt;h4 id=&#34;检测过程&#34;&gt;检测过程&lt;/h4&gt;
+
+&lt;p&gt;检测过程的目的是将静态分析产生的信息与相应的Web API规范相匹配，从而发现客户端HTTP请求的实现和规范之间的不一致。通常，请求信息包括：(1)要调用的Web API的URL，包括&lt;code&gt;endpoint&lt;/code&gt;和路径，和一个可选的查询参数字符串；(2)HTTP方法，包括GET、POST、PUT、DELETE等；(3)在请求的有效负载(payload)中发送的请求数据。实际中，本实验会采用多个URL值、HTTP方法和请求数据来检索单个请求，只要有任意一个这些数据的组合符合Web API规范即认为没有问题，不会报告错误，以此来避免部分&lt;code&gt;false positive&lt;/code&gt;的错误。&lt;/p&gt;
+
+&lt;h6 id=&#34;1-检查endpoint&#34;&gt;1. 检查endpoint&lt;/h6&gt;
+
+&lt;p&gt;该过程主要是将请求的endpoint和API规范中定义的endpoint相比较。首先检查给定请求的任何URL是否以已知的API规范的任何协议开头：比如，HTTP或HTTPS。然后，该过程尝试将请求的endpoint中的路径和规范中定义的路径相比较。为了匹配路径，该过程获取请求的每个UR，并将其与之前与该请求匹配的每个路径定义相比较。然后，通过检查每个路径的部分(由&lt;code&gt;&amp;quot;/&amp;quot;&lt;/code&gt;分隔)，将剩下的路径字符串与规范中的路径定义进行比较。最后，该过程确定HTTP方法是否符合规范，如HTTP请求的header是否符合Web API开发者制定的API规范。&lt;/p&gt;
+
+&lt;h6 id=&#34;2-检查请求数据&#34;&gt;2. 检查请求数据&lt;/h6&gt;
+
+&lt;p&gt;对于可以匹配API规范中的endpoint的请求，该过程会检查请求数据（如果有）的有效性。请求数据有两种：1. 在请求体中发送的数据（HTTP方法通常是：POST、PUT、或PATCH）；2. 在查询字符串中发送的数据。&lt;/p&gt;
+
+&lt;p&gt;(1). 检查有效负载数据：在HTTP请求的有效负载中发送的数据可以是任何格式。由于静态分析关注的是Javascript，并且因为JavaScript对象表示法(JSON)也是Web API中流行的数据格式，因此本文关注的是JSON中的数据。Swagger规范中允许定义有效负载数据，关于特定路径的或是针对特定endpoint的都可以。如果有已匹配到的规范在匹配到的endpoint中定义了有效负载的格式，那么这个过程将确定请求信息中报告的有效负载是否遵循这个格式。&lt;/p&gt;
+
+&lt;p&gt;(2). 检查查询参数：查询数据被编码为key-value键值对。在API规范中，查询参数可以定义为可选的。然后，检查过程可以确定请求中是否存在所有必需的查询参数。同样，该过程考虑了规范中不同位置的查询参数的定义。该过程将查询参数解析为请求报告的所有URL的查询字符串。然后，该过程检查找到的任何参数集是否与匹配请求的任何端点定义中找到的参数定义相匹配。&lt;/p&gt;
+
+&lt;h4 id=&#34;结论-1&#34;&gt;结论&lt;/h4&gt;
+
+&lt;p&gt;本文利用基于框架的Javascript Web应用程序的静态分析的现有研究，创建了一个能够提取与Web API请求相关的字符串的分析工具。本文作者利用这些提取的请求数据作为检查器的输入，而检查器来确定请求是否和Web API开发者制定的API规范是否一致。本文对6575个请求的检查结果进行了定性分析，结果显示，大多数不一致都是由于客户端代码中的错误，比如，调用已废弃的API、URL中的错误、数据有效负载定义中的错误和不完整的Swagger规范。这些结果表明，此工具能够警告程序员源代码中包含不一致的Web API请求。因此该工具可以与支持开发人员使用Web API的现有工具进行集成。&lt;/p&gt;
+
+&lt;h2 id=&#34;开发者如何修复跨项目相关的bug&#34;&gt;开发者如何修复跨项目相关的BUG？&lt;/h2&gt;
+
+&lt;h4 id=&#34;介绍-1&#34;&gt;介绍&lt;/h4&gt;
+
+&lt;p&gt;GitHub是目前开源世界中最大的代码存储库，它已经培育出了各种软件生态系统，在这些系统中，项目相互依赖。这个生态系统中的项目通常具有复杂的相互依赖关系，这种依赖关系给BUG查找和修复带来了新的挑战。本文对交叉项目的相关BUG进行了实证研究，将相关的BUG报告给不同的项目，本文主要关注两个方面：1. 开发者如何跟踪导致项目BUG的根本原因？2. 下游开发人员如何协调处理上游BUG。本研究揭示了开发人员常见的实践方式以及修复跨项目BUG的各种因素。这些发现为未来系统范围内的软件BUG分析提供了提示，同时也阐明了issue追踪器对此类BUG的需求。&lt;/p&gt;
+
+&lt;p&gt;Github为每个存储库(repo)提供了一个问题(issue)追踪系统，用于报告和讨论关于BUG的问题，因此多个关联项目BUG之间的关系非常可能存在于这些issue追踪系统之中。&lt;/p&gt;
+
+&lt;p&gt;比如：Astropy项目依赖于Numpy项目，而Astropy项目发现了一个性能问题(issue id #4259)，开发人员检查问题后发现，这个问题可能源于它的上游项目Numpy。然后另一个对Numpy和Asstropy项目都有贡献的开发人员指出，Numpy问题(issue id#6467)可能是与Astropy 4259问题是相关的。这就是所谓的跨项目的BUG。&lt;/p&gt;
+
+&lt;p&gt;修复BUG的实践已经研究多年，然而很少有工作研究开发人员如何修复跨项目的BUG，特别是如下两个挑战：1. 跨项目BUG的根本原因的跟踪：当BUG从一个项目转移到另一个项目时，将BUG追溯到其根源变得更加困难；2. BUG修复的协调工作：在等待上游修复时，下游的开发人员需要协调他们的项目与上游项目，以尽量减少上游BUG对项目的任何不良影响。&lt;/p&gt;
+
+&lt;p&gt;这两个挑战并没有在修复项目内的BUG中遇到，它们导致了跨项目BUG跟踪和修复的高度复杂性。由于缺乏这些方面的经验证据，本研究旨在研究开发人员如何处理跨项目相关的BUG，特别是在面对这两个挑战时。本文的研究基于科学Python生态系统，这是GitHub上最著名的生态系统之一。结合手工检查271对错误和在线调查，主要有两个发现：首先，堆栈跟踪、与上游开发人员的沟通以及对涉及项目的熟悉程度是有助于跨项目根源跟踪的三个主要因素。其次，在下游开发人员等待上游修复BUG时，可以提出一个无版本依赖的解决方案。&lt;/p&gt;
+
+&lt;h4 id=&#34;结论-2&#34;&gt;结论&lt;/h4&gt;
+
+&lt;p&gt;本文研究了开发人员如何修复交叉项目相关的BUG，例如。在GitHub的生态系统中，在不同的项目中，有一对因果相关的BUG。本文主要关注两个方面：1. 跨项目根源跟踪；2. BUG修复过程中上下游项目之间的协调。本文作者手动识别和检查了scientific Python生态系统中的271对跨项目BUG。实验结果揭示了开发人员在修复跨项目BUG时的常见做法。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Instantclick</title>
+      <link>https://kaiyai.com/post/instantclick/</link>
+      <pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/instantclick/</guid>
+      <description>
+
+&lt;h2 id=&#34;instanclick-usage-in-hugo&#34;&gt;Instanclick usage in Hugo&lt;/h2&gt;
+
+&lt;p&gt;看了Showfom大神的&lt;a href=&#34;https://sb.sb&#34;&gt;博客&lt;/a&gt;，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术是不是相同的。&lt;/p&gt;
+
+&lt;p&gt;找了一圈live template没找到，最后打开大神的博客，F12看了一波，发现加载了一个instanclick的js文件，随后了解到就是使用这个js库实现的不刷新加载页面，其实是预加载链接&lt;code&gt;pre-load&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo中的实现&#34;&gt;Hugo中的实现&lt;/h2&gt;
+
+&lt;p&gt;对于我使用的主题&lt;code&gt;hugo-smorg&lt;/code&gt;，在主题文件夹中的layouts/partials中的js-body-bottom.html中添加如下代码即可：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script src=&amp;quot;https://cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js&amp;quot; data-no-instant&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script data-no-instant&amp;gt;InstantClick.init();&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>LaTex on Sublime Text</title>
+      <link>https://kaiyai.com/post/latex/</link>
+      <pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/latex/</guid>
+      <description>
+
+&lt;h3 id=&#34;sublime-text中latex环境的配置&#34;&gt;Sublime Text中LaTex环境的配置&lt;/h3&gt;
+
+&lt;p&gt;工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路径不能有空格，不然会报路径中找不到latexmk命令。当使用CTex套件安装MiKTex时，其中latexmk包的版本可能比较低，会导致latexing无法打开日志文件等错误。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-latexing插件配置&#34;&gt;1. LaTexing插件配置&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;debug&amp;quot;: false,
+    &amp;quot;fallback_encoding&amp;quot;: &amp;quot;utf_8&amp;quot;,
+    &amp;quot;open_pdf_on_load&amp;quot;: false,
+    &amp;quot;build_arguments&amp;quot;: [&amp;quot;-shell-escape&amp;quot;],
+    &amp;quot;quick_build&amp;quot;: [
+        {
+            &amp;quot;name&amp;quot;: &amp;quot;Default Build: latexmk&amp;quot;,
+            &amp;quot;primary&amp;quot;: true,
+            &amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;]
+        },
+        {
+            &amp;quot;name&amp;quot;: &amp;quot;Quick Build 1: xelatex + bibtex + xelatex (2x)&amp;quot;,
+            &amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;bibtex&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;]
+        },
+        {
+            &amp;quot;name&amp;quot;: &amp;quot;Quick Build 2: xelatex + biber + xelatex (2x)&amp;quot;,
+            &amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;biber&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;]
+        }
+    ],
+    &amp;quot;typeset_on_save&amp;quot;: true
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-配置中文snippet&#34;&gt;2. 配置中文Snippet&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;snippet&amp;gt;
+	&amp;lt;content&amp;gt;&amp;lt;![CDATA[
+%!TEX program = xelatex
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\\documentclass[a4paper]{article}
+\\usepackage[UTF8, heading = false, scheme = plain]{ctex}
+\\usepackage{graphicx}
+\\usepackage{cite}
+\\usepackage{geometry}
+\\geometry{left=2.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
+\\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}
+\\usepackage{subfig}
+\\usepackage{caption}
+\\captionsetup{font={scriptsize}}
+
+\\renewcommand\figurename{图}
+
+\\makeatletter
+\\let\@afterindentfalse\@afterindenttrue
+\\@afterindenttrue
+\\makeatother
+\\setlength{\parindent}{2em}  
+
+\\linespread{1.4}
+\\setlength{\parskip}{0.5\baselineskip}
+
+\\title{${1:this}}
+\\author{Kaiya Xiong}
+\\date{\today}
+
+\\begin{document}
+\\maketitle
+
+$0
+
+\\end{document}
+
+]]&amp;gt;&amp;lt;/content&amp;gt;
+	&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
+	&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;
+	&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
+	&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
+	 &amp;lt;tabTrigger&amp;gt;zh&amp;lt;/tabTrigger&amp;gt;
+    &amp;lt;scope&amp;gt;text.tex.latex&amp;lt;/scope&amp;gt;
+    &amp;lt;description&amp;gt;zh basic article &amp;lt;/description&amp;gt;&amp;lt;/snippet&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-配置beamer-snippet&#34;&gt;3. 配置Beamer Snippet&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;snippet&amp;gt;
+	&amp;lt;content&amp;gt;&amp;lt;![CDATA[
+%!TEX program = xelatex
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\\documentclass[aspectratio=169]{beamer}
+\\usepackage[UTF8, heading = false, scheme = plain]{ctex}
+\\usepackage{silence}
+\\WarningFilter{biblatex}{Patching footnotes failed}
+\\usepackage[hyperref=true,backend=biber,sorting=none,backref=true,style=ieee]{biblatex}
+\\addbibresource{references.bib}
+\\renewcommand{\footnotesize}{\tiny}
+\\usepackage{graphicx}
+\\usepackage{subfig}
+\\usepackage{caption}
+\\captionsetup{font={scriptsize}}
+\\renewcommand\figurename{图}
+\\newcommand\blfootnote[1]{
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}
+  \addtocounter{footnote}{-1}
+  \endgroup
+}
+% \usepackage{tikz}
+
+\\title{${1:this}}
+\\author{Kaiya Xiong}
+\\date{\today}
+\\institute[JNU]{Jinan University}
+
+\\begin{document}
+\\begin{frame}
+\\titlepage
+\\end{frame}
+$0
+
+
+\\end{document}
+
+]]&amp;gt;&amp;lt;/content&amp;gt;
+	&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
+	&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;
+	&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
+	&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
+	 &amp;lt;tabTrigger&amp;gt;beamer&amp;lt;/tabTrigger&amp;gt;
+    &amp;lt;scope&amp;gt;text.tex.latex&amp;lt;/scope&amp;gt;
+    &amp;lt;description&amp;gt;zh basic beamer &amp;lt;/description&amp;gt;&amp;lt;/snippet&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
