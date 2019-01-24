@@ -23,6 +23,7 @@ deploy:
 
 after_script:
   - cd ./public
+  - echo kaiyai.com > CNAME
   - git init
   - git config user.name "Kaiya"
   - git config user.email "xiongkaiya@gmail.com"
