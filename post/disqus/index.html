@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Disqus科学使用方式 - Kaiya Xiong&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Kaiya Xiong" />
+  <meta name="description" content="前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的" />
+
+  <meta name="keywords" content="Kaiya, Xiong, Blog" />
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52 Kaiya Xiong" />
+
+
+<link rel="canonical" href="https://kaiyai.com/post/disqus/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="red">
+
+
+<link rel="shortcut icon" href="https://kaiyai.com/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Kaiya Xiong">
+<meta name="application-name" content="Kaiya Xiong">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://kaiyai.com/browserconfig.xml">
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/lightGallery/lightgallery.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Disqus科学使用方式" />
+<meta property="og:description" content="前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaiyai.com/post/disqus/" /><meta property="article:published_time" content="2018-12-12T16:50:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-12T16:50:00&#43;08:00"/>
+
+<meta itemprop="name" content="Disqus科学使用方式">
+<meta itemprop="description" content="前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的">
+
+
+<meta itemprop="datePublished" content="2018-12-12T16:50:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-12T16:50:00&#43;08:00" />
+<meta itemprop="wordCount" content="1591">
+
+
+
+<meta itemprop="keywords" content="中文,技术," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Disqus科学使用方式"/>
+<meta name="twitter:description" content="前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kaiya Xiong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kaiya Xiong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Disqus科学使用方式</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-12 </span>
+        
+        <span class="more-meta"> 1591 words </span>
+        <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#一-disqus">一、Disqus</a></li>
+<li><a href="#二-heroku">二、Heroku</a></li>
+<li><a href="#三-前端">三、前端</a></li>
+<li><a href="#四-大功告成">四、大功告成！</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+      
+      
+        
+
+        
+            
+        
+
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+
+<h3 id="前言">前言</h3>
+
+<p>由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的情况：基于Hugo静态博客生成器、使用<a href="https://github.com/olOwOlo/hugo-theme-even">Hugo Even</a>主题。网上有很多教程一般都需要有一个自己的VPS来运行转发程序，但是我发现使用Heroku来跑这个转发程序效果还不错。
+总体架构：</p>
+
+<p><figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/20181212154460512397630.png-l" alt="图片来源:blog.fooleap.org" class="lazyload"><figcaption class="image-caption">图片来源:blog.fooleap.org</figcaption></figure></p>
+
+<p>此处利用了一个PHP程序来转发Disqus API请求 <a href="https://github.com/fooleap/disqus-php-api">https://github.com/fooleap/disqus-php-api</a>。
+首先JS检测用户网络是否能够访问Disqus，如果能就直接访问原版Disqus。如果不能则请求自己的服务器通过PHP程序转发Disqus API请求，并显示自制的Disqus评论框。</p>
+
+<h3 id="一-disqus">一、Disqus</h3>
+
+<p>使用 API 实现匿名评论功能，需在 Disqus 后台<a href="https://disqus.com/admin/settings/community/">网站设置</a>，设置相关选项。
+* 开启匿名评论，Guest Commenting 项中勾选 Allow guests to comment。
+* 若需评论免审，Pre-moderation 项选中 None。</p>
+
+<p>必须在 <a href="https://disqus.com/api/applications/">Disqus API</a> 申请注册一个 App，取得相关的公钥（<strong>API Key</strong>）、私钥（<strong>API Secret</strong>），并填写于后端的配置文件 <code>config.php</code> 中。</p>
+
+<p>App 设置方面，回调链接请填写 <code>login.php</code> 文件的绝对地址，可根据自己情况填写。</p>
+
+<h3 id="二-heroku">二、Heroku</h3>
+
+<ol>
+<li>首先在<a href="https://heroku.com">Heroku</a>注册账号，可以直接通过Github登录；</li>
+<li>新建一个App，填写App名字，选择位置如下图：
+<figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/2018121215446058857644.png-l" alt="2018121215446058857644.png" class="lazyload"><figcaption class="image-caption">2018121215446058857644.png</figcaption></figure></li>
+
+<li><p>选择Deploy部署，可以通过Heroku CLI部署或者通过关联Github Repo部署，很方便。但是这里不建议通过Github部署，因为PHP文件里有些敏感信息，所以建议通过Heroku CLI部署。Heroku CLI安装过程省略，官网上有。</p>
+
+<pre><code class="language-shell">$ heroku login                      //调起浏览器登录Heroku账号
+$ heroku git:clone -a disqusproxy   //克隆Heroku的Git仓库，将disqusproxy替换为你自己的App名字
+$ cd disqusproxy
+</code></pre>
+
+<p>将<a href="https://github.com/fooleap/disqus-php-api">PHP程序</a>下载下来，将api文件夹内的文件都放到这个文件夹内，修改config.php文件，将上面获取的API Key、API Secret填入配置文件中，在根据配置文件提示填入你的Disqus账号信息。另外由于Gravatar在国内也不太稳定可以将配置文件下面的Gravatar CDN修改为<code>//gravatar.loli.net/avatar/</code>，配置文件如下图：</p>
+
+<p><figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/20181212154460966999228.png-l" alt="20181212154460966999228.png" class="lazyload"><figcaption class="image-caption">20181212154460966999228.png</figcaption></figure></p>
+
+<p>修改完后使用Git推送到heroku</p>
+
+<pre><code class="language-shell">$ git add .     
+$ git commit -am &quot;make it better&quot;
+$ git push heroku master            //Git工作流，推送到Heroku的Git仓库
+</code></pre></li>
+
+<li><p>可以测试访问https://{app name}.herokuapp.com/login.php判断是否安装成功。</p></li>
+</ol>
+
+<h3 id="三-前端">三、前端</h3>
+
+<ol>
+<li>将<a href="https://github.com/fooleap/disqus-php-api">PHP程序</a>Repo里的iDisqus.min.css和iDisqus.min.js文件下载下来放入static文件夹内。</li>
+<li>由于本博客采用的主题有Disqus功能，所以要先把以前的Div元素和涉及Disqus的代码清除。</li>
+
+<li><p>引入CSS</p>
+
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/iDisqus.min.css&quot; /&gt;
+</code></pre>
+
+<p>注：由于本博客采用的是<a href="https://github.com/olOwOlo/hugo-theme-even">Even主题</a>，所以以下针对前端的修改在<code>themes/even/layouts/partials/comments.html</code>中，不同主题请自行修改。</p></li>
+
+<li><p>创建容器</p>
+
+<pre><code class="language-html">&lt;div id=&quot;comment&quot;&gt;&lt;/div&gt;
+</code></pre></li>
+
+<li><p>引入JS</p>
+
+<pre><code class="language-html">&lt;script src=&quot;path/to/iDisqus.min.js&quot;&gt;&lt;/script&gt;
+</code></pre></li>
+
+<li><p>创建实例</p>
+
+<pre><code class="language-javascript">var disq = new iDisqus('comment', {
+        forum: 'kyxiong',
+        api: 'https://dqproxy.herokuapp.com/',
+        site: 'https://kaiyai.com',
+        mode: 1,
+        timeout: 3000,
+        init: true
+      });
+</code></pre>
+
+<p>如下图：</p>
+
+<p><figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/20181212154461004878666.png-l" alt="20181212154461004878666.png" class="lazyload"><figcaption class="image-caption">20181212154461004878666.png</figcaption></figure></p>
+
+<p>参数解释：</p>
+
+<ul>
+<li><code>forum</code>: disqus中forum的shortname</li>
+<li><code>api</code>: 上文中PHP转发程序的地址</li>
+<li><code>site</code>: 欲开启Disqus科学评论的网站地址</li>
+<li><code>mode</code>: 模式：
+
+<ul>
+<li><code>1</code>: 检测能否访问 Disqus，若能则加载 Disqus 原生评论框，超时则加载简易评论框</li>
+<li><code>2</code>: 仅加载简易评论框</li>
+<li><code>3</code>: 同时加载两种评论框，先显示简易评论框，Disqus 加载完成则切换至 Disqus 评论框</li>
+</ul></li>
+<li><code>timeout</code>: 超时时间设置，检测用户网络，如果连接原生Disqus超过这个时间则开启本转发程序转发Disqus API请求。单位毫秒。</li>
+<li><code>init</code>: 是否自动初始化</li>
+</ul></li>
+</ol>
+
+<h3 id="四-大功告成">四、大功告成！</h3>
+
+<p>使用Hugo生成静态网站预览，记得本地预览默认是关闭Disqus的，要注释掉comments中的代码</p>
+
+<pre><code class="language-javascript">if (window.location.hostname === 'localhost') return;
+</code></pre>
+
+<p>放到生产环境后记得再注释回来哟。</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Kaiya Xiong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-12-12</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/wechat-qr-code.png">
+        <span>wechat</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/alipay-qr-code.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+          
+          <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/thoughts/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">感想</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/readwrite/">
+            <span class="next-text nav-default">阅读与写作</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.css" />
+    
+    <div id="comment"></div>
+    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js"></script>
+    <script type="text/javascript">
+      function loadDiyDisqus(){
+        if (window.location.hostname === 'localhost') return;
+        var disq = new iDisqus('comment', {
+            forum: 'kyxiong',
+            api: 'https://disqus.kaiyai.com/api/',
+            site: 'https://kaiyai.com',
+            mode: 1,
+            timeout: 3000,
+            init: true
+          });
+      }
+      if (typeof iDisqus == 'undefined'){
+        var script=document.createElement("script");
+        script.type="text/javascript";
+        script.src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js";
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); 
+        script.onload=function(){
+          loadDiyDisqus();
+        }
+      }else{
+          loadDiyDisqus();
+      }
+    </script>
+    
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:me@kaiyai.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/KaiyaXiong" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/Kaiya" class="iconfont icon-github" title="github"></a>
+      <a href="http://weibo.com/773846787" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://zhihu.com/people/KaiyaXiong" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/people/83405959/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://kaiyai.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://coding.me">Coding Pages</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kaiya Xiong</span>
+      
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/highlight/highlight.pack.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery.min.js" integrity="sha256-fVI9G3UpdqpL0kYpTF2GCtJkK36SLoHA5qswX9f4Yc8=" crossorigin="anonymous"></script>
+  
+  
+
+
+
+
+<script type="text/javascript" src="/dist/even.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+ if (isInitialLoad === false) {
+  if (typeof MathJax !== 'undefined') 
+   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  if (typeof prettyPrint !== 'undefined') 
+   prettyPrint();
+  if (typeof _hmt !== 'undefined') 
+   _hmt.push(['_trackPageview', location.pathname + location.search]);
+  if (typeof ga !== 'undefined') 
+    ga('send', 'pageview', location.pathname + location.search);
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+ }
+});
+InstantClick.init();
+</script>
+
+
+</body>
+</html>
