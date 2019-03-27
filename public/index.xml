@@ -6,7 +6,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Homepage:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/xiong&#34;&gt;Google Sites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gs.kaiyai.com&#34;&gt;Google Sites&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://about.kaiyai.com&#34;&gt;Academic Homepage&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Reach me at:&lt;/p&gt;
@@ -15,7 +15,38 @@
 &lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
 &lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Disqus科学使用方式</title><link>https://kaiyai.com/post/disqus/</link><pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate><guid>https://kaiyai.com/post/disqus/</guid><description>
+&lt;/ul&gt;</description></item><item><title>如何做研究</title><link>https://kaiyai.com/post/howdoresearch/</link><pubDate>Wed, 27 Mar 2019 12:03:09 +0800</pubDate><guid>https://kaiyai.com/post/howdoresearch/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;偶遇 Thomas，请教他博士期间如何做到这么高产的。Thomas 说做 research 不是做工程，一篇 paper 就是提出一个 idea 并证明其可行性，你费了很大力气做了很多功能，也不见得有人会用。其实读 paper 的人最关心的就是你的 core insight，你的系统设计需要是 fundamentally correct，evaluation 符合预期就行。如果他需要的话，自己会去实现出来完整的产品。感觉挺有道理的，听人说如果只是性能好，却说不出个所以然，或者没有选择看起来最正确的设计方案，确实不好发 paper。之前一直想着把系统做得尽量 solid，做到能开箱即用的程度，不过确实很费时间，最后板上的逻辑资源都不够了，而且现实中我们 research 部门实习生写的代码确实很难被产品部门用上。&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>情书💌</title><link>https://kaiyai.com/post/loveletter/</link><pubDate>Fri, 22 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/loveletter/</guid><description>&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#include &amp;lt;stdio.h&amp;gt;
+int main()
+{
+double world;
+unsigned letter;
+short stay;
+long memories;
+printf(&amp;quot;I miss you.\n&amp;quot;);
+return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;两个人的世界，一封没有署名的信，短暂的重逢后，留下的只是回忆，我想你，我爱的人。&lt;/p&gt;</description></item><item><title>感想</title><link>https://kaiyai.com/post/thoughts/</link><pubDate>Fri, 22 Mar 2019 02:03:09 +0800</pubDate><guid>https://kaiyai.com/post/thoughts/</guid><description>&lt;p&gt;苏格拉底和爱情失意者的对话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;苏: 如果他认为离开你是一种幸福呢?&lt;/p&gt;
+&lt;p&gt;失: 不会的! 他曾经跟我说，只有跟我在一起的时候他才感觉到幸福!&lt;/p&gt;
+&lt;p&gt;苏: 那是曾经，是过去，可他现在并不这么认为了。&lt;/p&gt;
+&lt;p&gt;失: 这就是说，他一直在骗我?&lt;/p&gt;
+&lt;p&gt;苏: 不，他一直对你很忠诚，当他爱你的时候，他和你在一起，现在他不爱你了，他就离去了，世界上再没有比这更大的忠诚。如果他不再爱你，却还装的对你很有情谊, 甚至跟你结婚, 生子, 那才是真正的欺骗呢。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面这段话是18年1月看到的，当时还没感觉有什么。现在才觉得&amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一些人懒得在关系中做出努力，那些琐碎的抱怨积累起来，终有一天将他们分开；而另一些人则选择用善意去对待对方，并且不断提升双方在细节上的沟通。他们之所以能够牢牢联结在一起，正是因为在每个可能可以选择猜疑的小瞬间里，他们都选择了用善意去揣测和对待。&lt;/p&gt;
+&lt;p&gt;所以在选择伴侣的时候不能自我欺骗，更加不能“自毁”。我们无法抱着“改变一个人”的心态进入到一段关系，因为改变，从来都只能由某个人自己来进行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;还有下面这一段：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;他在多年研究后总结到两种伴侣最本质的区别：那些“成功型”伴侣习惯去搜索伴侣身上那些值得欣赏、感谢的部分，他们会有意识、有目的地建立起这种尊重和欣赏的习惯；而那些“灾难型”伴侣则会注意和寻找伴侣身上的错误，他们习惯表达批评，而不是尊重和欣赏。&lt;/p&gt;
+&lt;p&gt;后者会带来“蔑视”，这一在众多促使分手的因素中的头号杀手。那些非常微小的蔑视对方的举动也会引发对方的愤恨。&lt;/p&gt;
+&lt;p&gt;前者则是一种“善意”（kindness）。研究中发现，这一因素最能准确预测一段满意而稳固的婚姻。而这里所说的善意，正是在许多个细节的瞬间里，你选择对待对方的态度和方式。&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Disqus科学使用方式</title><link>https://kaiyai.com/post/disqus/</link><pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate><guid>https://kaiyai.com/post/disqus/</guid><description>
 &lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的情况：基于Hugo静态博客生成器、使用&lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Hugo Even&lt;/a&gt;主题。网上有很多教程一般都需要有一个自己的VPS来运行转发程序，但是我发现使用Heroku来跑这个转发程序效果还不错。
 总体架构：&lt;/p&gt;
@@ -245,130 +276,4 @@ print(step, sess.run(Weights), sess.run(biases))
 &lt;p&gt;修复BUG的实践已经研究多年，然而很少有工作研究开发人员如何修复跨项目的BUG，特别是如下两个挑战：1. 跨项目BUG的根本原因的跟踪：当BUG从一个项目转移到另一个项目时，将BUG追溯到其根源变得更加困难；2. BUG修复的协调工作：在等待上游修复时，下游的开发人员需要协调他们的项目与上游项目，以尽量减少上游BUG对项目的任何不良影响。&lt;/p&gt;
 &lt;p&gt;这两个挑战并没有在修复项目内的BUG中遇到，它们导致了跨项目BUG跟踪和修复的高度复杂性。由于缺乏这些方面的经验证据，本研究旨在研究开发人员如何处理跨项目相关的BUG，特别是在面对这两个挑战时。本文的研究基于科学Python生态系统，这是GitHub上最著名的生态系统之一。结合手工检查271对错误和在线调查，主要有两个发现：首先，堆栈跟踪、与上游开发人员的沟通以及对涉及项目的熟悉程度是有助于跨项目根源跟踪的三个主要因素。其次，在下游开发人员等待上游修复BUG时，可以提出一个无版本依赖的解决方案。&lt;/p&gt;
 &lt;h4 id=&#34;结论-2&#34;&gt;结论&lt;/h4&gt;
-&lt;p&gt;本文研究了开发人员如何修复交叉项目相关的BUG，例如。在GitHub的生态系统中，在不同的项目中，有一对因果相关的BUG。本文主要关注两个方面：1. 跨项目根源跟踪；2. BUG修复过程中上下游项目之间的协调。本文作者手动识别和检查了scientific Python生态系统中的271对跨项目BUG。实验结果揭示了开发人员在修复跨项目BUG时的常见做法。&lt;/p&gt;</description></item><item><title>Instantclick</title><link>https://kaiyai.com/post/instantclick/</link><pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate><guid>https://kaiyai.com/post/instantclick/</guid><description>
-&lt;h2 id=&#34;instanclick-usage-in-hugo&#34;&gt;Instanclick usage in Hugo&lt;/h2&gt;
-&lt;p&gt;看了Showfom大神的&lt;a href=&#34;https://sb.sb&#34;&gt;博客&lt;/a&gt;，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术是不是相同的。&lt;/p&gt;
-&lt;p&gt;找了一圈live template没找到，最后打开大神的博客，F12看了一波，发现加载了一个instanclick的js文件，随后了解到就是使用这个js库实现的不刷新加载页面，其实是预加载链接&lt;code&gt;pre-load&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;hugo中的实现&#34;&gt;Hugo中的实现&lt;/h2&gt;
-&lt;p&gt;对于我使用的主题&lt;code&gt;hugo-smorg&lt;/code&gt;，在主题文件夹中的layouts/partials中的js-body-bottom.html中添加如下代码即可：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script src=&amp;quot;https://cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js&amp;quot; data-no-instant&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script data-no-instant&amp;gt;InstantClick.init();&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>LaTex on Sublime Text</title><link>https://kaiyai.com/post/latex/</link><pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate><guid>https://kaiyai.com/post/latex/</guid><description>
-&lt;h3 id=&#34;sublime-text中latex环境的配置&#34;&gt;Sublime Text中LaTex环境的配置&lt;/h3&gt;
-&lt;p&gt;工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路径不能有空格，不然会报路径中找不到latexmk命令。当使用CTex套件安装MiKTex时，其中latexmk包的版本可能比较低，会导致latexing无法打开日志文件等错误。&lt;/p&gt;
-&lt;h4 id=&#34;1-latexing插件配置&#34;&gt;1. LaTexing插件配置&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-&amp;quot;debug&amp;quot;: false,
-&amp;quot;fallback_encoding&amp;quot;: &amp;quot;utf_8&amp;quot;,
-&amp;quot;open_pdf_on_load&amp;quot;: false,
-&amp;quot;build_arguments&amp;quot;: [&amp;quot;-shell-escape&amp;quot;],
-&amp;quot;quick_build&amp;quot;: [
-{
-&amp;quot;name&amp;quot;: &amp;quot;Default Build: latexmk&amp;quot;,
-&amp;quot;primary&amp;quot;: true,
-&amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;]
-},
-{
-&amp;quot;name&amp;quot;: &amp;quot;Quick Build 1: xelatex + bibtex + xelatex (2x)&amp;quot;,
-&amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;bibtex&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;]
-},
-{
-&amp;quot;name&amp;quot;: &amp;quot;Quick Build 2: xelatex + biber + xelatex (2x)&amp;quot;,
-&amp;quot;cmds&amp;quot;: [&amp;quot;xelatex&amp;quot;, &amp;quot;biber&amp;quot;, &amp;quot;xelatex&amp;quot;, &amp;quot;xelatex&amp;quot;]
-}
-],
-&amp;quot;typeset_on_save&amp;quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;2-配置中文snippet&#34;&gt;2. 配置中文Snippet&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;snippet&amp;gt;
-&amp;lt;content&amp;gt;&amp;lt;![CDATA[
-%!TEX program = xelatex
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-\\documentclass[a4paper]{article}
-\\usepackage[UTF8, heading = false, scheme = plain]{ctex}
-\\usepackage{graphicx}
-\\usepackage{cite}
-\\usepackage{geometry}
-\\geometry{left=2.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
-\\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}
-\\usepackage{subfig}
-\\usepackage{caption}
-\\captionsetup{font={scriptsize}}
-\\renewcommand\figurename{图}
-\\makeatletter
-\\let\@afterindentfalse\@afterindenttrue
-\\@afterindenttrue
-\\makeatother
-\\setlength{\parindent}{2em}
-\\linespread{1.4}
-\\setlength{\parskip}{0.5\baselineskip}
-\\title{${1:this}}
-\\author{Kaiya Xiong}
-\\date{\today}
-\\begin{document}
-\\maketitle
-$0
-\\end{document}
-]]&amp;gt;&amp;lt;/content&amp;gt;
-&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
-&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;
-&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
-&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
-&amp;lt;tabTrigger&amp;gt;zh&amp;lt;/tabTrigger&amp;gt;
-&amp;lt;scope&amp;gt;text.tex.latex&amp;lt;/scope&amp;gt;
-&amp;lt;description&amp;gt;zh basic article &amp;lt;/description&amp;gt;&amp;lt;/snippet&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;3-配置beamer-snippet&#34;&gt;3. 配置Beamer Snippet&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;snippet&amp;gt;
-&amp;lt;content&amp;gt;&amp;lt;![CDATA[
-%!TEX program = xelatex
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-\\documentclass[aspectratio=169]{beamer}
-\\usepackage[UTF8, heading = false, scheme = plain]{ctex}
-\\usepackage{silence}
-\\WarningFilter{biblatex}{Patching footnotes failed}
-\\usepackage[hyperref=true,backend=biber,sorting=none,backref=true,style=ieee]{biblatex}
-\\addbibresource{references.bib}
-\\renewcommand{\footnotesize}{\tiny}
-\\usepackage{graphicx}
-\\usepackage{subfig}
-\\usepackage{caption}
-\\captionsetup{font={scriptsize}}
-\\renewcommand\figurename{图}
-\\newcommand\blfootnote[1]{
-\begingroup
-\renewcommand\thefootnote{}\footnote{#1}
-\addtocounter{footnote}{-1}
-\endgroup
-}
-% \usepackage{tikz}
-\\title{${1:this}}
-\\author{Kaiya Xiong}
-\\date{\today}
-\\institute[JNU]{Jinan University}
-\\begin{document}
-\\begin{frame}
-\\titlepage
-\\end{frame}
-$0
-\\end{document}
-]]&amp;gt;&amp;lt;/content&amp;gt;
-&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
-&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;
-&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
-&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
-&amp;lt;tabTrigger&amp;gt;beamer&amp;lt;/tabTrigger&amp;gt;
-&amp;lt;scope&amp;gt;text.tex.latex&amp;lt;/scope&amp;gt;
-&amp;lt;description&amp;gt;zh basic beamer &amp;lt;/description&amp;gt;&amp;lt;/snippet&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Bible</title><link>https://kaiyai.com/post/bible/</link><pubDate>Wed, 18 Jul 2018 21:10:00 +0800</pubDate><guid>https://kaiyai.com/post/bible/</guid><description>
-&lt;h2 id=&#34;新约&#34;&gt;新约&lt;/h2&gt;
-&lt;h3 id=&#34;马太福音&#34;&gt;马太福音&lt;/h3&gt;
-&lt;h4 id=&#34;第一章&#34;&gt;第一章&lt;/h4&gt;
-&lt;p&gt;耶稣的母亲马利亚许配了约瑟，他们还没有成亲，马利亚就从圣灵怀了孕。&lt;/p&gt;
-&lt;p&gt;主的使者在梦中向他显现，说：“大卫的子孙约瑟，只管放胆把你的妻子马利亚迎娶过来，因为她怀的孕是从圣灵来的。她必生一个儿子，你要给他起名叫耶稣，因为他要把自己的子民从罪恶中拯救出来。”&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;必有童女怀孕生子，他的名要叫以马内利。以马内利就是神与我们同在的意思。&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;p&gt;本文研究了开发人员如何修复交叉项目相关的BUG，例如。在GitHub的生态系统中，在不同的项目中，有一对因果相关的BUG。本文主要关注两个方面：1. 跨项目根源跟踪；2. BUG修复过程中上下游项目之间的协调。本文作者手动识别和检查了scientific Python生态系统中的271对跨项目BUG。实验结果揭示了开发人员在修复跨项目BUG时的常见做法。&lt;/p&gt;</description></item></channel></rss>

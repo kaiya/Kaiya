@@ -20,7 +20,7 @@ My research interest:
 
 Homepage:
 
-* [Google Sites](https://sites.google.com/view/xiong)
+* [Google Sites](https://gs.kaiyai.com)
 * [Academic Homepage](https://about.kaiyai.com)
 
 Reach me at:
