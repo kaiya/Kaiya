@@ -84,7 +84,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   changyanAppid = ""        # Changyan app id             # 畅言
   changyanAppkey = ""       # Changyan app key
   livereUID = ""            # LiveRe UID                  # 来必力
-  baidu_push = false        # baidu push                  # 百度
+  baidu_push = true        # baidu push                  # 百度
   baidu_analytics = ""      # Baidu Analytics
   baidu_verification = ""   # Baidu Verification
   google_verification = ""  # Google_Verification         # 谷歌
@@ -149,10 +149,10 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.social]                                         # 社交链接
     a-email = "mailto:me@kaiyai.com"
-    b-stack-overflow = ""
+    b-stack-overflow = "https://stackoverflow.com/users/4922822"
     c-twitter = "https://twitter.com/KaiyaXiong"
-    d-facebook = ""
-    e-linkedin = ""
+    d-facebook = "https://www.facebook.com/KaiyaXiong"
+    e-linkedin = "https://www.linkedin.com/in/kaiyaxiong/"
     f-google = ""
     g-github = "https://github.com/Kaiya"
     h-weibo = "http://weibo.com/773846787"
