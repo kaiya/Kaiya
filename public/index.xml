@@ -15,7 +15,10 @@
 &lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
 &lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>众声喧哗，我只歌唱❤️</title><link>https://kaiyai.com/post/jackycheung/</link><pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/jackycheung/</guid><description> &lt;iframe style=&#34;max-width: 100%&#34;
+&lt;/ul&gt;</description></item><item><title>粤港澳大湾区能否助力中国崛起？</title><link>https://kaiyai.com/post/cantonhkmo/</link><pubDate>Mon, 01 Apr 2019 00:16:09 +0800</pubDate><guid>https://kaiyai.com/post/cantonhkmo/</guid><description>&lt;p&gt;考虑粤港澳大湾区问题不能仅仅把它和世界级湾区如美国纽约湾区、旧金山湾区、日本东京湾区进行对比，而应该考虑粤港澳大湾区对中国经济，甚至对世界经济格局的影响。&lt;/p&gt;
+&lt;p&gt;在粤港澳三大经济区内施行怎样的关税政策？&lt;/p&gt;
+&lt;p&gt;应该像最初欧元一样，将粤港澳地区作为“亚元”的小范围试点区，一方面方便粤港澳地区投资及关税，另一方便也能进一步削弱美元的国际地位，为中国主导的“亚元区”做铺垫。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=eBtkHaLxygk&amp;amp;t=3332s&#34;&gt;视频：粤港澳大湾区能否助力中国崛起？&lt;/a&gt;&lt;/p&gt;</description></item><item><title>众声喧哗，我只歌唱❤️</title><link>https://kaiyai.com/post/jackycheung/</link><pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/jackycheung/</guid><description> &lt;iframe style=&#34;max-width: 100%&#34;
 class=&#34;music163&#34;
 frameborder=&#34;no&#34;
 border=&#34;0&#34;
@@ -212,33 +215,4 @@ if i % 500 == 0:
 print(compute_accuracy(mnist.test.images[:1000], mnist.test.labels[:1000]))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Accuracy:
-&lt;img src=&#34;https://ws3.sinaimg.cn/large/006tNbRwgy1fu8kjwzuqvj31es0ragot.jpg&#34; alt=&#34;Accuracy&#34; /&gt;&lt;/p&gt;</description></item><item><title>Tensorflow</title><link>https://kaiyai.com/post/tensorflow/</link><pubDate>Sun, 12 Aug 2018 01:03:09 +0800</pubDate><guid>https://kaiyai.com/post/tensorflow/</guid><description>&lt;p&gt;最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://morvanzhou.github.io/&#34;&gt;教程官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;刚刚看了Tensorflow的讲解，记录一下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import tensorflow as tf
-import numpy as np
-# create data
-x_data = np.random.rand(100).astype(np.float32)
-y_data = x_data*0.1 + 0.3
-Weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
-biases = tf.Variable(tf.zeros([1]))
-y = Weights*x_data + biases
-loss = tf.reduce_mean(tf.square(y-y_data))
-optimizer = tf.train.GradientDescentOptimizer(0.5)
-train = optimizer.minimize(loss)
-init = tf.global_variables_initializer()
-sess = tf.Session()
-sess.run(init) # Very important
-for step in range(201):
-sess.run(train)
-if step % 20 == 0:
-print(step, sess.run(Weights), sess.run(biases))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;首先，使用numpy生成100个随机数，然后制定他们的标签符合公式$y = 0.1*x + 0.3$，目的是让程序学习到这个公式，
-然后使用tensorflow生成随机-1到1之间的数作为权重，[1]表示生成的是一维数，偏置初始设置为0.&lt;/p&gt;
-&lt;p&gt;y就为预测的y值. 损失函数为y和y_data之间的平方差，优化函数为梯度下降算法，0.5为学习速率.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;train = optimizer.minimize(loss)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这句代码道出了机器学习的精髓：训练就是使用优化算法最小化损失函数！！&lt;/p&gt;
-&lt;p&gt;接着，tf初始化，tf创建session，session运行初始化。&lt;/p&gt;
-&lt;p&gt;这个程序跑201步，每一步都在session中运行训练，然后每20个输出一个当前步、权重和偏置。&lt;/p&gt;</description></item></channel></rss>
+&lt;img src=&#34;https://ws3.sinaimg.cn/large/006tNbRwgy1fu8kjwzuqvj31es0ragot.jpg&#34; alt=&#34;Accuracy&#34; /&gt;&lt;/p&gt;</description></item></channel></rss>
