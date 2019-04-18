@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kaiya Xiong&#39;s Blog</title><link>https://kaiyai.com/</link><description>Recent content on Kaiya Xiong&#39;s Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 01 Aug 2018 21:38:52 +0800</lastBuildDate><atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://kaiyai.com/about/</link><pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate><guid>https://kaiyai.com/about/</guid><description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
 &lt;p&gt;My research interest:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Security and Privacy of Machine Learning&lt;/li&gt;
+&lt;li&gt;Security and Privacy of Machine Learning(Focused on &lt;strong&gt;Adversarial Examples&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;Blockchain Consensus&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Homepage:&lt;/p&gt;
@@ -9,6 +9,7 @@
 &lt;li&gt;&lt;a href=&#34;https://gs.kaiyai.com&#34;&gt;Google Sites&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://about.kaiyai.com&#34;&gt;Academic Homepage&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;ORCID: &lt;div itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;a itemprop=&#34;sameAs&#34; content=&#34;https://orcid.org/0000-0002-7648-8714&#34; href=&#34;https://orcid.org/0000-0002-7648-8714&#34; target=&#34;orcid.widget&#34; rel=&#34;noopener noreferrer&#34; style=&#34;vertical-align:top;&#34;&gt;&lt;img src=&#34;https://orcid.org/sites/default/files/images/orcid_16x16.png&#34; style=&#34;width:1em;margin-top:4px;float: left;&#34; alt=&#34;ORCID iD icon&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-7648-8714&#34;&gt;https://orcid.org/0000-0002-7648-8714&lt;/a&gt;&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Reach me at:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Huangpu Avenue West No.601 Jinan University, Guangzhou, China, 510632&lt;/li&gt;
