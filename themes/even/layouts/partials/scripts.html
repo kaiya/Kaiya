@@ -1,7 +1,8 @@
 <!-- js -->
 <!--Change to JSDelivr CDN，JSDelivr support distributing the file on github repo, such as https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/themes/even/static/dist/even.min.css -->
 {{ $postHasImages :=  .Scratch.Get "postHasImages"}}
-<script src="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/highlight/highlight.pack.js" | relURL }}"></script>
+<!-- <script src="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/highlight/highlight.pack.js" | relURL }}"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/highlight/highlight.pack.js" integrity="sha256-pIhK75qIrmwqLEJ+9SeMInTme57ycwwLdc9dbRk4jdA=" crossorigin="anonymous"></script>
 {{- if .Site.Params.publicCDN.enable }}
   {{ .Site.Params.publicCDN.jquery | safeHTML }}
   {{ .Site.Params.publicCDN.slideout | safeHTML }}
@@ -66,7 +67,8 @@
 {{- end }}
 <!-- <script type="text/javascript" src="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.47/dist/even.min.js" | relURL }}"></script> -->
 
-<script type="text/javascript" src="{{ "/dist/even.min.js" | relURL }}"></script>
+<!-- <script type="text/javascript" src="{{ "/dist/even.min.js" | relURL }}"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/even.min.js" integrity="sha256-DCRiiKWBbojZM6ae/BaHZBiq3Dj0zHa4vhgOG1CcRJs=" crossorigin="anonymous"></script>
 
 {{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome) }}
   <script type="text/javascript">
@@ -127,10 +129,12 @@
 {{ end }}
 
 <!-- lazy load images -->
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js" integrity="sha256-I3otyfIRoV0atkNQtZLaP4amnmkQOq0YK5R5RFBd5/0=" crossorigin="anonymous"></script>
 
 <!-- InstantClick -->
-<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/instantclick.min.js" data-no-instant></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/instantclick.min.js" data-no-instant></script> -->
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/instantclick.min.js" integrity="sha256-SVgP0duWZXZFPVIX+woWPFhpnHcxG5IXS6zvZAVoa3Y=" crossorigin="anonymous" data-no-instant></script>
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad) {
  if (isInitialLoad === false) {

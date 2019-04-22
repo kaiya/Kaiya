@@ -2,10 +2,12 @@
   <!-- Disqus -->
   {{- if .Site.DisqusShortname -}}
     <!-- import disqus css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/iDisqus.min.css" integrity="sha256-kzO+oWBH3NUMOwjhqPmZ5UfbSR7hAOJSHSu6Ummao7U=" crossorigin="anonymous">
     <!-- <div id="disqus_thread"></div> -->
     <div id="comment"></div>
-    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/iDisqus.min.js" integrity="sha256-x0qFxb51OjRZZhuUrS0AMzlqZ7L6V8GAh23Dd3X3sJM=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       function loadDiyDisqus(){
         if (window.location.hostname === 'localhost') return;
@@ -22,7 +24,7 @@
       if (typeof iDisqus == 'undefined'){
         var script=document.createElement("script");
         script.type="text/javascript";
-        script.src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/iDisqus.min.js";
+        script.src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/iDisqus.min.js";
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); 
         script.onload=function(){
           loadDiyDisqus();

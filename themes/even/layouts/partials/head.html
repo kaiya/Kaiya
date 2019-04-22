@@ -82,7 +82,8 @@
 
 <!-- <link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.47/dist/even.min.css" | relURL }}" rel="stylesheet"> -->
 
-<link href="{{ "dist/even.min.css?v=3.2.0" | relURL }}" rel="stylesheet">
+<!-- <link href="{{ "dist/even.min.css?v=3.2.0" | relURL }}" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/even.min.css" integrity="sha256-eL6esk8xoO9obsKjrvIP0GY8vAouCA9PZrLe023ANS8=" crossorigin="anonymous">
 
 <!-- {{ if .Site.Params.publicCDN.enable -}}
   {{ if .Site.Params.fancybox }}{{ .Site.Params.publicCDN.fancyboxCss | safeHTML }}{{ end }}
@@ -91,7 +92,8 @@
 {{- end }} -->
 
 <!-- replace fancybox with lightGallery -->
-<link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">
+<!-- <link href="{{ "https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/lightGallery/lightgallery.css" integrity="sha256-I7W1szkra2spImPcJCYn/edugJ6o6mM/ghWbDjFIr5E=" crossorigin="anonymous">
 
 
 {{ $postHasImages :=  .Scratch.Get "postHasImages"}}
@@ -99,7 +101,7 @@
 {{ if $postHasImages }}
 {{ if .Site.Params.publicCDN.enable -}}
   {{ if .Site.Params.lightGallery }}{{ .Site.Params.publicCDN.lightGalleryCss | safeHTML }}{{ end}}
-  {{ if .Site.Params.lightGallery }}<link href="{{ "lib/lightGallery/lightgallery.min.css" | relURL }}" rel="stylesheet">{{ end }}
+  {{ if .Site.Params.lightGallery }}<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/lightGallery/lightgallery.css" integrity="sha256-I7W1szkra2spImPcJCYn/edugJ6o6mM/ghWbDjFIr5E=" crossorigin="anonymous">{{ end }}
 {{- end }}
 {{ end }}
 
