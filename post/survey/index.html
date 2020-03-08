@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Survey on Security and Privacy of Machine Learning - Kaiya Xiong&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Kaiya Xiong" />
+  <meta name="description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks." />
+
+  <meta name="keywords" content="Kaiya, Xiong, Blog" />
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52 Kaiya Xiong" />
+
+
+<link rel="canonical" href="https://kaiyai.com/post/survey/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="red">
+
+
+<link rel="shortcut icon" href="https://kaiyai.com/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Kaiya Xiong">
+<meta name="application-name" content="Kaiya Xiong">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://kaiyai.com/browserconfig.xml">
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/even.min.css" integrity="sha256-eL6esk8xoO9obsKjrvIP0GY8vAouCA9PZrLe023ANS8=" crossorigin="anonymous">
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/lightGallery/lightgallery.css" integrity="sha256-I7W1szkra2spImPcJCYn/edugJ6o6mM/ghWbDjFIr5E=" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Survey on Security and Privacy of Machine Learning" />
+<meta property="og:description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaiyai.com/post/survey/" /><meta property="article:published_time" content="2018-07-18T09:10:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-18T09:10:00&#43;08:00"/>
+
+<meta itemprop="name" content="Survey on Security and Privacy of Machine Learning">
+<meta itemprop="description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks.">
+
+
+<meta itemprop="datePublished" content="2018-07-18T09:10:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-18T09:10:00&#43;08:00" />
+<meta itemprop="wordCount" content="2375">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Survey on Security and Privacy of Machine Learning"/>
+<meta name="twitter:description" content="Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kaiya Xiong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kaiya Xiong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Survey on Security and Privacy of Machine Learning</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-07-18 </span>
+        
+        <span class="more-meta"> 2375 words </span>
+        <span class="more-meta"> 12 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#survey-on-security-and-privacy-of-machine-learning">Survey on Security and Privacy of Machine Learning</a>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-basic-concept-model-taxonomy">2. Basic Concept, Model, Taxonomy</a>
+<ul>
+<li><a href="#1-basic-of-machine-learning">1. Basic of Machine Learning</a></li>
+<li><a href="#2-adversarial-model">2. Adversarial Model</a></li>
+<li><a href="#3-security-threats-taxonomy">3. Security threats taxonomy</a>
+<ul>
+<li><a href="#1-influence-on-classifiers">1. Influence on classifiers</a></li>
+<li><a href="#2-security-violation">2. Security violation</a></li>
+<li><a href="#3-attack-specificity">3. Attack specificity</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-security-threats-towards-machine-learning">3. Security Threats towards machine learning</a>
+<ul>
+<li><a href="#1-training-phase">1. Training Phase</a>
+<ul>
+<li><a href="#1-poisoning-without-modifying-features-or-labels">1) Poisoning without modifying features or labels</a></li>
+<li><a href="#2-poisoning-with-modifying-features-or-lables">2) Poisoning with modifying features or lables</a></li>
+</ul></li>
+<li><a href="#2-testing-or-inferring-phase">2. Testing or Inferring Phase</a></li>
+<li><a href="#3-summary-of-adversarial-attacks-against-machine-learning">3. Summary of Adversarial attacks against machine learning</a></li>
+</ul></li>
+<li><a href="#4-defensive-techniques-of-machine-learning">4. Defensive Techniques of Machine Learning</a>
+<ul>
+<li><a href="#1-security-assessment-mechanisms">1. Security assessment mechanisms</a></li>
+<li><a href="#2-countermeasures-in-training-phase">2. Countermeasures in Training phase</a></li>
+<li><a href="#3-countermeasures-in-testing-inferring-phase">3. Countermeasures in Testing/Inferring phase</a></li>
+<li><a href="#4-data-security-and-privacy">4. Data security and privacy</a></li>
+</ul></li>
+<li><a href="#5-challenges-and-future-opportunities">5. Challenges and future opportunities</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+      
+      
+        
+
+        
+            
+        
+
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+
+<h2 id="survey-on-security-and-privacy-of-machine-learning">Survey on Security and Privacy of Machine Learning</h2>
+
+<ul>
+<li><p>TOC
+{:toc}</p>
+
+<h3 id="abstract">Abstract</h3>
+
+<blockquote>
+<p>ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.</p>
+</blockquote></li>
+</ul>
+
+<p>And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection.
+But these algorithms and corresponding training data are vulnerable.</p>
+
+<blockquote>
+<p>Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks.</p>
+</blockquote>
+
+<p>Survey from two aspects: the training phase and the testing/inferring phase.</p>
+
+<p>defensive techniques, four groups:</p>
+
+<ul>
+<li>security assessment mechanisms</li>
+<li>countermeasures in the training phase</li>
+<li>countermeasures in the testing or inferring phase</li>
+<li>data security, and privacy</li>
+</ul>
+
+<h3 id="1-introduction">1. Introduction</h3>
+
+<h3 id="2-basic-concept-model-taxonomy">2. Basic Concept, Model, Taxonomy</h3>
+
+<h4 id="1-basic-of-machine-learning">1. Basic of Machine Learning</h4>
+
+<p>According to differences of feedbacks, machine learning related works can be categorized into three groups:
+* supervised learning: decision tree, support vector machine (SVM), neural networks, etc.
+* unsupervised learning: Clustering and auto-encoder.
+* reinforcement learning: optimizes behavior strategies via try-and-error.</p>
+
+<h4 id="2-adversarial-model">2. Adversarial Model</h4>
+
+<p>Biggio <em>et al.</em> argued that well-deﬁned adversarial model should be constructed with four dimensions, goal, knowledge, capability and attacking strategy.</p>
+
+<ol>
+<li>Goal: can be clearly described using both the expected impacts and the attack speciﬁcity of security threats.</li>
+<li>Knowlodge: divided into two groups named <strong>constrained knowledge</strong> and <strong>complete knowledge</strong> by examining whether or not an attacker know training data, features, learning algorithms, decision functions, classiﬁer parameters and feedback information.</li>
+<li>Capability: qualitative interpreted from three aspects: (1) Is the impact of security threats causative or exploratory? (2) What is the percentage of training and testing data that are controlled by the attacker? (3) What is the extent of features and parameters that are known by the attacker?</li>
+<li>Attacking strategy: speciﬁc behaviors of manipulating training and testing data to effectively achieve his/her goals.</li>
+</ol>
+
+<h4 id="3-security-threats-taxonomy">3. Security threats taxonomy</h4>
+
+<h5 id="1-influence-on-classifiers">1. Influence on classifiers</h5>
+
+<ul>
+<li>Causative Attack: adversaries change the distri of training data, which induces param chagnes of learning models when retraining.</li>
+<li>Exploratory attack: does not modify already trained classifiers, but aims to cause misclassification with respect to adversarial samples or to uncover sensitive info.</li>
+</ul>
+
+<h5 id="2-security-violation">2. Security violation</h5>
+
+<ul>
+<li>Integrity attack: try to increase the <strong>false negatives</strong> of existing classifiers when classifying harmful samples.</li>
+<li>Availability attack: on the contrary, increase the <strong>false positives</strong> of classifiers with respect to benign samples.</li>
+<li>Privacy violation attack: able to obtain sensitive and confidential info.</li>
+</ul>
+
+<h5 id="3-attack-specificity">3. Attack specificity</h5>
+
+<ul>
+<li>Targeted attack: highly directed to reduce the performance of classifiers on one particular sample or one specific group of samples.</li>
+<li>Indiscriminate attack: causes the classifiers to fail in an indiscriminate fashion on a broad range of samples.</li>
+</ul>
+
+<p><figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/2018-07-15-084523.png" alt="taxonomy of security threats" class="lazyload"><figcaption class="image-caption">taxonomy of security threats</figcaption></figure></p>
+
+<h3 id="3-security-threats-towards-machine-learning">3. Security Threats towards machine learning</h3>
+
+<p>An attacker can inject malicious and designated data into training data during the training procedure of machine learning based intrusion detection systems, inducing a significant decrease of the performance of these systems.</p>
+
+<p><strong>Clustering</strong>  is a kind of unsupervised learning method, which can discover implicit patterns of data distributions. Most of attacks against clustering algorithms reduce their accuracy by injecting malicious data. <strong>Obfuscation attack</strong> is another type of threat that compromises clustering algorithms. It&rsquo;s goal against the targeted cluster is to generate a blend of adversarial samples and normal ones from other clusters without altering the clustering results of these normal samples, resulting in a set of stealthy adversarial samples.</p>
+
+<p><strong>Deep Learning</strong> : as a typical arch of dl, DNN is demonstrated to be effective in various pattern recognition tasks. DNN is also vulnerable to various adversarial attacks. In image classification, DNN only extracts a small set of features, resulting in poor performance on the images with minor differences. Potential adversaries can exploit such vulnerability to evade anomaly detection. In 2013, Szegedy <em>et al.</em> proposed to use the generated image with slight turbulence to deceive the pre-trained DNN.</p>
+
+<h4 id="1-training-phase">1. Training Phase</h4>
+
+<p><strong>Poisoning attack</strong> : a type of causative attack, disrupts availability and integrity of models via injecting adversarial samples to the training data. Such adversarial samples are designated to have similar features with malicious samples but incorrect labels, including change of training data distribution. It&rsquo;s not easy to alter the data itself. So the adversaries exploit the vulnerability that stems from <strong>retraining</strong> existing machine learning models. Machine learning based systems are generally required to <strong>periodically update</strong> their decision models to adapt to varying application contexts. So the adversaries can utilize the periodic update characteristic.</p>
+
+<p>For unsupervised learning, e.g., clustering analysis, it&rsquo;s not applicable for changing the sample labels. However, some researches introduced how to launch poisoning attack against single-linkage and complete-linkage hierarchical clustering. For example, a heuristic strategy can be adopted to measure the impact induced by adversarial samples on clustering accuracy via introducing a <em>bridge</em> concept. Then the optimal adversarial samples were selected to effectively reduce the clustering accuracy. Three commonly used graph clustering or embedding techniques:</p>
+
+<ul>
+<li>Community discovery</li>
+<li>Singular value decomposition (SVD)</li>
+<li>Node2vec</li>
+</ul>
+
+<p>There are two novel attacks, named <strong>targeted noise injection</strong> and <strong>small community</strong>. These attacks can effectively evade graph clustering approaches with limit adversaries knowledge and low cost. Two defense strategies: <strong>Training Classifier with Noise</strong> (similar to adversarial training) and <strong>Improving hyper-parameter selection</strong> , but the defense effect is not significant.</p>
+
+<h5 id="1-poisoning-without-modifying-features-or-labels">1) Poisoning without modifying features or labels</h5>
+
+<p>adversarial samples selecting methods:</p>
+
+<ul>
+<li>poisoning models: selected according to the degree of performance reduction in terms of the classification accuracy of learning models over validating data sets. (Feasible on decision tree, nearest neighbor classifier, multilayer perception, and SVM)</li>
+<li><strong>gradient ascent strategy</strong>: selected by calculating the gradient of objective functions that measure the effectiveness of adversarial samples. (Feasible on SVM, LASSO, PDF malware detection systems)</li>
+<li><strong>GAN</strong>: generative model is trained to generate candidate adversarial samples. Then, the discriminative model is used to select the optimal samples with a specific loss function.</li>
+</ul>
+
+<p>Comparative results between GAN and direct gradient methods on MNIST and CIFAR-10 data sets validated that GAN was able to rapidly generate high-quality adversarial samples with a large loss value.</p>
+
+<h5 id="2-poisoning-with-modifying-features-or-lables">2) Poisoning with modifying features or lables</h5>
+
+<p>More powerful adversary model has the capability of modifying extracted features or the labels of some training data.</p>
+
+<blockquote>
+<p>Transferring the problem of selecting target labels to an optimization one</p>
+</blockquote>
+
+<ul>
+<li>In <strong>label contamination attack</strong>(LCA), an attacker can significantly reduce the performance of SVM by <strong>flipping the labels of some training data</strong>.</li>
+<li>Xiao. <em>et al.</em> Extended the model to attack against some black-box linear learning such as SVM and logistic regression.</li>
+</ul>
+
+<h4 id="2-testing-or-inferring-phase">2. Testing or Inferring Phase</h4>
+
+<p>Utilizing the trained model to classifying or clustering new data. The most common types of security threats against the testing/Inferring phase include <code>spoofing</code> (for example, <code>evasion</code> and <code>impersonate</code> threats) and <code>Inversion attack</code>.</p>
+
+<p><strong>1) Evasion attack</strong>: main idea is that an attacker generates some adversarial samples that are able to evade detection such that overall security of target systems is significantly reduced.</p>
+
+<ul>
+<li>Attack and Defense: generate the optimal adversarial samples to evade detection via gradient algorithms.</li>
+<li>Evasion attacks was feasible for use to attack against FRS and malware detection real world, resulting in severe security threats towards target systems.</li>
+</ul>
+
+<p><strong>2) Impersonate attack</strong>: <strong>imitate data samples from victims</strong>, use in image recognition, malware detection. Attacker aims to generate specific adversarial samples such that existing machine learning-based systems wrongly classify the original samples with different labels from the impersonated ones. Such attack is <strong>particularly effective in attacking DNN algorithms</strong> because <em>DNN usually extracts a small feature set to facilitate the object identification</em>. So, attacker can easily launch impersonate attacks by <strong>modifying some key features</strong>.</p>
+
+<ul>
+<li>Electrical world: Use a revised genetic algorithm called Multi-dimensional Archive of Phenotypic Elites(MAP-Elites), to generate the optimal adversarial samples after evolving images from different categories. Then, these samples were fed into AlexNet and Le-Net-5 network, resulting in the performance reduction of DNNs.</li>
+<li>Physical world: adversary generated electronic adversarial samples via the least likely class method. Then these adversarial images were printed out to serve as the input of camera. Due to the feature loss during printing and photography, the successful rate was much lower than that in electrical world. But it also validated the feasibility of impersonate attacks in real world.</li>
+</ul>
+
+<p>More work show that <strong><em><code>transferable</code></em></strong> adversarial samples could be generated from <code>ensemble learning</code>, where the output samples from one DNN were effective for use to attack against other DNNs.</p>
+
+<p><em>Hidden voice commands</em> :</p>
+
+<blockquote>
+<p>Real experiments: the voice with no meanings in the perspective of human-beings could be used to emulate real voice control commands.</p>
+</blockquote>
+
+<p><strong>3) Inversion attack</strong> : utilizes the API provided by existing machine learning systems to gather some basic information regarding target system models. Then, the basic information is fed into <strong>reverse analysis</strong> followed by the leakage of privacy data embedded in target models.</p>
+
+<p>According to the degree of understanding knowledge in adversarial models, this type of attack can be generally classified into two groups: namely <strong>white-box attack</strong> and <strong>black-box attack</strong>.</p>
+
+<h4 id="3-summary-of-adversarial-attacks-against-machine-learning">3. Summary of Adversarial attacks against machine learning</h4>
+
+<p><figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/2018-07-15-144336.png" alt="image-20180715224335752" class="lazyload"><figcaption class="image-caption">image-20180715224335752</figcaption></figure></p>
+
+<h3 id="4-defensive-techniques-of-machine-learning">4. Defensive Techniques of Machine Learning</h3>
+
+<p><figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/2018-07-15-155824.png" alt="image-20180715235824018" class="lazyload"><figcaption class="image-caption">image-20180715235824018</figcaption></figure></p>
+
+<h4 id="1-security-assessment-mechanisms">1. Security assessment mechanisms</h4>
+
+<p>Most of existing assessing techniques focus on quantitatively evaluating the performance of various learning algorithms rather than their security.
+A designer first introduces adversarial assumptions towards classifer vulnerabilities. Then, the designer proposes countermeasures to protect classifiers from the adversaries. There are two types of defensive mechanisms, i.e., <strong>proactive defense</strong> and <strong>reactive defense</strong>, as illustrated in Fig. 4.
+<figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/2018-07-15-155800.png" alt="image-20180715235759999" class="lazyload"><figcaption class="image-caption">image-20180715235759999</figcaption></figure></p>
+
+<p>The notable differences between proactive and reactive defending mechanisms include the following two aspects:</p>
+
+<ul>
+<li>The attacking and defending subjects are both the classifier designer in proactive defense.</li>
+<li>The designer only performs penetration testing to uncover vulnerabilities rather than a true attack against the classifier. In other words, penetration testing in the proactive defending mechanism and attacking in the reactive one are benign and malicious, respectively.</li>
+</ul>
+
+<p>The distribution of training data and that of testing data will be notably different with the presence of adversarial samples. Such abnormal phenomenon can be used to serve as a way of assessing the security of machine learning and to predict whether or not the adversarial samples exists.</p>
+
+<p>So, some researchers proposed quantitative security analysis and evaluation of ml algorithms in a adversarial env.
+<figure class="figureforimg"><img src="/img/ring.svg" data-sizes="auto" data-src="https://lib.azfs.com.cn/2018-07-15-162410.png" alt="image-20180716002410135" class="lazyload"><figcaption class="image-caption">image-20180716002410135</figcaption></figure>
+Fig. 5 illustrates an example of proactive security assessment considering data distributions.</p>
+
+<p>First, select proper adversarial models with respect to the hypothesized attack scenario defined at the conceptual level by making assumptions on the goal, knowledge, capacity and corresponding strategy.</p>
+
+<p>Then, it defines the distributions p(Y), p(A|Y) and p(<strong>X</strong>|Y, A) for training and testing data, where Y belongs to set {L, M} and A belongs to set {F, T} respectively refer to class labels (L:legitimate; M:malicious) and a Boolean random variable representing whether or not a given sample has been manipulated (A=T) or not(A=F).</p>
+
+<p>After that, it constructs sample training <strong>TR</strong> and testing <strong>TS</strong> sets according to the data model defined before, given k&gt;=1 Paris of data sets $(D<em>{TR}^I, D</em>{TS}^i), i=1,&hellip;,k$ that are obtained from classical <code>resampling</code> techniques, e.g., <code>cross-validation</code> or <code>bootstrapping</code>. Finally, the classifier performance with the presence of simulated attack is evaluated using the constructed(TR^i, TS^i) pairs.</p>
+
+<h4 id="2-countermeasures-in-training-phase">2. Countermeasures in Training phase</h4>
+
+<p>Two main countermeasures:</p>
+
+<ul>
+<li>Ensuing the purity of training data.</li>
+<li>Improving the robustness of learning algorithms.</li>
+</ul>
+
+<p><strong>Data Sanitization</strong> : ensuring the purity of training data by separating adversarial samples from normal ones, and then removing these malicious samples. E.g., Reject on Negative Impact(RONI) defense tested the impact of each email in the training phase and did not train on message that had a large negative impact. To quantitatively measure impacts on the classification performance, the method <strong>compare error rate between the original classifier and the new one</strong>, which was retrained after adding new samples into the original training data, over the same testing data. If the error rate of the new classifier was much lower than that of the original one, then the new added samples were considered as malicious data and would be removed from training data.</p>
+
+<p><strong>Improving the robustness of learning algorithms</strong> is another feasible defending technique, e.g., Bootstrap Aggregating and Random Subspace Method(RSM).</p>
+
+<p><strong>Design secure learning algorithms</strong>, for example, Demontis <em>et al.</em> proposed a defending method that improved the security of linear classifier by learning more evenly-distributed feature weights.</p>
+
+<h4 id="3-countermeasures-in-testing-inferring-phase">3. Countermeasures in Testing/Inferring phase</h4>
+
+<p>Focus on the improvement of learning algorithms&rsquo; robustness.</p>
+
+<p><strong>Game theory</strong></p>
+
+<p>Tho <em>et al.</em> proposed invariant SVM algorithms using the min-max method to address the worst case feature manipulation activities in the testing phase.</p>
+
+<p>To improve the robustness, Scheffer <em>et al.</em> proposed Stackelberg Games for adversarial prediction problems and a nashSVM algorithm based on the Nash equilibrium.</p>
+
+<p>Bulo <em>et al.</em> extended previous work and proposed a randomized prediction game by considering randomized strategy selections according to some probability distribution defined over the respective strategy set. Results show that this method could improve the trade-off between attack detection and false alarms of classifiers.</p>
+
+<p><strong>Active defense considering data distribution</strong></p>
+
+<p>The goal of adversarial samples in the testing/Inferring phase is to alter data distribution of test data. So, a feasible way of defending against adversaries is to <strong>fit the testing data distribution by <code>retraining</code> learning models</strong> by classifier designers with adversarial samples. So that the new trained classifier are able to detect anomalies in the testing phase.</p>
+
+<p><strong>Smoothing model output</strong></p>
+
+<p>Is also effective to strengthen the robustness of learning models.</p>
+
+<p>To protect deep learning algorithms in adversarial settings, <strong><code>defensive distillation</code></strong> was proposed to defend against adversarial samples on DNNs. Papernot <em>et al.</em> analyzed the generalization and robustness properties of defensive distillation. Comparative results validated that the technique could effectively enhance the performance of two DNNs with different architectures to detect adversarial samples in terms of the success rate of adversarial sample crafting from 95.86%(87.89%) to 0.45%(5.11%) on the MINST(CIFAT-10) data set.</p>
+
+<p><strong><code>Dimension reduction</code></strong>: can be used to protect machine learning models from evasion attacks. This strategy aimed to enhance the resilience of classifiers by reducing the dimension of sample features.</p>
+
+<h4 id="4-data-security-and-privacy">4. Data security and privacy</h4>
+
+<ul>
+<li><strong>Differential Privacy</strong></li>
+<li>Homomorphic encryption</li>
+<li>Multi-party computation</li>
+<li>K-means clustering algorithms</li>
+</ul>
+
+<h3 id="5-challenges-and-future-opportunities">5. Challenges and future opportunities</h3>
+
+<p>Five notable trends on security threats and defensive techniques of machine learning</p>
+
+<ol>
+<li>New security threats towards machine learning are constantly emerging.</li>
+<li>Security assessment on machine learning based decision systems in adversarial environments becomes a prevailing research area.</li>
+<li>Data privacy plays an important role in protecting the security of machine learning.</li>
+<li>Secure deep learning is a new growth point in the ﬁeld of machine learning security.</li>
+<li>Jointly optimizing security, generalization performance and overhead is required to design secure learning algorithms.</li>
+</ol>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Kaiya Xiong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-07-18</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/wechat-qr-code.png">
+        <span>wechat</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/alipay-qr-code.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/bible/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Bible</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/qiniu/">
+            <span class="next-text nav-default">七牛融合CDN的坑</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/iDisqus.min.css" integrity="sha256-kzO+oWBH3NUMOwjhqPmZ5UfbSR7hAOJSHSu6Ummao7U=" crossorigin="anonymous">
+    
+    <div id="comment"></div>
+    
+    <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/iDisqus.min.js" integrity="sha256-x0qFxb51OjRZZhuUrS0AMzlqZ7L6V8GAh23Dd3X3sJM=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function loadDiyDisqus(){
+        if (window.location.hostname === 'localhost') return;
+        var disq = new iDisqus('comment', {
+            forum: 'kyxiong',
+            api: 'https://disqus.kaiyai.com/api/',
+            site: 'https://kaiyai.com',
+            mode: 1,
+            timeout: 3000,
+            init: true,
+            emojiPath: 'https://github.githubassets.com/images/icons/emoji/unicode/'
+          });
+      }
+      if (typeof iDisqus == 'undefined'){
+        var script=document.createElement("script");
+        script.type="text/javascript";
+        script.src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/iDisqus.min.js";
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); 
+        script.onload=function(){
+          loadDiyDisqus();
+        }
+      }else{
+          loadDiyDisqus();
+      }
+    </script>
+    
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:me@kaiyai.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/4922822" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/KaiyaXiong" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/KaiyaXiong" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/kaiyaxiong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Kaiya" class="iconfont icon-github" title="github"></a>
+      <a href="http://weibo.com/773846787" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://zhihu.com/people/KaiyaXiong" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/people/83405959/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://kaiyai.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://coding.me">Coding Pages</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kaiya Xiong</span>
+      
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/highlight/highlight.pack.js" integrity="sha256-pIhK75qIrmwqLEJ+9SeMInTme57ycwwLdc9dbRk4jdA=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery.min.js" integrity="sha256-fVI9G3UpdqpL0kYpTF2GCtJkK36SLoHA5qswX9f4Yc8=" crossorigin="anonymous"></script>
+  
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/even.min.js" integrity="sha256-DCRiiKWBbojZM6ae/BaHZBiq3Dj0zHa4vhgOG1CcRJs=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script data-ad-client="ca-pub-2656698844588033" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js" integrity="sha256-I3otyfIRoV0atkNQtZLaP4amnmkQOq0YK5R5RFBd5/0=" crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/instantclick.min.js" integrity="sha256-SVgP0duWZXZFPVIX+woWPFhpnHcxG5IXS6zvZAVoa3Y=" crossorigin="anonymous" data-no-instant></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+ if (isInitialLoad === false) {
+  if (typeof MathJax !== 'undefined') 
+   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  if (typeof prettyPrint !== 'undefined') 
+   prettyPrint();
+  if (typeof _hmt !== 'undefined') 
+   _hmt.push(['_trackPageview', location.pathname + location.search]);
+  if (typeof ga !== 'undefined') 
+    ga('send', 'pageview', location.pathname + location.search);
+  
+  $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+ }
+});
+InstantClick.init();
+</script>
+
+
+</body>
+</html>
