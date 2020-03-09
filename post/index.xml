@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/post/</link>
+    <description>Recent content in Posts on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 11:50:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hermes Notifyer</title>
+      <link>https://kaiyai.com/post/hermesnotifyer/</link>
+      <pubDate>Mon, 09 Mar 2020 11:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hermesnotifyer/</guid>
+      <description>Build a Hermes Product Update Notifyer Step by Step  import needed module  import requests from lxml import html import schedule import time import json   define a function to search in the Hermes.com site  def isinstock_by_search(local, term): headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) &#39; &#39;Chrome/69.0.3497.100 Safari/537.36&#39;, } url = &#39;https://bck.hermes.com/product&#39; params = {&#39;locale&#39;: local, &#39;searchterm&#39;: term, &#39;sort&#39;: &#39;relevance&#39;} response = requests.</description>
+    </item>
+    
+    <item>
+      <title>Cantonese➕Jazz</title>
+      <link>https://kaiyai.com/post/jazz/</link>
+      <pubDate>Sat, 28 Sep 2019 22:21:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jazz/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Photography association</title>
+      <link>https://kaiyai.com/post/photography/</link>
+      <pubDate>Thu, 26 Sep 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/photography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HK Journey</title>
+      <link>https://kaiyai.com/post/hk/</link>
+      <pubDate>Thu, 06 Jun 2019 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hk/</guid>
+      <description>Some Photos shotting during HK Journey.</description>
+    </item>
+    
+    <item>
+      <title>Some Reverse Proxy</title>
+      <link>https://kaiyai.com/post/proxy/</link>
+      <pubDate>Thu, 09 May 2019 18:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/proxy/</guid>
+      <description> Arxiv.kaiya.ml DBLP.kaiya.ml  References:
+ v2ex Blog  </description>
+    </item>
+    
+    <item>
+      <title>痴心换情深</title>
+      <link>https://kaiyai.com/post/cxhqs/</link>
+      <pubDate>Wed, 01 May 2019 14:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/cxhqs/</guid>
+      <description>年少不知曲中意，再听已是曲中人。 曲终人散梦已醒，梦中之人何处寻。 回首已是曲中人，何须在意曲中意。 莫非在等梦初醒，再去寻那梦中人。 不愿再做曲中</description>
+    </item>
+    
+    <item>
+      <title>粤港澳大湾区能否助力中国崛起？</title>
+      <link>https://kaiyai.com/post/cantonhkmo/</link>
+      <pubDate>Mon, 01 Apr 2019 00:16:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/cantonhkmo/</guid>
+      <description>考虑粤港澳大湾区问题不能仅仅把它和世界级湾区如美国纽约湾区、旧金山湾区、日本东京湾区进行对比，而应该考虑粤港澳大湾区对中国经济，甚至对世界经</description>
+    </item>
+    
+    <item>
+      <title>众声喧哗，我只歌唱❤️</title>
+      <link>https://kaiyai.com/post/jackycheung/</link>
+      <pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jackycheung/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>如何做研究</title>
+      <link>https://kaiyai.com/post/howdoresearch/</link>
+      <pubDate>Wed, 27 Mar 2019 12:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/howdoresearch/</guid>
+      <description>偶遇 Thomas，请教他博士期间如何做到这么高产的。Thomas 说做 research 不是做工程，一篇 paper 就是提出一个 idea 并证明其可行性，你费了很大力气做了很多</description>
+    </item>
+    
+    <item>
+      <title>情书💌</title>
+      <link>https://kaiyai.com/post/loveletter/</link>
+      <pubDate>Fri, 22 Mar 2019 04:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/loveletter/</guid>
+      <description>#include &amp;lt;stdio.h&amp;gt; int main() { double world; unsigned letter; short stay; long memories; printf(&amp;quot;I miss you.\n&amp;quot;); return 0; } 两个人的世界，一封没有署名的信，短暂的重逢后，留下的只是回忆，我想你，我爱的人。</description>
+    </item>
+    
+    <item>
+      <title>感想</title>
+      <link>https://kaiyai.com/post/thoughts/</link>
+      <pubDate>Fri, 22 Mar 2019 02:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/thoughts/</guid>
+      <description>苏格拉底和爱情失意者的对话： 苏: 如果他认为离开你是一种幸福呢? 失: 不会的! 他曾经跟我说，只有跟我在一起的时候他才感觉到幸福! 苏: 那是曾经，是</description>
+    </item>
+    
+    <item>
+      <title>Disqus科学使用方式</title>
+      <link>https://kaiyai.com/post/disqus/</link>
+      <pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/disqus/</guid>
+      <description>前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的</description>
+    </item>
+    
+    <item>
+      <title>阅读与写作</title>
+      <link>https://kaiyai.com/post/readwrite/</link>
+      <pubDate>Sat, 08 Dec 2018 00:27:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/readwrite/</guid>
+      <description>首先我就告诉你，所有的文如泉涌和才思敏捷都归根于大量的阅读。 你以为别人每天都能写上万字是轻轻松松吗？全是因为他或者她过人的文笔吗？ 如果你这样</description>
+    </item>
+    
+    <item>
+      <title>My Girlfriend</title>
+      <link>https://kaiyai.com/post/girlfriend/</link>
+      <pubDate>Tue, 04 Dec 2018 13:09:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/girlfriend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CNN in Tensorflow</title>
+      <link>https://kaiyai.com/post/tfcnn/</link>
+      <pubDate>Tue, 14 Aug 2018 01:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/tfcnn/</guid>
+      <description>import tensorflow as tf from tensorflow.examples.tutorials.mnist import input_data # number 1 to 10 data mnist = input_data.read_data_sets(&#39;MNIST_data&#39;, one_hot=True) def compute_accuracy(v_xs, v_ys): # validation xs and validation ys global prediction y_pre = sess.run(prediction, feed_dict={xs: v_xs, keep_prob: 1}) correct_prediction = tf.equal(tf.arg_max(y_pre, 1), tf.arg_max(v_ys, 1)) accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys, keep_prob: 1}) return result def weight_variable(shape): initial = tf.truncated_normal(shape, stddev=0.1) return tf.Variable(initial) def bias_variable(shape): initial = tf.constant(0.1, shape=shape) return tf.</description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://kaiyai.com/post/tensorflow/</link>
+      <pubDate>Sun, 12 Aug 2018 01:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/tensorflow/</guid>
+      <description>最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。 教程官网 刚刚看了Tensorflow的</description>
+    </item>
+    
+    <item>
+      <title>高级软件工程论文总结😂</title>
+      <link>https://kaiyai.com/post/summary_zh/</link>
+      <pubDate>Mon, 23 Jul 2018 01:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/summary_zh/</guid>
+      <description>量化Javascript中可检测的BUG paper 这篇文章探讨了是否值得为Javascript项目添加静态类型注释，以及Facebook的Flow和</description>
+    </item>
+    
+    <item>
+      <title>Instantclick</title>
+      <link>https://kaiyai.com/post/instantclick/</link>
+      <pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/instantclick/</guid>
+      <description>Instanclick usage in Hugo 看了Showfom大神的博客，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术</description>
+    </item>
+    
+    <item>
+      <title>LaTex on Sublime Text</title>
+      <link>https://kaiyai.com/post/latex/</link>
+      <pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/latex/</guid>
+      <description>Sublime Text中LaTex环境的配置 工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路</description>
+    </item>
+    
+    <item>
+      <title>Bible</title>
+      <link>https://kaiyai.com/post/bible/</link>
+      <pubDate>Wed, 18 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/bible/</guid>
+      <description>新约 马太福音 第一章 耶稣的母亲马利亚许配了约瑟，他们还没有成亲，马利亚就从圣灵怀了孕。 主的使者在梦中向他显现，说：“大卫的子孙约瑟，只管放胆把</description>
+    </item>
+    
+    <item>
+      <title>Survey on Security and Privacy of Machine Learning</title>
+      <link>https://kaiyai.com/post/survey/</link>
+      <pubDate>Wed, 18 Jul 2018 09:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/survey/</guid>
+      <description>Survey on Security and Privacy of Machine Learning  TOC {:toc}
+Abstract  ML was used in image processing, natural language processing, pattern recognition, cybersecurity and other fields.
+  And Scenarios: facial recognition, malware detection, automatic driving, and intrusion detection. But these algorithms and corresponding training data are vulnerable.
+ Academia and industry have found out many security threats against a variety of learning algorithms, including naive Bayes, logistic regression, decision tree, support vector machine (SVM), principle component analysis, clustering, and prevailing deep neural networks.</description>
+    </item>
+    
+    <item>
+      <title>七牛融合CDN的坑</title>
+      <link>https://kaiyai.com/post/qiniu/</link>
+      <pubDate>Tue, 17 Jul 2018 21:47:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/qiniu/</guid>
+      <description>感觉被七牛云存储坑了一波。 七牛对开启HTTPS功能的对象存储收费均按照HTTPS计算，即使你是使用HTTP方式访问的也是按照HTTPS收费。</description>
+    </item>
+    
+    <item>
+      <title>落花流水</title>
+      <link>https://kaiyai.com/post/lhls/</link>
+      <pubDate>Tue, 17 Jul 2018 18:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/lhls/</guid>
+      <description>流水像清得没带半颗沙 前身被搁在上游风化 但那天经过那条提坝 斜阳又返照闪一下 遇上一朵落花 相遇就此拥着最爱归家 生活别过份地童话化 故事假使短过这五月</description>
+    </item>
+    
+    <item>
+      <title>Weekly Reports</title>
+      <link>https://kaiyai.com/post/reports/</link>
+      <pubDate>Mon, 16 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/reports/</guid>
+      <description>第四周 第五周 第六周 第七周 第八周 第九周 第十周 第十一周 第十二周 第十三周 第十四周 第十五周 第十六周 [slides]()</description>
+    </item>
+    
+  </channel>
+</rss>
