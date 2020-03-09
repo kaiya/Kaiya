@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/</link>
+    <description>Recent content on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Aug 2018 21:38:52 +0800</lastBuildDate>
+    
+        <atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://kaiyai.com/about/</link>
+      <pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/about/</guid>
+      <description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
+
+&lt;p&gt;My research interest:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Security and Privacy of Machine Learning(Focused on &lt;strong&gt;Adversarial Examples&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Blockchain Consensus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Homepage:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gs.kaiyai.com&#34;&gt;Google Sites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://about.kaiyai.com&#34;&gt;Academic Homepage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ORCID: &lt;div itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;a itemprop=&#34;sameAs&#34; content=&#34;https://orcid.org/0000-0002-7648-8714&#34; href=&#34;https://orcid.org/0000-0002-7648-8714&#34; target=&#34;orcid.widget&#34; rel=&#34;noopener noreferrer&#34; style=&#34;vertical-align:top;&#34;&gt;&lt;img src=&#34;https://orcid.org/sites/default/files/images/orcid_16x16.png&#34; style=&#34;width:1em;margin-top:4px;float: left;&#34; alt=&#34;ORCID iD icon&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-7648-8714&#34;&gt;https://orcid.org/0000-0002-7648-8714&lt;/a&gt;&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;Reach me at:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Huangpu Avenue West No.601 Jinan University, Guangzhou, China, 510632&lt;/li&gt;
+&lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
+&lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
+&lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hermes Notifyer</title>
+      <link>https://kaiyai.com/post/hermesnotifyer/</link>
+      <pubDate>Mon, 09 Mar 2020 11:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hermesnotifyer/</guid>
+      <description>
+
+&lt;h3 id=&#34;build-a-hermes-product-update-notifyer-step-by-step&#34;&gt;Build a Hermes Product Update Notifyer Step by Step&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;import needed module&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import requests
+from lxml import html
+import schedule
+import time
+import json
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;define a function to search in the Hermes.com site&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def isinstock_by_search(local, term):
+headers = {
+    &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                  &#39;Chrome/69.0.3497.100 Safari/537.36&#39;,
+}
+url = &#39;https://bck.hermes.com/product&#39;
+params = {&#39;locale&#39;: local, &#39;searchterm&#39;: term, &#39;sort&#39;: &#39;relevance&#39;}
+response = requests.get(url=url, params=params, headers=headers)
+resp_text = response.text
+resp_json = json.loads(resp_text)
+total_item = resp_json.get(&#39;total&#39;)
+if total_item &amp;gt; 0:
+    products = resp_json.get(&#39;products&#39;)
+    for product_item in products:
+        if product_item.get(&#39;hasStock&#39;):
+            return True
+else:
+    return False
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;the concept behind the code is that we can request the url &lt;code&gt;https://bck.hermes.com/product?locale=us_en&amp;amp;searchterm=picotin&amp;amp;sort=relevance&lt;/code&gt; to search product(searchterm) by locale in the hermes.com site.&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2656698844588033&#34;
+     data-ad-slot=&#34;3770953699&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;if the function above return True, aka. the product has stock, we&amp;rsquo;ll send a simple mail to the monitor recipient using Mailgun&amp;rsquo;s Mailing service.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def send_simple_message(in_stock_url):
+response = requests.post(
+    &amp;quot;https://api.mailgun.net/v3/sandboxxxx.mailgun.org/messages&amp;quot;,
+    auth=(&amp;quot;api&amp;quot;, &amp;quot;apiKey&amp;quot;),
+    data={&amp;quot;from&amp;quot;: &amp;quot;me@example.com&amp;quot;,
+          &amp;quot;to&amp;quot;: [&amp;quot;recipient@gmail.com&amp;quot;],
+          &amp;quot;subject&amp;quot;: &amp;quot;title&amp;quot;,
+          &amp;quot;text&amp;quot;: &amp;quot;url: &amp;quot; + in_stock_url})
+if response.status_code == 200:
+    print(&#39;mail send success&#39;)
+    return True
+else:
+    print(&#39;mail send failed&#39;)
+    return False
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;define a main task to run combine this function for scheduling&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def main_task(monitor_urls, locales, terms):
+for term in terms:
+    for local in locales:
+        if isinstock_by_search(local, term):
+            print(&#39;has stock&#39; + term + &#39; in: &#39; + local)
+            url = &#39;https://bck.hermes.com/product?locale=&#39; + local + &#39;&amp;amp;searchterm=&#39; + term + &#39;&amp;amp;sort=relevance&#39;
+            send_simple_message(url)
+print(&#39;ROUND Monitor Done&#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the main process&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if __name__ == &#39;__main__&#39;:
+
+country_code = [&#39;be/en&#39;, &#39;cz/en&#39;, &#39;dk/en&#39;, &#39;de/de&#39;, &#39;es/es&#39;, &#39;fi/en&#39;, &#39;fr/fr&#39;, &#39;ie/en&#39;, &#39;it/it&#39;, &#39;lu/fr&#39;,
+                &#39;nl/en&#39;, &#39;no/en&#39;, &#39;at/de&#39;, &#39;pl/en&#39;, &#39;pt/en&#39;, &#39;ch/fr&#39;, &#39;se/en&#39;, &#39;uk/en&#39;, &#39;us/en&#39;, &#39;ca/en&#39;,
+                &#39;jp/ja&#39;, &#39;my/en&#39;, &#39;sg/en&#39;, &#39;au/en&#39;]
+    
+# build param for GET
+with open(&#39;productlist.txt&#39;) as f:
+    product_list = f.readlines()
+urls = []
+for code in country_code:
+    for product in product_list:
+        urls.append(&#39;https://www.hermes.com/&#39; + code + product)
+
+# build param for search
+locale_list = []
+for code in country_code:
+    locale = code.replace(&#39;/&#39;, &#39;_&#39;)
+    locale_list.append(locale)
+
+term_list = [&#39;picotin&#39;]
+
+schedule.clear()
+schedule.every(30).minutes.do(main_task, urls, locale_list, term_list)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;in this main function, we define country code and product for monitor by get url, and locale, term list for monitor by search in the site. And we also define a scheduler to run this script every one minutes to monitor the product regularlly.
+That&amp;rsquo;s all.
+Happy Shopping!!&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cantonese➕Jazz</title>
+      <link>https://kaiyai.com/post/jazz/</link>
+      <pubDate>Sat, 28 Sep 2019 22:21:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jazz/</guid>
+      <description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=986078047&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Photography association</title>
+      <link>https://kaiyai.com/post/photography/</link>
+      <pubDate>Thu, 26 Sep 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/photography/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2473.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2489.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2471.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2515.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2532.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2581.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2583.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2607.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2617.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2620.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2625.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2644.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2648.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2653.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2665.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2669.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2673.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2676.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2681.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2683.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2684.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/img/DSC_2753.jpg-c&#34; alt=&#34;Photography Association&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HK Journey</title>
+      <link>https://kaiyai.com/post/hk/</link>
+      <pubDate>Thu, 06 Jun 2019 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hk/</guid>
+      <description>&lt;p&gt;Some Photos shotting during HK Journey.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982858042545.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982861111410.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982863083650.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982863939569.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982864671461.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982865320915.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/2019060615598286593216.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982866635067.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982867669734.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982868312831.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982868824477.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982869347237.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982869910439.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982870451352.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982871053491.jpg&#34; alt=&#34;HK Journey&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Some Reverse Proxy</title>
+      <link>https://kaiyai.com/post/proxy/</link>
+      <pubDate>Thu, 09 May 2019 18:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/proxy/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.kaiya.ml&#34;&gt;Arxiv.kaiya.ml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dblp.kaiya.ml&#34;&gt;DBLP.kaiya.ml&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.v2ex.com/t/234923&#34;&gt;v2ex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://moeyui.cn/%E7%BD%91%E7%AB%99/eea1a03.html&#34;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>痴心换情深</title>
+      <link>https://kaiyai.com/post/cxhqs/</link>
+      <pubDate>Wed, 01 May 2019 14:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/cxhqs/</guid>
+      <description>&lt;p&gt;年少不知曲中意，再听已是曲中人。&lt;br /&gt;
+曲终人散梦已醒，梦中之人何处寻。&lt;br /&gt;
+回首已是曲中人，何须在意曲中意。&lt;br /&gt;
+莫非在等梦初醒，再去寻那梦中人。&lt;br /&gt;
+不愿再做曲中人，奈何越听越沉沦。&lt;br /&gt;
+既然已成曲中人，何必再听曲中曲。&lt;br /&gt;
+曲中人唱曲中曲，曲中人非曲中人。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>粤港澳大湾区能否助力中国崛起？</title>
+      <link>https://kaiyai.com/post/cantonhkmo/</link>
+      <pubDate>Mon, 01 Apr 2019 00:16:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/cantonhkmo/</guid>
+      <description>&lt;p&gt;考虑粤港澳大湾区问题不能仅仅把它和世界级湾区如美国纽约湾区、旧金山湾区、日本东京湾区进行对比，而应该考虑粤港澳大湾区对中国经济，甚至对世界经济格局的影响。&lt;/p&gt;
+
+&lt;p&gt;在粤港澳三大经济区内施行怎样的关税政策？&lt;/p&gt;
+
+&lt;p&gt;应该像最初欧元一样，将粤港澳地区作为“亚元”的小范围试点区，一方面方便粤港澳地区投资及关税，另一方便也能进一步削弱美元的国际地位，为中国主导的“亚元区”做铺垫。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=eBtkHaLxygk&amp;amp;t=3332s&#34;&gt;视频：粤港澳大湾区能否助力中国崛起？&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>众声喧哗，我只歌唱❤️</title>
+      <link>https://kaiyai.com/post/jackycheung/</link>
+      <pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jackycheung/</guid>
+      <description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=2587836003&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何做研究</title>
+      <link>https://kaiyai.com/post/howdoresearch/</link>
+      <pubDate>Wed, 27 Mar 2019 12:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/howdoresearch/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;偶遇 Thomas，请教他博士期间如何做到这么高产的。Thomas 说做 research 不是做工程，一篇 paper 就是提出一个 idea 并证明其可行性，你费了很大力气做了很多功能，也不见得有人会用。其实读 paper 的人最关心的就是你的 core insight，你的系统设计需要是 fundamentally correct，evaluation 符合预期就行。如果他需要的话，自己会去实现出来完整的产品。感觉挺有道理的，听人说如果只是性能好，却说不出个所以然，或者没有选择看起来最正确的设计方案，确实不好发 paper。之前一直想着把系统做得尽量 solid，做到能开箱即用的程度，不过确实很费时间，最后板上的逻辑资源都不够了，而且现实中我们 research 部门实习生写的代码确实很难被产品部门用上。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
