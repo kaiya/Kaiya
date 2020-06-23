@@ -1,0 +1,39 @@
+// ==============================
+// Custom style
+// ==============================
+// You can override the variables in _variables.scss to customize the style
+
+.post-content {
+figure {
+      img:hover{
+          cursor: zoom-in;
+      }
+  }
+
+  .image-caption:not(:empty) {
+      min-width: 20%;
+      max-width: 80%;
+      display: inline-block;
+      padding: 10px;
+      margin: 0 auto;
+      border-bottom: 1px solid #d9d9d9;
+      font-size: 14px;
+      color: #969696;
+      line-height: 1.7;
+  }
+  .figureforimg {
+      text-align: center;
+  }
+
+  img {
+      display: block!important;
+      max-width: 80%;
+      height: auto;
+      margin: 0 auto;
+      overflow: hidden;
+  }
+
+  img[data-action="zoom"] {
+      cursor: zoom-in;
+  }
+}

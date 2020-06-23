@@ -1,0 +1,8 @@
+baseURL = "https://kaiyai.com/"
+languageCode = "en"
+defaultContentLanguage = "en"                           
+title = "Kaiya Xiong's Blog"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "hugo-paper"
+author = "Kaiya Xiong"

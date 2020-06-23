@@ -1,0 +1,11 @@
+baseurl = "https://kaiyai.com"
+title = "Kaiya Xiong's Blog"
+author = "Kaiya Xiong"
+canonifyurls = true
+paginate = 3
+theme = "aether"
+
+[params]
+brand = "Kaiya"
+description = "Kaiya Xiong's Blog"
+bgimg = "img/ignasi_pattern_s.png"
