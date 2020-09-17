@@ -18,3 +18,5 @@ git push origin master
 # push index to Baidu Spider
 curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://kaiyai.com&token=swIICtyYi3ptMPHm"
 
+# update jemdoc
+cd jemdoc && vercel --prod
