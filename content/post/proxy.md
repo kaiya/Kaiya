@@ -10,6 +10,7 @@ date: 2019-05-09T18:10:20+08:00
 5. [Scholar.kaiya.ml](https://scholar.kaiya.ml) using Cloudflare Workers
 6. [wikipedia.kaiya.ml](https://wikipedia.kaiya.ml) using Cloudflare Workers
 7. [nytimes.kaiya.ml](https://nytimes.kaiya.ml) using Cloudflare Workers
+8. [BADGE.kaiya.ml](https://badge.kaiya.ml) proxy for `img.shields.io` 
 
 References:
 
