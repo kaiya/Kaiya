@@ -36,7 +36,9 @@ sudo -H pip install --upgrade youtube-dl
 2. 配置
 
 默认的配置文件位置如下（或者通过`--config-location`选项指定配置文件位置）：
+
 - Win: `%APPDATA%\youtube-dl\config.txt` 或 `C:\Users\<user name>\youtube-dl.conf`
+
 - Linux和Mac: `/etc/youtube-dl.conf` 或 `~/.config/youtube-dl/config`
 
 代理配置如下：
