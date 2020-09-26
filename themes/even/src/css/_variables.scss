@@ -59,7 +59,8 @@ $global-font-family: "Helvetica Neue", Tahoma, Arial, "Microsoft YaHei", "Hiragi
 
 // Serif font family of the site.
 //$global-serif-font-family: Arial "Hiragino Sans GB", 冬青黑, 'Source Sans Pro', 'Helvetica Neue', Athelas, STHeiti, Microsoft Yahei, serif !default;
-$global-serif-font-family: "Helvetica Neue", Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !default;
+// add serif font Athelas 2020-09-26
+$global-serif-font-family: Athelas, "Helvetica Neue", Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !default;
 
 // Background color of the site.
 $global-background: $white !default;
