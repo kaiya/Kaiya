@@ -150,8 +150,9 @@ InstantClick.on('change', function(isInitialLoad) {
   if (typeof ga !== 'undefined') // support google analytics
     ga('send', 'pageview', location.pathname + location.search);
   // load busuanzi
-  $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-    
+//  $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+$.getScript("/dist/busuanzi.pure.mini.js");
+
   // if instantclick conflict with disqus, uncomment below
   // function loadDiyDisqus(){
   // if (window.location.hostname === 'localhost') return;
