@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/tags/code/</link>
+    <description>Recent content in code on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 11:50:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hermes Notifyer</title>
+      <link>https://kaiyai.com/post/hermesnotifyer/</link>
+      <pubDate>Mon, 09 Mar 2020 11:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hermesnotifyer/</guid>
+      <description>Build a Hermes Product Update Notifyer Step by Step  import needed module  import requests from lxml import html import schedule import time import json   define a function to search in the Hermes.com site  def isinstock_by_search(local, term): headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) &#39; &#39;Chrome/69.0.3497.100 Safari/537.36&#39;, } url = &#39;https://bck.hermes.com/product&#39; params = {&#39;locale&#39;: local, &#39;searchterm&#39;: term, &#39;sort&#39;: &#39;relevance&#39;} response = requests.</description>
+    </item>
+    
+    <item>
+      <title>Instantclick</title>
+      <link>https://kaiyai.com/post/instantclick/</link>
+      <pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/instantclick/</guid>
+      <description>Instanclick usage in Hugo 看了Showfom大神的博客，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术</description>
+    </item>
+    
+    <item>
+      <title>LaTex on Sublime Text</title>
+      <link>https://kaiyai.com/post/latex/</link>
+      <pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/latex/</guid>
+      <description>Sublime Text中LaTex环境的配置 工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路</description>
+    </item>
+    
+  </channel>
+</rss>

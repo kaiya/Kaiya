@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/categories/tech/</link>
+    <description>Recent content in Tech on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Sep 2020 14:03:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Youtube-dl下载Youtube 4K视频</title>
+      <link>https://kaiyai.com/post/youtube-dl/</link>
+      <pubDate>Wed, 23 Sep 2020 14:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/youtube-dl/</guid>
+      <description>前言 Youtube作为非常火🔥的视频平台，它有很多内容质量非常高的视频。Youtube官方并没有提供下载的方法，如果我们想下载它上面的视频该</description>
+    </item>
+    
+    <item>
+      <title>Hermes Notifyer</title>
+      <link>https://kaiyai.com/post/hermesnotifyer/</link>
+      <pubDate>Mon, 09 Mar 2020 11:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hermesnotifyer/</guid>
+      <description>Build a Hermes Product Update Notifyer Step by Step  import needed module  import requests from lxml import html import schedule import time import json   define a function to search in the Hermes.com site  def isinstock_by_search(local, term): headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) &#39; &#39;Chrome/69.0.3497.100 Safari/537.36&#39;, } url = &#39;https://bck.hermes.com/product&#39; params = {&#39;locale&#39;: local, &#39;searchterm&#39;: term, &#39;sort&#39;: &#39;relevance&#39;} response = requests.</description>
+    </item>
+    
+    <item>
+      <title>Some Reverse Proxy</title>
+      <link>https://kaiyai.com/post/proxy/</link>
+      <pubDate>Thu, 09 May 2019 18:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/proxy/</guid>
+      <description> Arxiv.kaiya.ml DBLP.kaiya.ml Google.kaiya.ml using Cloudflare Workers Github.kaiya.ml using Cloudflare Workers Scholar.kaiya.ml using Cloudflare Workers wikipedia.kaiya.ml using Cloudflare Workers nytimes.kaiya.ml using Cloudflare Workers BADGE.kaiya.ml proxy for img.shields.io  References:
+ v2ex Blog  </description>
+    </item>
+    
+    <item>
+      <title>Disqus科学使用方式</title>
+      <link>https://kaiyai.com/post/disqus/</link>
+      <pubDate>Wed, 12 Dec 2018 16:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/disqus/</guid>
+      <description>前言 由于某些原因Disqus这个很多博客使用的评论系统没法在大陆使用了。本文记录一下本博客对Disqus的改造过程，以供参考。说一下本博客的</description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://kaiyai.com/post/tensorflow/</link>
+      <pubDate>Sun, 12 Aug 2018 01:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/tensorflow/</guid>
+      <description>最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。 教程官网 刚刚看了Tensorflow的</description>
+    </item>
+    
+    <item>
+      <title>Instantclick</title>
+      <link>https://kaiyai.com/post/instantclick/</link>
+      <pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/instantclick/</guid>
+      <description>Instanclick usage in Hugo 看了Showfom大神的博客，这个博客能实现不刷新就可以加载页面的效果，和ruby-china.org很像，不过我不知道他们用的技术</description>
+    </item>
+    
+    <item>
+      <title>LaTex on Sublime Text</title>
+      <link>https://kaiyai.com/post/latex/</link>
+      <pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/latex/</guid>
+      <description>Sublime Text中LaTex环境的配置 工具：LaTexing插件、MacTex（Mac），MiKTex（Win）,注意Win上安装MiKTex时路</description>
+    </item>
+    
+    <item>
+      <title>七牛融合CDN的坑</title>
+      <link>https://kaiyai.com/post/qiniu/</link>
+      <pubDate>Tue, 17 Jul 2018 21:47:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/qiniu/</guid>
+      <description>感觉被七牛云存储坑了一波。 七牛对开启HTTPS功能的对象存储收费均按照HTTPS计算，即使你是使用HTTP方式访问的也是按照HTTPS收费。</description>
+    </item>
+    
+  </channel>
+</rss>
