@@ -2,6 +2,13 @@
 title: Weekly Reports
 date: 2018-07-16T21:10:00+08:00
 draft: true
+
+tags: ['Weekly Reports', 'zh-CN']
+categories: ['Weekly Reports']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Weekly Reports.
+
 ---
 
 1. [第四周](http://libnos.azfs.com.cn/pdf/学习汇报-熊凯亚-第四周.pdf)

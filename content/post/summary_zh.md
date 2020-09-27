@@ -1,6 +1,13 @@
 ---
-title: 高级软件工程论文总结😂
+title: 高级软件工程论文总结
 date: 2018-07-23T01:10:00+08:00
+draft: false
+tags: ['Tech', 'Papers', 'zh-CN']
+categories: ['Papers']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Summary reports of Advanced Software Engineering Papers😂.
+
 ---
 
 

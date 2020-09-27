@@ -6,6 +6,7 @@ draft: false
 tags: ["Tensorflow", "Tech"]
 categories: ["Tensorflow", "Tech"]
 author: Kaiya Xiong
+summary: Tensorflow tot by morvanzhou.
 ---
 
 最近看了莫烦Python教程，morvan讲的很不错，视频很短，很喜欢😍这种边敲代码边解释原理的教程。

@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 on Kaiya Xiong's Blog</title><link>https://kaiyai.com/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on Kaiya Xiong's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Sep 2020 14:03:09 +0800</lastBuildDate><atom:link href="https://kaiyai.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Youtube-dl下载Youtube 4K视频</title><link>https://kaiyai.com/post/youtube-dl/</link><pubDate>Wed, 23 Sep 2020 14:03:09 +0800</pubDate><guid>https://kaiyai.com/post/youtube-dl/</guid><description>前言 Youtube作为非常火🔥的视频平台，它有很多内容质量非常高的视频。Youtube官方并没有提供下载的方法，如果我们想下载它上面的视频该</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Sep 2020 14:03:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Youtube-dl下载Youtube 4K视频</title>
+      <link>https://kaiyai.com/post/youtube-dl/</link>
+      <pubDate>Wed, 23 Sep 2020 14:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/youtube-dl/</guid>
+      <description>前言 Youtube作为非常火🔥的视频平台，它有很多内容质量非常高的视频。Youtube官方并没有提供下载的方法，如果我们想下载它上面的视频该</description>
+    </item>
+    
+  </channel>
+</rss>

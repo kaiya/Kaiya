@@ -1,6 +1,12 @@
 ---
 title: Survey on Security and Privacy of Machine Learning
 date: 2018-07-18T09:10:00+08:00
+draft: false
+tags: ['Tech', 'Papers']
+categories: ['Papers']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Survey on Security and Privacy of Machine Learning
 ---
 ## Survey on Security and Privacy of Machine Learning
 * TOC

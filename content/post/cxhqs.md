@@ -1,6 +1,12 @@
 ---
 title: 痴心换情深
 date: 2019-05-01T14:10:20+08:00
+draft: false
+tags: ['Lyics', 'Vivian Chow', 'zh-CN']
+categories: ['Lyics']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Feeling of Vivian Chow's Song.
 ---
 
 年少不知曲中意，再听已是曲中人。\\

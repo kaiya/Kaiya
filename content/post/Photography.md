@@ -2,6 +2,11 @@
 title: Photography association 
 date: 2019-09-26T00:00:00+08:00
 draft: true
+tags: ['Photography', 'Guangzhou', 'Photography association']
+categories: ['Photography']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Here are some awesome photos shoot by me. Share with you guys!
 ---
 
 

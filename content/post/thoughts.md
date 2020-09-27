@@ -1,11 +1,12 @@
 ---
-title: "感想"
+title: "Thoughts"
 date: 2019-03-22T02:03:09+08:00
 lastmod: 2019-03-22T02:03:09+08:00
 draft: true
 tags: ["Thoughts"]
 categories: ["Thoughts"]
 author: 'Kaiya Xiong'
+summary: Somes Thoughts on life.
 ---
 
 苏格拉底和爱情失意者的对话：

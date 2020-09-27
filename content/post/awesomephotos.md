@@ -1,12 +1,12 @@
 ---
 title: Awesome Photos
 date: 2020-08-16
-published: true
-tags: ['Photo', 'Cover Image']
-series: false
-cover_image: https://imgs.azfs.com.cn/img/HK-10.jpg-cover
-canonical_url: false
-description: 
+draft: false
+tags: ['Photography', 'HK', 'Travel']
+categories: ['Photography']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Here are some awesome photos shoot by me. Share with you guys!
 ---
 
 Awesome Photos!

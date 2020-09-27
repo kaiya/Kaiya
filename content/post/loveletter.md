@@ -6,6 +6,8 @@ draft: false
 tags: ["Thoughts"]
 categories: ["Thoughts"]
 author: 'Kaiya Xiong'
+summary: A love letter💌
+
 ---
 
 ```c

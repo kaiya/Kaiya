@@ -1,6 +1,13 @@
 ---
 title: 落花流水
 date: 2018-07-17T18:10:20+08:00
+draft: false
+tags: ['Lyics', 'Eason']
+categories: ['Lyics']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: A song by Eason.
+
 ---
 
 >流水像清得没带半颗沙 

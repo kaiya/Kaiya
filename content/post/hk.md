@@ -1,6 +1,12 @@
 ---
 title: HK Journey
 date: 2019-06-06T21:10:00+08:00
+draft: false
+tags: ['Photography', 'HK', 'Travel']
+categories: ['Photography']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Some Photos shotting during HK Journey.
 ---
 
 Some Photos shotting during HK Journey.

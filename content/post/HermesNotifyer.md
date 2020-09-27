@@ -1,6 +1,13 @@
 ---
 title: Hermes Notifyer
 date: 2020-03-09T11:50:00+08:00
+
+draft: false
+tags: ['Tech', 'code', 'Hermes']
+categories: ['Tech']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Build a Hermes Product Update Notifyer Step by Step.
 ---
 
 ### Build a Hermes Product Update Notifyer Step by Step

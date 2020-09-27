@@ -1,7 +1,11 @@
 ---
 title: Disqus科学使用方式
 date: 2018-12-12T16:50:00+08:00
-tags: ["中文","技术"]
+tags: ["Tech","zh-CN"]
+categories: ['Tech']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: How to using Disqus in mainland China with our Blog System?
 ---
 
 ### 前言

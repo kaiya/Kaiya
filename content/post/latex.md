@@ -1,6 +1,15 @@
 ---
 title: LaTex on Sublime Text
 date: 2018-07-19T21:10:00+08:00
+
+
+draft: false
+tags: ['Tech', 'code', 'latex']
+categories: ['Tech']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: How to use LaTex for Typeseting with Sublime Text Editor.
+
 ---
 
 ### Sublime Text中LaTex环境的配置

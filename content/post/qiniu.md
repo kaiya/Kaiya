@@ -1,6 +1,13 @@
 ---
 title: 七牛融合CDN的坑
 date: 2018-07-17T21:47:00+08:00
+draft: false
+tags: ['Tech', 'zh-CN']
+categories: ['Tech']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Complaints about the CDN service provided by QiNiu.
+
 ---
 
 感觉被七牛云存储坑了一波。

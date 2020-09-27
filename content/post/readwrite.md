@@ -1,8 +1,12 @@
 ---
-title: 阅读与写作
+title: Reading and Writting
 date: 2018-12-08T00:27:00+08:00
-tags: ["中文", "阅读"]
-categories: ["阅读"]
+tags: ["Reading", "Writting", "zh-CN"]
+categories: ["Reading", "Writting"]
+draft: false
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Thoughts on Reading and Writting.
 ---
 
 首先我就告诉你，所有的文如泉涌和才思敏捷都归根于大量的阅读。

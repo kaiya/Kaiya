@@ -6,6 +6,7 @@ draft: false
 tags: ["Tensorflow", "CNN"]
 categories: ["Tensorflow"]
 author: 'Kaiya Xiong'
+summary: Tensorflow CNN code.
 ---
 
 ```python

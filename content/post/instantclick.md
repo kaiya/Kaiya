@@ -1,6 +1,12 @@
 ---
-title: "Instantclick"
+title: Instantclick
 date: 2018-07-20T10:43:48+08:00
+draft: false
+tags: ['Tech', 'code', 'instantclick', 'zh-CN']
+categories: ['Tech']
+author: Kaiya Xiong
+autoCollapseToc: true
+summary: Instanclick usage in Hugo Blog System.
 ---
 
 ## Instanclick usage in Hugo
