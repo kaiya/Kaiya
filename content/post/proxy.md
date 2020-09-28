@@ -19,7 +19,3 @@ summary: Here are some Reversed Proxy website I've create using Cloudflare Worke
 7. [nytimes.kaiya.ml](https://nytimes.kaiya.ml) using Cloudflare Workers
 8. [BADGE.kaiya.ml](https://badge.kaiya.ml) proxy for `img.shields.io` 
 
-References:
-
-1. [v2ex](https://www.v2ex.com/t/234923)
-2. [Blog](https://moeyui.cn/%E7%BD%91%E7%AB%99/eea1a03.html)
