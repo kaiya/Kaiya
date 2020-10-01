@@ -18,7 +18,7 @@
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Using Selenium in Python</title><link>https://kaiyai.com/post/selenium/</link><pubDate>Thu, 01 Oct 2020 18:10:20 +0800</pubDate><guid>https://kaiyai.com/post/selenium/</guid><description>
 &lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
-&lt;p&gt;今年三月份写了个&lt;a href=&#34;./post/hermesnotifyer/&#34;&gt;爱马仕的上新提醒工具&lt;/a&gt;。一开始还运行的蛮好的，只要官方有上新，立马就会邮件通知到我。&lt;/p&gt;
+&lt;p&gt;今年三月份写了个&lt;a href=&#34;../hermesnotifyer/&#34;&gt;爱马仕的上新提醒工具&lt;/a&gt;。一开始还运行的蛮好的，只要官方有上新，立马就会邮件通知到我。&lt;/p&gt;
 &lt;p&gt;燃鹅，过了几个月，我发现连续好久都没有上新了（我当时还以为国外疫情严重，爱马仕员工没有去公司所以才没有上新呢🤣）。我打开当时使用的接口一看，被封了。。接口加了验证码😢，我用SS看了一下，IP直接被Ban了😥。看来我这小工具已经惊动了官方了（害怕😨）。&lt;/p&gt;
 &lt;p&gt;现在官网已经全部都加上了人机验证，所以没法使用Python去调用他们的产品信息查询接口，所以要另辟蹊径了。我们可以使用&lt;code&gt;selenium&lt;/code&gt;来模拟人在浏览器中的行为，进而让官网认为我们是正常的浏览请求网页。&lt;/p&gt;
 &lt;h3 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h3&gt;
