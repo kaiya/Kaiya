@@ -15,6 +15,7 @@ https://kaiyai.com/post/page
 https://kaiyai.com/post/proxy
 https://kaiyai.com/post/qiniu
 https://kaiyai.com/post/readwrite
+https://kaiyai.com/post/selenium
 https://kaiyai.com/post/summary_zh
 https://kaiyai.com/post/survey
 https://kaiyai.com/post/tensorflow

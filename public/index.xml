@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kaiya Xiong&#39;s Blog</title><link>https://kaiyai.com/</link><description>Recent content on Kaiya Xiong&#39;s Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Sep 2020 14:03:09 +0800</lastBuildDate><atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://kaiyai.com/about/</link><pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate><guid>https://kaiyai.com/about/</guid><description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kaiya Xiong&#39;s Blog</title><link>https://kaiyai.com/</link><description>Recent content on Kaiya Xiong&#39;s Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 01 Oct 2020 18:10:20 +0800</lastBuildDate><atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://kaiyai.com/about/</link><pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate><guid>https://kaiyai.com/about/</guid><description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
 &lt;p&gt;My research interest:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Security and Privacy of Machine Learning(Focused on &lt;strong&gt;Adversarial Examples&lt;/strong&gt;)&lt;/li&gt;
@@ -16,7 +16,73 @@
 &lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
 &lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>使用Youtube-dl下载Youtube 4K视频</title><link>https://kaiyai.com/post/youtube-dl/</link><pubDate>Wed, 23 Sep 2020 14:03:09 +0800</pubDate><guid>https://kaiyai.com/post/youtube-dl/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Using Selenium in Python</title><link>https://kaiyai.com/post/selenium/</link><pubDate>Thu, 01 Oct 2020 18:10:20 +0800</pubDate><guid>https://kaiyai.com/post/selenium/</guid><description>
+&lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
+&lt;p&gt;今年三月份写了个&lt;a href=&#34;./post/hermesnotifyer/&#34;&gt;爱马仕的上新提醒工具&lt;/a&gt;。一开始还运行的蛮好的，只要官方有上新，立马就会邮件通知到我。&lt;/p&gt;
+&lt;p&gt;燃鹅，过了几个月，我发现连续好久都没有上新了（我当时还以为国外疫情严重，爱马仕员工没有去公司所以才没有上新呢🤣）。我打开当时使用的接口一看，被封了。。接口加了验证码😢，我用SS看了一下，IP直接被Ban了😥。看来我这小工具已经惊动了官方了（害怕😨）。&lt;/p&gt;
+&lt;p&gt;现在官网已经全部都加上了人机验证，所以没法使用Python去调用他们的产品信息查询接口，所以要另辟蹊径了。我们可以使用&lt;code&gt;selenium&lt;/code&gt;来模拟人在浏览器中的行为，进而让官网认为我们是正常的浏览请求网页。&lt;/p&gt;
+&lt;h3 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h3&gt;
+&lt;h4 id=&#34;selenium&#34;&gt;selenium&lt;/h4&gt;
+&lt;p&gt;使用&lt;code&gt;conda&lt;/code&gt;或者pip安装selenium&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;conda install selenium
+pip install selenium
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;chrome-driver&#34;&gt;Chrome Driver&lt;/h4&gt;
+&lt;p&gt;因为需要模拟Chrome浏览器，我们要去&lt;a href=&#34;https://chromedriver.chromium.org/downloads&#34;&gt;https://chromedriver.chromium.org/downloads&lt;/a&gt;下载驱动。&lt;/p&gt;
+&lt;p&gt;⚠️注意，一定要下载和你的Chrome浏览器版本对应的驱动版本。如我的Chrome版本是&lt;code&gt;85.0.4183.121&lt;/code&gt;，下载的ChromeDriver版本是&lt;code&gt;85.0.4183.87&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;使用&#34;&gt;使用&lt;/h3&gt;
+&lt;p&gt;使用selenium通过chrome driver模拟Chrome浏览器，我们可以使用直接调起Chrome浏览器的方式，或者使用&lt;code&gt;headless&lt;/code&gt;模式（此模式下无需调起浏览器，其实是在后台调起的。）&lt;/p&gt;
+&lt;h4 id=&#34;直接调起方式&#34;&gt;直接调起方式&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+driver = webdriver.Chrome(executable_path=&#39;./chromedriver&#39;) # 相对路径 此处参数为上面👆下载的ChromeDriver的可执行文件的位置，如果已经将其加入到系统的环境变量PATH中，则无需此参数.
+try:
+driver.get(&#39;&amp;lt;login_url&amp;gt;&#39;)
+except TimeoutException:
+print(&#39;time out!&#39;)
+username_field = driver.find_element_by_id(&#39;username&#39;)
+password_field = driver.find_element_by_id(&#39;password&#39;)
+submit_button = driver.find_element_by_id(&#39;submit_btn&#39;)
+username_field.clear()
+username_field.send_keys(&#39;&amp;lt;username&amp;gt;&#39;)
+password_field.send_keys(&#39;&amp;lt;password&amp;gt;&#39;)
+submit_button.click()
+time.sleep(5)
+driver.quit() # Quits the driver and closes every associated window.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;headless模式&#34;&gt;headless模式&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import time
+options = webdriver.ChromeOptions()
+options.add_argument(&#39;--headless&#39;) # headless mode
+driver = webdriver.Chrome(options=options, executable_path=&#39;./chromedriver&#39;)
+try:
+driver.get(&#39;&amp;lt;login_url&amp;gt;&#39;)
+except TimeoutException:
+print(&#39;time out!&#39;)
+try:
+username_field = driver.find_element_by_id(&#39;username&#39;)
+password_field = driver.find_element_by_id(&#39;password&#39;)
+submit_button = driver.find_element_by_id(&#39;submit_btn&#39;)
+except NoSuchElementException:
+print(&#39;No Such Element&#39;)
+username_field.clear()
+username_field.send_keys(&#39;&amp;lt;username&amp;gt;&#39;)
+password_field.send_keys(&#39;&amp;lt;password&amp;gt;&#39;)
+submit_button.click()
+try:
+element = WebDriverWait(driver, 10).until(
+EC.presence_of_element_located((By.ID, &#39;visit-list-talbe&#39;))
+)
+except Exception as e:
+print(e)
+finally:
+print(driver.find_element_by_tag_name(&#39;tbody&#39;).text)
+driver.quit() # Quits the driver and closes every associated window.
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>使用Youtube-dl下载Youtube 4K视频</title><link>https://kaiyai.com/post/youtube-dl/</link><pubDate>Wed, 23 Sep 2020 14:03:09 +0800</pubDate><guid>https://kaiyai.com/post/youtube-dl/</guid><description>
 &lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;Youtube作为非常火🔥的视频平台，它有很多内容质量非常高的视频。Youtube官方并没有提供下载的方法，如果我们想下载它上面的视频该怎么办呢？如果你在网络上搜索，你可以看到很多Youtube视频下载的方法，当然这些方法都各有优缺点，如不能下载分辨率大于1080P的视频等。&lt;/p&gt;
 &lt;p&gt;众所周知，Youtube在国内是无法使用的。如果你想高速畅快地下载Youtube上的高清视频，一个快速的XX是必须的~&lt;/p&gt;
@@ -306,26 +372,10 @@ time.sleep(1)
 &lt;li&gt;&lt;a href=&#34;https://wikipedia.kaiya.ml&#34;&gt;wikipedia.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://nytimes.kaiya.ml&#34;&gt;nytimes.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://badge.kaiya.ml&#34;&gt;BADGE.kaiya.ml&lt;/a&gt; proxy for &lt;code&gt;img.shields.io&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;References:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.v2ex.com/t/234923&#34;&gt;v2ex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://moeyui.cn/%E7%BD%91%E7%AB%99/eea1a03.html&#34;&gt;Blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</description></item><item><title>痴心换情深</title><link>https://kaiyai.com/post/cxhqs/</link><pubDate>Wed, 01 May 2019 14:10:20 +0800</pubDate><guid>https://kaiyai.com/post/cxhqs/</guid><description>&lt;p&gt;年少不知曲中意，再听已是曲中人。&lt;br /&gt;
 曲终人散梦已醒，梦中之人何处寻。&lt;br /&gt;
 回首已是曲中人，何须在意曲中意。&lt;br /&gt;
 莫非在等梦初醒，再去寻那梦中人。&lt;br /&gt;
 不愿再做曲中人，奈何越听越沉沦。&lt;br /&gt;
 既然已成曲中人，何必再听曲中曲。&lt;br /&gt;
-曲中人唱曲中曲，曲中人非曲中人。&lt;/p&gt;</description></item><item><title>众声喧哗，我只歌唱❤️</title><link>https://kaiyai.com/post/jackycheung/</link><pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/jackycheung/</guid><description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=2587836003&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;</description></item><item><title>情书💌</title><link>https://kaiyai.com/post/loveletter/</link><pubDate>Fri, 22 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/loveletter/</guid><description>&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#include &amp;lt;stdio.h&amp;gt;
-int main()
-{
-double world;
-unsigned letter;
-short stay;
-long memories;
-printf(&amp;quot;I miss you.\n&amp;quot;);
-return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;两个人的世界，一封没有署名的信，短暂的重逢后，留下的只是回忆，我想你，我爱的人。&lt;/p&gt;</description></item></channel></rss>
+曲中人唱曲中曲，曲中人非曲中人。&lt;/p&gt;</description></item><item><title>众声喧哗，我只歌唱❤️</title><link>https://kaiyai.com/post/jackycheung/</link><pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/jackycheung/</guid><description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=2587836003&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;</description></item></channel></rss>
