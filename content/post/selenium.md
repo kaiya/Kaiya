@@ -4,7 +4,7 @@ date: 2020-10-01T18:10:20+08:00
 draft: false
 tags: ['Tech', 'Python', 'Selenium', 'Chrome headlss', 'Hermes Notifyer']
 categories: ['Tech', 'Python']
-author: Kaiya Xiong
+author: かいや
 autoCollapseToc: true
 summary: Using Selenium with Chrome's headless mode for simulating human's behavior in the browser.
 ---
