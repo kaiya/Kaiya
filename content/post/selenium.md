@@ -93,4 +93,3 @@ finally:
     driver.quit() # Quits the driver and closes every associated window.
 ```
 
-

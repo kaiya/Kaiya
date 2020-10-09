@@ -3,7 +3,7 @@ title: Reading and Writting
 date: 2018-12-08T00:27:00+08:00
 tags: ["Reading", "Writting", "zh-CN"]
 categories: ["Reading", "Writting"]
-draft: false
+draft: true 
 author: Kaiya Xiong
 autoCollapseToc: true
 summary: Thoughts on Reading and Writting.

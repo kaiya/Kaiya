@@ -1,7 +1,7 @@
 ---
 title: Bible
 date: 2018-07-18T21:10:00+08:00
-draft: false
+draft: true 
 tags: ['Bible']
 categories: ['Bible']
 author: Kaiya Xiong
