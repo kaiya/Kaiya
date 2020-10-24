@@ -184,7 +184,12 @@ format code extension resolution note
 如：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl -f 313+140 --proxy &amp;quot;socks5://127.0.0.1:1080/&amp;quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;使用这种方式进行下载时，工具会自动检测FFmpeg是否存在在系统PATH中，如果存在的话，会自动调用FFmpeg进行视频和音频的合并。&lt;/p&gt;</description></item><item><title>Awesome Photos</title><link>https://kaiyai.com/post/awesomephotos/</link><pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate><guid>https://kaiyai.com/post/awesomephotos/</guid><description>
+&lt;p&gt;使用这种方式进行下载时，工具会自动检测FFmpeg是否存在在系统PATH中，如果存在的话，会自动调用FFmpeg进行视频和音频的合并。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Update:&lt;/p&gt;
+&lt;p&gt;Youtube-dl has received a DMCA takedown from RIAA @2020-10-23&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://news.ycombinator.com/item?id=24872911&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;or &lt;a href=&#34;https://github.com/github/dmca/blob/master/2020/10/2020-10-23-RIAA.md&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Awesome Photos</title><link>https://kaiyai.com/post/awesomephotos/</link><pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate><guid>https://kaiyai.com/post/awesomephotos/</guid><description>
 &lt;p&gt;Awesome Photos!&lt;/p&gt;
 &lt;p&gt;Here are some awesome photos shoot by me.&lt;/p&gt;
 &lt;p&gt;Share with you guys! ^_^&lt;/p&gt;

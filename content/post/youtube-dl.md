@@ -130,3 +130,12 @@ youtube-dl -f 140 --proxy "socks5://127.0.0.1:1080/" https://www.youtube.com/wat
 youtube-dl -f 313+140 --proxy "socks5://127.0.0.1:1080/" https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
 ```
 使用这种方式进行下载时，工具会自动检测FFmpeg是否存在在系统PATH中，如果存在的话，会自动调用FFmpeg进行视频和音频的合并。
+
+---
+Update:
+
+Youtube-dl has received a DMCA takedown from RIAA @2020-10-23......
+
+[link](https://news.ycombinator.com/item?id=24872911)
+
+or [here](https://github.com/github/dmca/blob/master/2020/10/2020-10-23-RIAA.md)
