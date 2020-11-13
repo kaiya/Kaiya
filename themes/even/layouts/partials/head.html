@@ -72,6 +72,18 @@
 <script>eruda.init();</script>
 {{- end }}
 
+<!-- add Athelas Fonts(Cross Platform) -->
+<!-- <link rel="stylesheet" type="text/css" href="/athelas.css"> -->
+<!-- 非Mac/iPhone/iPod/iPad平台加载Athelas字体 -->
+<script type="text/javascript">
+  var isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+  if (!isMacLike) {
+    document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.131/athelas.css" integrity="sha256-r8sVA/dGn9IGeRefQ6b/9RmNHaDYit01McJYTDpAlXk=" crossorigin="anonymous">');
+    document.write('<link rel="stylesheet" href="/helvetica.css">');
+  }
+  console.log('platform: ', navigator.platform);
+</script>
+
 <!-- busuanzi -->
 {{ if .Site.Params.busuanzi.enable -}}
 <script async src="/dist/busuanzi.pure.mini.js"></script>
@@ -122,8 +134,6 @@
 {{ end }}
 <!-- End of Twitter -->
 
-<!-- add Athelas Fonts(Cross Platform) -->
-<link rel="stylesheet" type="text/css" href="/athelas.css">
 <!-- custom css -->
 {{ range .Site.Params.customCSS }}
 <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
