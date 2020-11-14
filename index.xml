@@ -1,0 +1,668 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/</link>
+    <description>Recent content on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 Oct 2020 18:10:20 +0800</lastBuildDate>
+    
+        <atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://kaiyai.com/about/</link>
+      <pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/about/</guid>
+      <description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
+
+&lt;p&gt;My research interest:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Security and Privacy of Machine Learning(Focused on &lt;strong&gt;Adversarial Examples&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Blockchain Consensus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Homepage:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gs.kaiyai.com&#34;&gt;Google Sites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://about.kaiyai.com&#34;&gt;Academic Homepage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ORCID: &lt;div itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;a itemprop=&#34;sameAs&#34; content=&#34;https://orcid.org/0000-0002-7648-8714&#34; href=&#34;https://orcid.org/0000-0002-7648-8714&#34; target=&#34;orcid.widget&#34; rel=&#34;noopener noreferrer&#34; style=&#34;vertical-align:top;&#34;&gt;&lt;img src=&#34;https://orcid.org/sites/default/files/images/orcid_16x16.png&#34; style=&#34;width:1em;margin-top:4px;float: left;&#34; alt=&#34;ORCID iD icon&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-7648-8714&#34;&gt;https://orcid.org/0000-0002-7648-8714&lt;/a&gt;&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;Reach me at:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Huangpu Avenue West No.601 Jinan University, Guangzhou, China, 510632&lt;/li&gt;
+&lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
+&lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
+&lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Selenium in Python</title>
+      <link>https://kaiyai.com/post/selenium/</link>
+      <pubDate>Thu, 01 Oct 2020 18:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/selenium/</guid>
+      <description>
+
+&lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
+
+&lt;p&gt;今年三月份写了个&lt;a href=&#34;../hermesnotifyer/&#34;&gt;爱马仕的上新提醒工具&lt;/a&gt;。一开始还运行的蛮好的，只要官方有上新，立马就会邮件通知到我。&lt;/p&gt;
+
+&lt;p&gt;燃鹅，过了几个月，我发现连续好久都没有上新了（我当时还以为国外疫情严重，爱马仕员工没有去公司所以才没有上新呢🤣）。我打开当时使用的接口一看，被封了。。接口加了验证码😢，我用SS看了一下，IP直接被Ban了😥。看来我这小工具已经惊动了官方了（害怕😨）。&lt;/p&gt;
+
+&lt;p&gt;现在官网已经全部都加上了人机验证，所以没法使用Python去调用他们的产品信息查询接口，所以要另辟蹊径了。我们可以使用&lt;code&gt;selenium&lt;/code&gt;来模拟人在浏览器中的行为，进而让官网认为我们是正常的浏览请求网页。&lt;/p&gt;
+
+&lt;h3 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h3&gt;
+
+&lt;h4 id=&#34;selenium&#34;&gt;selenium&lt;/h4&gt;
+
+&lt;p&gt;使用&lt;code&gt;conda&lt;/code&gt;或者pip安装selenium&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;conda install selenium
+pip install selenium
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;chrome-driver&#34;&gt;Chrome Driver&lt;/h4&gt;
+
+&lt;p&gt;因为需要模拟Chrome浏览器，我们要去&lt;a href=&#34;https://chromedriver.chromium.org/downloads&#34;&gt;https://chromedriver.chromium.org/downloads&lt;/a&gt;下载驱动。&lt;/p&gt;
+
+&lt;p&gt;⚠️注意，一定要下载和你的Chrome浏览器版本对应的驱动版本。如我的Chrome版本是&lt;code&gt;85.0.4183.121&lt;/code&gt;，下载的ChromeDriver版本是&lt;code&gt;85.0.4183.87&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;使用&#34;&gt;使用&lt;/h3&gt;
+
+&lt;p&gt;使用selenium通过chrome driver模拟Chrome浏览器，我们可以使用直接调起Chrome浏览器的方式，或者使用&lt;code&gt;headless&lt;/code&gt;模式（此模式下无需调起浏览器，其实是在后台调起的。）&lt;/p&gt;
+
+&lt;h4 id=&#34;直接调起方式&#34;&gt;直接调起方式&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+driver = webdriver.Chrome(executable_path=&#39;./chromedriver&#39;) # 相对路径 此处参数为上面👆下载的ChromeDriver的可执行文件的位置，如果已经将其加入到系统的环境变量PATH中，则无需此参数.
+
+try:
+    driver.get(&#39;&amp;lt;login_url&amp;gt;&#39;)
+except TimeoutException:
+    print(&#39;time out!&#39;)
+
+username_field = driver.find_element_by_id(&#39;username&#39;)
+password_field = driver.find_element_by_id(&#39;password&#39;)
+submit_button = driver.find_element_by_id(&#39;submit_btn&#39;)
+username_field.clear()
+username_field.send_keys(&#39;&amp;lt;username&amp;gt;&#39;)
+password_field.send_keys(&#39;&amp;lt;password&amp;gt;&#39;)
+submit_button.click()
+time.sleep(5)
+driver.quit() # Quits the driver and closes every associated window.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;headless模式&#34;&gt;headless模式&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import time
+
+options = webdriver.ChromeOptions()
+options.add_argument(&#39;--headless&#39;)  # headless mode
+driver = webdriver.Chrome(options=options, executable_path=&#39;./chromedriver&#39;)
+
+try:
+    driver.get(&#39;&amp;lt;login_url&amp;gt;&#39;)
+except TimeoutException:
+    print(&#39;time out!&#39;)
+
+try:
+    username_field = driver.find_element_by_id(&#39;username&#39;)
+    password_field = driver.find_element_by_id(&#39;password&#39;)
+    submit_button = driver.find_element_by_id(&#39;submit_btn&#39;)
+except NoSuchElementException:
+    print(&#39;No Such Element&#39;)
+
+username_field.clear()
+
+username_field.send_keys(&#39;&amp;lt;username&amp;gt;&#39;)
+password_field.send_keys(&#39;&amp;lt;password&amp;gt;&#39;)
+submit_button.click()
+
+try:
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, &#39;visit-list-talbe&#39;))
+    )
+except Exception as e:
+    print(e)
+finally:
+    print(driver.find_element_by_tag_name(&#39;tbody&#39;).text)
+    driver.quit() # Quits the driver and closes every associated window.
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用Youtube-dl下载Youtube 4K视频</title>
+      <link>https://kaiyai.com/post/youtube-dl/</link>
+      <pubDate>Wed, 23 Sep 2020 14:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/youtube-dl/</guid>
+      <description>
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;Youtube作为非常火🔥的视频平台，它有很多内容质量非常高的视频。Youtube官方并没有提供下载的方法，如果我们想下载它上面的视频该怎么办呢？如果你在网络上搜索，你可以看到很多Youtube视频下载的方法，当然这些方法都各有优缺点，如不能下载分辨率大于1080P的视频等。&lt;/p&gt;
+
+&lt;p&gt;众所周知，Youtube在国内是无法使用的。如果你想高速畅快地下载Youtube上的高清视频，一个快速的XX是必须的~&lt;/p&gt;
+
+&lt;h3 id=&#34;现有方式&#34;&gt;现有方式&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.clipconverter.cc/&#34;&gt;clipconverter.cc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这是一个在线下载视频的网站，你只需要将Youtube的视频链接粘贴进来，然后选择需要的格式、分辨率，等它转码后，点击下载即可。这个是我以前需要下载Youtube视频时最常用的工具，但是最近貌似抽风了，几乎无法使用。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.4kdownload.com/&#34;&gt;4K video Downloader&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这个工具必须要下载他们的客户端，我下载过几次。。但是我把视频链接粘贴过来之后，它就一直解析链接中。。一直在解析。。然后等了半天告诉我，解析失败&amp;hellip;. 这个工具我前后下载过几次，从来没有使用成功过。也不知道是不是我使用的方式不对🌚&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;youtube-dl的使用&#34;&gt;Youtube-dl的使用&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ytdl-org/youtube-dl&#34;&gt;Youtube-dl&lt;/a&gt;是一个基于命令行的下载工具，对小白童鞋不是很友好（可以考虑基于这个工具开发个可视化网站🤣&lt;/p&gt;
+
+&lt;h4 id=&#34;环境准备&#34;&gt;环境准备&lt;/h4&gt;
+
+&lt;p&gt;由于这个工具是基于Python语言开发的，需要安装Python的环境。到&lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt;下载安装包安装即可（当然也可以使用Anaconda、miniconda、virtualenv等安装，在此不赘述）。&lt;/p&gt;
+
+&lt;h4 id=&#34;youtube-dl&#34;&gt;Youtube-dl&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;下载&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;下载方式有很多，直接下载已编译好的压缩包（解压后将目录地址放到环境变量PATH中即可）、pip安装、Homebrew安装（macOS系统）等方式均可。
+由于前面已经准备好Python环境，使用pip安装还是非常方便的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo -H pip install --upgrade youtube-dl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;配置&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;默认的配置文件位置如下（或者通过&lt;code&gt;--config-location&lt;/code&gt;选项指定配置文件位置）：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Win: &lt;code&gt;%APPDATA%\youtube-dl\config.txt&lt;/code&gt; 或 &lt;code&gt;C:\Users\&amp;lt;user name&amp;gt;\youtube-dl.conf&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Linux和Mac: &lt;code&gt;/etc/youtube-dl.conf&lt;/code&gt; 或 &lt;code&gt;~/.config/youtube-dl/config&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;代理配置如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Use this proxy
+--proxy 127.0.0.1:8087
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;ffmpeg&#34;&gt;FFmpeg&lt;/h4&gt;
+
+&lt;p&gt;使用此工具下载Youtube高清视频时，视频画面和音频是分离开的，所以需要FFmpeg工具完成合并。在&lt;a href=&#34;https://www.ffmpeg.org/&#34;&gt;FFmpeg&lt;/a&gt;下载&lt;/p&gt;
+
+&lt;p&gt;下载完可执行文件后，将其放到系统PATH路径包含的路径里，如Linux和Mac可以放到&lt;code&gt;/usr/local/bin&lt;/code&gt;里面，或者将可执行文件的路径添加到PATH变量中。&lt;/p&gt;
+
+&lt;h3 id=&#34;开始下载视频&#34;&gt;开始下载视频&lt;/h3&gt;
+
+&lt;h4 id=&#34;最简单的下载命令&#34;&gt;最简单的下载命令：&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;比如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl https://www.youtube.com/watch?v=3M0Bhy19Ta4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;配置代理&#34;&gt;配置代理&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl --proxy &amp;quot;http://127.0.0.1:1087&amp;quot; &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;选择画质&#34;&gt;选择画质&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;第一种方式：直接选择最优画质&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl -f bestvideo+bestaudio &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;第二种方式：先查出来可选画质列表，再选择指定画质资源
+首先使用&lt;code&gt;-F&lt;/code&gt;参数列出所有可选分辨率列表：
+&lt;code&gt;bash
+youtube-dl -F &amp;lt;url&amp;gt;
+或
+youtube-dl --list-formats &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;输出如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;(base) ☁  abdm [master] ⚡ youtube-dl -F --proxy &amp;quot;socks5://127.0.0.1:1080/&amp;quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+[youtube] 3M0Bhy19Ta4: Downloading webpage
+[info] Available formats for 3M0Bhy19Ta4:
+format code  extension  resolution note
+249          webm       audio only tiny   56k , opus @ 50k (48000Hz), 1.47MiB
+250          webm       audio only tiny   73k , opus @ 70k (48000Hz), 1.90MiB
+140          m4a        audio only tiny  127k , m4a_dash container, mp4a.40.2@128k (44100Hz), 3.59MiB
+251          webm       audio only tiny  141k , opus @160k (48000Hz), 3.72MiB
+278          webm       256x144    144p   97k , webm container, vp9, 24fps, video only, 1.53MiB
+160          mp4        256x144    144p  110k , avc1.4d400c, 24fps, video only, 706.04KiB
+242          webm       426x240    240p  232k , vp9, 24fps, video only, 1.80MiB
+133          mp4        426x240    240p  245k , avc1.4d4015, 24fps, video only, 1.29MiB
+243          webm       640x360    360p  404k , vp9, 24fps, video only, 3.43MiB
+134          mp4        640x360    360p  634k , avc1.4d401e, 24fps, video only, 3.24MiB
+244          webm       854x480    480p  747k , vp9, 24fps, video only, 5.76MiB
+135          mp4        854x480    480p 1160k , avc1.4d401e, 24fps, video only, 6.36MiB
+247          webm       1280x720   720p 1663k , vp9, 24fps, video only, 12.10MiB
+136          mp4        1280x720   720p 2321k , avc1.4d401f, 24fps, video only, 11.96MiB
+248          webm       1920x1080  1080p 3090k , vp9, 24fps, video only, 22.00MiB
+137          mp4        1920x1080  1080p 4360k , avc1.640028, 24fps, video only, 21.53MiB
+271          webm       2560x1440  1440p 8981k , vp9, 24fps, video only, 53.97MiB
+313          webm       3840x2160  2160p 17969k , vp9, 24fps, video only, 171.59MiB
+18           mp4        640x360    360p  347k , avc1.42001E, 24fps, mp4a.40.2@ 96k (44100Hz), 9.80MiB
+22           mp4        1280x720   720p  550k , avc1.64001F, 24fps, mp4a.40.2@192k (44100Hz) (best)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出的结果中第一列为格式代码&lt;/p&gt;
+
+&lt;p&gt;选择指定格式下载：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl -f 313 --proxy &amp;quot;socks5://127.0.0.1:1080/&amp;quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以下载指定格式代码为313的&lt;code&gt;313          webm       3840x2160  2160p 17969k , vp9, 24fps, video only, 171.59MiB&lt;/code&gt;这个视频资源。&lt;/p&gt;
+
+&lt;p&gt;然后下载音频文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl -f 140 --proxy &amp;quot;socks5://127.0.0.1:1080/&amp;quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后再使用FFmpeg进行合并。&lt;/p&gt;
+
+&lt;p&gt;另外，此工具也提供了一种简单的方式 &lt;code&gt;youtube-dl -f 视频格式代码+音频格式代码&lt;/code&gt;，注意 必须视频格式代码在前，音频格式代码在后。
+如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;youtube-dl -f 313+140 --proxy &amp;quot;socks5://127.0.0.1:1080/&amp;quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用这种方式进行下载时，工具会自动检测FFmpeg是否存在在系统PATH中，如果存在的话，会自动调用FFmpeg进行视频和音频的合并。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Update:&lt;/p&gt;
+
+&lt;p&gt;Youtube-dl has received a DMCA takedown from RIAA @2020-10-23&amp;hellip;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://news.ycombinator.com/item?id=24872911&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;or &lt;a href=&#34;https://github.com/github/dmca/blob/master/2020/10/2020-10-23-RIAA.md&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Awesome Photos</title>
+      <link>https://kaiyai.com/post/awesomephotos/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kaiyai.com/post/awesomephotos/</guid>
+      <description>
+
+&lt;p&gt;Awesome Photos!&lt;/p&gt;
+
+&lt;p&gt;Here are some awesome photos shoot by me.&lt;/p&gt;
+
+&lt;p&gt;Share with you guys! ^_^&lt;/p&gt;
+
+&lt;h4 id=&#34;hk&#34;&gt;HK&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-5.jpg-c&#34; alt=&#34;鸽子🕊和Taxi🚖&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-14.jpg-c&#34; alt=&#34;暴走在HK的街角，十字路口驻足拍的大楼&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-12.jpg-c&#34; alt=&#34;有意思🤔&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-6.jpg-c&#34; alt=&#34;浪奔🐎~ 浪流~&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-9.jpg-c&#34; alt=&#34;幸福摩天轮🎡~&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-8.jpg-c&#34; alt=&#34;叮叮车🚍上的街道&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/HK-13.jpg-c&#34; alt=&#34;重庆大厦&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;平潭旅游&#34;&gt;平潭旅游&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0144.jpg-c&#34; alt=&#34;福州平潭岛上的居民楼&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0170.jpg-c&#34; alt=&#34;平潭岛上的一座酒店🕘&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0450.jpg-c&#34; alt=&#34;教堂⛪️&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0627.jpg-c&#34; alt=&#34;一艘轮船⛴&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0706.jpg-c&#34; alt=&#34;岛上居民家门口的瓶子&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0759.jpg-c&#34; alt=&#34;屋外的世界&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0321.jpg-c&#34; alt=&#34;以马内利 Amen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_0525.jpg-c&#34; alt=&#34;北港看日出🌅&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;珠海&#34;&gt;珠海&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_3158.jpg-c&#34; alt=&#34;群山⛰环抱的校园&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;青岛旅游&#34;&gt;青岛旅游&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4185.jpg-c&#34; alt=&#34;路霸！😎&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4125.jpg-c&#34; alt=&#34;cool🥳&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5212.jpg-c&#34; alt=&#34;吓死个人...&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4677-大6.jpg-c&#34; alt=&#34;海底世界&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4768.jpg-c&#34; alt=&#34;黑帮巨头😈&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4799.jpg-c&#34; alt=&#34;水母&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4827.jpg-c&#34; alt=&#34;漂亮的小鱼儿~&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;大西北&#34;&gt;大西北&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5448.jpg-c&#34; alt=&#34;青海湖...旁边的油菜花🤪&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5541.jpg-c&#34; alt=&#34;大鹏展翅！&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5620.jpg-c&#34; alt=&#34;头顶的云☁️&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5573.jpg-c&#34; alt=&#34;cool guy😎&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5577.jpg-c&#34; alt=&#34;干哈呢??&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5615.jpg-c&#34; alt=&#34;彩色的防撞轮胎~&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5638.jpg-c&#34; alt=&#34;夕阳🌇下的茶卡盐湖景区门口...&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5644.jpg-c&#34; alt=&#34;大骆驼🐫&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5666.jpg-c&#34; alt=&#34;傍晚的茶卡盐湖 &#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5688.jpg-c&#34; alt=&#34;茶卡盐湖里拍照的小姐姐们~&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5708.jpg-c&#34; alt=&#34;湖里的洞洞?&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5713.jpg-c&#34; alt=&#34;U型公路&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5816.jpg-c&#34; alt=&#34;雅丹地貌?🤔&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5843.jpg-c&#34; alt=&#34;气势恢宏！&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5884.jpg-c&#34; alt=&#34;石油小镇的路牌&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5890.jpg-c&#34; alt=&#34;几部电影🎬的取景地&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_5928.jpg-c&#34; alt=&#34;电脑壁纸???&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4874.jpg-c&#34; alt=&#34;骑骆驼🐫&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4890.jpg-c&#34; alt=&#34;热气球🎈上看日落🌇&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4903.jpg-c&#34; alt=&#34;热气球🎈里真的好热🔥🔥🔥&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4904.jpg-c&#34; alt=&#34;这是？&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4880.jpg-c&#34; alt=&#34;丹霞地貌~&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4951-7.jpg-c&#34; alt=&#34;厉害了👍&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/IMG_4794-12.jpg-c&#34; alt=&#34;湖中的cool guy😼&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;摄影协会活动&#34;&gt;摄影协会活动&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_2648.jpg-c&#34; alt=&#34;摄影协会，同事拍的我👦！&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_2532.jpg-c&#34; alt=&#34;女同事👧！！&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_6008.jpg-c&#34; alt=&#34;俺家阳台拍的夕阳🌇&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/img/DSC_4056.JPG-c&#34; alt=&#34;珠江New Town😂&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;未完待续&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hermes Notifyer</title>
+      <link>https://kaiyai.com/post/hermesnotifyer/</link>
+      <pubDate>Mon, 09 Mar 2020 11:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hermesnotifyer/</guid>
+      <description>
+
+&lt;h3 id=&#34;build-a-hermes-product-update-notifyer-step-by-step&#34;&gt;Build a Hermes Product Update Notifyer Step by Step&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;import needed module&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import requests
+from lxml import html
+import schedule
+import time
+import json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;define a function to search in the Hermes.com site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def isinstock_by_search(local, term):
+    headers = {
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                      &#39;Chrome/69.0.3497.100 Safari/537.36&#39;,
+    }
+    url = &#39;https://bck.hermes.com/product&#39;
+    params = {&#39;locale&#39;: local, &#39;searchterm&#39;: term, &#39;sort&#39;: &#39;relevance&#39;}
+    response = requests.get(url=url, params=params, headers=headers)
+    resp_text = response.text
+    resp_json = json.loads(resp_text)
+    total_item = resp_json.get(&#39;total&#39;)
+    if total_item &amp;gt; 0:
+        products = resp_json.get(&#39;products&#39;)
+        for product_item in products:
+            if product_item.get(&#39;hasStock&#39;):
+                return True
+    else:
+        return False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the concept behind the code is that we can request the url &lt;code&gt;https://bck.hermes.com/product?locale=us_en&amp;amp;searchterm=picotin&amp;amp;sort=relevance&lt;/code&gt; to search product(searchterm) by locale in the hermes.com site.&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2656698844588033&#34;
+     data-ad-slot=&#34;3770953699&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+
+&lt;ul&gt;
+&lt;li&gt;if the function above return True, aka. the product has stock, we&amp;rsquo;ll send a simple mail to the monitor recipient using Mailgun&amp;rsquo;s Mailing service.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def send_simple_message(in_stock_url):
+    response = requests.post(
+        &amp;quot;https://api.mailgun.net/v3/sandboxxxx.mailgun.org/messages&amp;quot;,
+        auth=(&amp;quot;api&amp;quot;, &amp;quot;apiKey&amp;quot;),
+        data={&amp;quot;from&amp;quot;: &amp;quot;me@example.com&amp;quot;,
+              &amp;quot;to&amp;quot;: [&amp;quot;recipient@gmail.com&amp;quot;],
+              &amp;quot;subject&amp;quot;: &amp;quot;title&amp;quot;,
+              &amp;quot;text&amp;quot;: &amp;quot;url: &amp;quot; + in_stock_url})
+    if response.status_code == 200:
+        print(&#39;mail send success&#39;)
+        return True
+    else:
+        print(&#39;mail send failed&#39;)
+        return False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;define a main task to run combine this function for scheduling&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def main_task(monitor_urls, locales, terms):
+    for term in terms:
+        for local in locales:
+            if isinstock_by_search(local, term):
+                print(&#39;has stock&#39; + term + &#39; in: &#39; + local)
+                url = &#39;https://bck.hermes.com/product?locale=&#39; + local + &#39;&amp;amp;searchterm=&#39; + term + &#39;&amp;amp;sort=relevance&#39;
+                send_simple_message(url)
+    print(&#39;ROUND Monitor Done&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the main process&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if __name__ == &#39;__main__&#39;:
+
+    country_code = [&#39;be/en&#39;, &#39;cz/en&#39;, &#39;dk/en&#39;, &#39;de/de&#39;, &#39;es/es&#39;, &#39;fi/en&#39;, &#39;fr/fr&#39;, &#39;ie/en&#39;, &#39;it/it&#39;, &#39;lu/fr&#39;,
+                    &#39;nl/en&#39;, &#39;no/en&#39;, &#39;at/de&#39;, &#39;pl/en&#39;, &#39;pt/en&#39;, &#39;ch/fr&#39;, &#39;se/en&#39;, &#39;uk/en&#39;, &#39;us/en&#39;, &#39;ca/en&#39;,
+                    &#39;jp/ja&#39;, &#39;my/en&#39;, &#39;sg/en&#39;, &#39;au/en&#39;]
+    
+    # build param for GET
+    with open(&#39;productlist.txt&#39;) as f:
+        product_list = f.readlines()
+    urls = []
+    for code in country_code:
+        for product in product_list:
+            urls.append(&#39;https://www.hermes.com/&#39; + code + product)
+
+    # build param for search
+    locale_list = []
+    for code in country_code:
+        locale = code.replace(&#39;/&#39;, &#39;_&#39;)
+        locale_list.append(locale)
+
+    term_list = [&#39;picotin&#39;]
+
+    schedule.clear()
+    schedule.every(30).minutes.do(main_task, urls, locale_list, term_list)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;in this main function, we define country code and product for monitor by get url, and locale, term list for monitor by search in the site. And we also define a scheduler to run this script every one minutes to monitor the product regularlly.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all.&lt;/p&gt;
+
+&lt;p&gt;Happy Shopping!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cantonese &amp; Jazz</title>
+      <link>https://kaiyai.com/post/jazz/</link>
+      <pubDate>Sat, 28 Sep 2019 22:21:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jazz/</guid>
+      <description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=986078047&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HK Journey</title>
+      <link>https://kaiyai.com/post/hk/</link>
+      <pubDate>Thu, 06 Jun 2019 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hk/</guid>
+      <description>&lt;p&gt;Some Photos shotting during HK Journey.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982858042545.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982861111410.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982863083650.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982863939569.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982864671461.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982865320915.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/2019060615598286593216.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982866635067.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982867669734.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982868312831.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982868824477.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982869347237.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982869910439.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982870451352.jpg&#34; alt=&#34;HK Journey&#34; /&gt;
+&lt;img src=&#34;http://libnos.azfs.com.cn/20190606155982871053491.jpg&#34; alt=&#34;HK Journey&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Some Reverse Proxy</title>
+      <link>https://kaiyai.com/post/proxy/</link>
+      <pubDate>Thu, 09 May 2019 18:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/proxy/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.kaiya.ml&#34;&gt;Arxiv.kaiya.ml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dblp.kaiya.ml&#34;&gt;DBLP.kaiya.ml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://google.kaiya.ml&#34;&gt;Google.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.kaiya.ml&#34;&gt;Github.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://scholar.kaiya.ml&#34;&gt;Scholar.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wikipedia.kaiya.ml&#34;&gt;wikipedia.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nytimes.kaiya.ml&#34;&gt;nytimes.kaiya.ml&lt;/a&gt; using Cloudflare Workers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://badge.kaiya.ml&#34;&gt;BADGE.kaiya.ml&lt;/a&gt; proxy for &lt;code&gt;img.shields.io&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>痴心换情深</title>
+      <link>https://kaiyai.com/post/cxhqs/</link>
+      <pubDate>Wed, 01 May 2019 14:10:20 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/cxhqs/</guid>
+      <description>&lt;p&gt;年少不知曲中意，再听已是曲中人。&lt;br /&gt;
+曲终人散梦已醒，梦中之人何处寻。&lt;br /&gt;
+回首已是曲中人，何须在意曲中意。&lt;br /&gt;
+莫非在等梦初醒，再去寻那梦中人。&lt;br /&gt;
+不愿再做曲中人，奈何越听越沉沦。&lt;br /&gt;
+既然已成曲中人，何必再听曲中曲。&lt;br /&gt;
+曲中人唱曲中曲，曲中人非曲中人。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>众声喧哗，我只歌唱❤️</title>
+      <link>https://kaiyai.com/post/jackycheung/</link>
+      <pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/jackycheung/</guid>
+      <description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=2587836003&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
