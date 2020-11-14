@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using Selenium in Python - Kaiya Xiong&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="かいや" />
+  <meta name="description" content="Using Selenium with Chrome&amp;rsquo;s headless mode for simulating human&amp;rsquo;s behavior in the browser." />
+
+  <meta name="keywords" content="Kaiya, Xiong, Blog" />
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.1 Kaiya Xiong" />
+
+
+<link rel="canonical" href="https://kaiyai.com/post/selenium/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="red">
+
+
+<link rel="shortcut icon" href="https://kaiyai.com/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Kaiya Xiong">
+<meta name="application-name" content="Kaiya Xiong">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://kaiyai.com/browserconfig.xml">
+
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+
+
+
+
+
+<script type="text/javascript">
+  var isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+  if (!isMacLike) {
+    document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.131/athelas.css" integrity="sha256-r8sVA/dGn9IGeRefQ6b/9RmNHaDYit01McJYTDpAlXk=" crossorigin="anonymous">');
+    
+    document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.133/helvetica.css" integrity="sha256-bgVD/85EuQkNbDlP2zAfpV3ESWMF9TmnlC1D6C9zx/E=" crossorigin="anonymous">');
+
+  }
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/even.min.css" crossorigin="anonymous">
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/lightGallery/lightgallery.css" integrity="sha256-I7W1szkra2spImPcJCYn/edugJ6o6mM/ghWbDjFIr5E=" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+ 
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.140/dist/Valine.min.js" integrity="sha256-phg8ASsS1ken5UHDd7301txl1qOJU+dLF3TK1LtpTaE=" crossorigin="anonymous"></script>
+
+
+
+
+<meta property="og:title" content="Using Selenium in Python" />
+<meta property="og:description" content="Using Selenium with Chrome&rsquo;s headless mode for simulating human&rsquo;s behavior in the browser." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaiyai.com/post/selenium/" />
+<meta property="article:published_time" content="2020-10-01T18:10:20&#43;08:00"/>
+<meta property="article:modified_time" content="2020-10-01T18:10:20&#43;08:00"/>
+
+<meta itemprop="name" content="Using Selenium in Python">
+<meta itemprop="description" content="Using Selenium with Chrome&rsquo;s headless mode for simulating human&rsquo;s behavior in the browser.">
+
+
+<meta itemprop="datePublished" content="2020-10-01T18:10:20&#43;08:00" />
+<meta itemprop="dateModified" content="2020-10-01T18:10:20&#43;08:00" />
+<meta itemprop="wordCount" content="772">
+
+
+
+<meta itemprop="keywords" content="Tech,Python,Selenium,Chrome headlss,Hermes Notifyer," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Selenium in Python"/>
+<meta name="twitter:description" content="Using Selenium with Chrome&rsquo;s headless mode for simulating human&rsquo;s behavior in the browser."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kaiya</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kaiya</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Using Selenium in Python</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-10-01 </span>
+        <div class="post-category">
+            
+              <a href="/categories/tech/"> Tech </a>
+            
+              <a href="/categories/python/"> Python </a>
+            
+          </div>
+        <span class="more-meta"> 772 words </span>
+        <span class="more-meta"> 2 mins read </span>
+
+        
+        
+        <span id="/post/selenium/" class="leancloud_visitors" data-flag-title="Using Selenium in Python">
+            <span class="leancloud-visitors-count more-meta">0</span>
+            <span class="post-meta-item-text">times read</span>
+        </span>
+
+        
+        
+
+
+        
+
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#前情提要">前情提要</a></li>
+<li><a href="#prerequisite">Prerequisite</a>
+<ul>
+<li><a href="#selenium">selenium</a></li>
+<li><a href="#chrome-driver">Chrome Driver</a></li>
+</ul></li>
+<li><a href="#使用">使用</a>
+<ul>
+<li><a href="#直接调起方式">直接调起方式</a></li>
+<li><a href="#headless模式">headless模式</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+      
+      
+        
+
+        
+
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+
+<h3 id="前情提要">前情提要</h3>
+
+<p>今年三月份写了个<a href="../hermesnotifyer/">爱马仕的上新提醒工具</a>。一开始还运行的蛮好的，只要官方有上新，立马就会邮件通知到我。</p>
+
+<p>燃鹅，过了几个月，我发现连续好久都没有上新了（我当时还以为国外疫情严重，爱马仕员工没有去公司所以才没有上新呢🤣）。我打开当时使用的接口一看，被封了。。接口加了验证码😢，我用SS看了一下，IP直接被Ban了😥。看来我这小工具已经惊动了官方了（害怕😨）。</p>
+
+<p>现在官网已经全部都加上了人机验证，所以没法使用Python去调用他们的产品信息查询接口，所以要另辟蹊径了。我们可以使用<code>selenium</code>来模拟人在浏览器中的行为，进而让官网认为我们是正常的浏览请求网页。</p>
+
+<h3 id="prerequisite">Prerequisite</h3>
+
+<h4 id="selenium">selenium</h4>
+
+<p>使用<code>conda</code>或者pip安装selenium</p>
+
+<pre><code class="language-bash">conda install selenium
+pip install selenium
+</code></pre>
+
+<h4 id="chrome-driver">Chrome Driver</h4>
+
+<p>因为需要模拟Chrome浏览器，我们要去<a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a>下载驱动。</p>
+
+<p>⚠️注意，一定要下载和你的Chrome浏览器版本对应的驱动版本。如我的Chrome版本是<code>85.0.4183.121</code>，下载的ChromeDriver版本是<code>85.0.4183.87</code>.</p>
+
+<h3 id="使用">使用</h3>
+
+<p>使用selenium通过chrome driver模拟Chrome浏览器，我们可以使用直接调起Chrome浏览器的方式，或者使用<code>headless</code>模式（此模式下无需调起浏览器，其实是在后台调起的。）</p>
+
+<h4 id="直接调起方式">直接调起方式</h4>
+
+<pre><code class="language-python">from selenium import webdriver
+driver = webdriver.Chrome(executable_path='./chromedriver') # 相对路径 此处参数为上面👆下载的ChromeDriver的可执行文件的位置，如果已经将其加入到系统的环境变量PATH中，则无需此参数.
+
+try:
+    driver.get('&lt;login_url&gt;')
+except TimeoutException:
+    print('time out!')
+
+username_field = driver.find_element_by_id('username')
+password_field = driver.find_element_by_id('password')
+submit_button = driver.find_element_by_id('submit_btn')
+username_field.clear()
+username_field.send_keys('&lt;username&gt;')
+password_field.send_keys('&lt;password&gt;')
+submit_button.click()
+time.sleep(5)
+driver.quit() # Quits the driver and closes every associated window.
+</code></pre>
+
+<h4 id="headless模式">headless模式</h4>
+
+<pre><code class="language-python">from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import time
+
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')  # headless mode
+driver = webdriver.Chrome(options=options, executable_path='./chromedriver')
+
+try:
+    driver.get('&lt;login_url&gt;')
+except TimeoutException:
+    print('time out!')
+
+try:
+    username_field = driver.find_element_by_id('username')
+    password_field = driver.find_element_by_id('password')
+    submit_button = driver.find_element_by_id('submit_btn')
+except NoSuchElementException:
+    print('No Such Element')
+
+username_field.clear()
+
+username_field.send_keys('&lt;username&gt;')
+password_field.send_keys('&lt;password&gt;')
+submit_button.click()
+
+try:
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, 'visit-list-talbe'))
+    )
+except Exception as e:
+    print(e)
+finally:
+    print(driver.find_element_by_tag_name('tbody').text)
+    driver.quit() # Quits the driver and closes every associated window.
+</code></pre>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">かいや</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2020-10-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/wechat-qr-code.png">
+        <span>wechat</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/alipay-qr-code.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/tech/">Tech</a>
+          
+          <a href="/tags/python/">Python</a>
+          
+          <a href="/tags/selenium/">Selenium</a>
+          
+          <a href="/tags/chrome-headlss/">Chrome headlss</a>
+          
+          <a href="/tags/hermes-notifyer/">Hermes Notifyer</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/youtube-dl/">
+            <span class="next-text nav-default">使用Youtube-dl下载Youtube 4K视频</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2656698844588033"
+     data-ad-slot="3770953699"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+  
+  <div id="vcomments"></div>
+  <script >
+        new Valine({
+            el: '#vcomments',
+            appId: '3c0xfbo8yoskdw4h4h1cibztymoj642pd0mwqe2t77xjhux9',
+            appKey: '3eegko5mhab583oaws9xy2mz77axth44kfogq9lvbhgmfmv1',
+            visitor: true, 
+            lang:'en', 
+            path: document.location.pathname
+        })
+  </script>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:me@kaiyai.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/4922822" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/KaiyaXiong" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/KaiyaXiong" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/kaiyaxiong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Kaiya" class="iconfont icon-github" title="github"></a>
+      <a href="http://weibo.com/773846787" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://zhihu.com/people/KaiyaXiong" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/people/83405959/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://kaiyai.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://coding.me">Coding Pages</a>
+  </span>
+
+  
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kaiya Xiong</span>
+      
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/highlight/highlight.pack.js" integrity="sha256-pIhK75qIrmwqLEJ+9SeMInTme57ycwwLdc9dbRk4jdA=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/even.min.js" integrity="sha256-DCRiiKWBbojZM6ae/BaHZBiq3Dj0zHa4vhgOG1CcRJs=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js" integrity="sha256-I3otyfIRoV0atkNQtZLaP4amnmkQOq0YK5R5RFBd5/0=" crossorigin="anonymous"></script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/instantclick.min.js" integrity="sha256-SVgP0duWZXZFPVIX+woWPFhpnHcxG5IXS6zvZAVoa3Y=" crossorigin="anonymous" data-no-instant></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+ if (isInitialLoad === false) {
+  if (typeof MathJax !== 'undefined') 
+   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  if (typeof prettyPrint !== 'undefined') 
+   prettyPrint();
+  if (typeof _hmt !== 'undefined') 
+   _hmt.push(['_trackPageview', location.pathname + location.search]);
+  if (typeof ga !== 'undefined') 
+    ga('send', 'pageview', location.pathname + location.search);
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+ }
+});
+InstantClick.init();
+</script>
+
+
+</body>
+</html>
