@@ -434,7 +434,7 @@ function(e, t) {
     }, function(e, t, n) {
         "use strict";
         t.__esModule = !0;
-        t.DEFAULT_EMOJI_CDN = "//img.t.recordip.cn/t4/appstyle/expression/ext/normal/", t.DB_NAME = "Comment", t.defaultConfig = {
+        t.DEFAULT_EMOJI_CDN = "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/", t.DB_NAME = "Comment", t.defaultConfig = {
             lang: "zh-CN",
             langMode: null,
             appId: "",
