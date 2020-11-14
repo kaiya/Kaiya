@@ -150,9 +150,10 @@ InstantClick.on('change', function(isInitialLoad) {
    _hmt.push(['_trackPageview', location.pathname + location.search]);
   if (typeof ga !== 'undefined') // support google analytics
     ga('send', 'pageview', location.pathname + location.search);
+  
   // load busuanzi
 //  $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-$.getScript("/dist/busuanzi.pure.mini.js");
+// $.getScript("/dist/busuanzi.pure.mini.js");
 
   // if instantclick conflict with disqus, uncomment below
   // function loadDiyDisqus(){
