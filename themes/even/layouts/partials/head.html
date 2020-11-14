@@ -136,6 +136,10 @@
 {{ end }}
 <!-- End of Twitter -->
 
+<!--Valine + LeanCloud -->
+      <!-- <script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.135/dist/Valine.min.js" integrity="sha256-fPqMAsW3FDt/rNyneSJ7HOpZNRs/O2rM016SU08JtCk=" crossorigin="anonymous"></script> -->
+<script type="text/javascript" src="/dist/valine.min.js"></script>
+
 <!-- custom css -->
 {{ range .Site.Params.customCSS }}
 <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
