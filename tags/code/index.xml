@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/tags/code/</link>
+    <description>Recent content in code on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 11:50:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hermes Notifyer</title>
+      <link>https://kaiyai.com/post/hermesnotifyer/</link>
+      <pubDate>Mon, 09 Mar 2020 11:50:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/hermesnotifyer/</guid>
+      <description>Build a Hermes Product Update Notifyer Step by Step.</description>
+    </item>
+    
+    <item>
+      <title>Instantclick</title>
+      <link>https://kaiyai.com/post/instantclick/</link>
+      <pubDate>Fri, 20 Jul 2018 10:43:48 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/instantclick/</guid>
+      <description>Instanclick usage in Hugo Blog System.</description>
+    </item>
+    
+    <item>
+      <title>LaTex on Sublime Text</title>
+      <link>https://kaiyai.com/post/latex/</link>
+      <pubDate>Thu, 19 Jul 2018 21:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/latex/</guid>
+      <description>How to use LaTex for Typeseting with Sublime Text Editor.</description>
+    </item>
+    
+  </channel>
+</rss>
