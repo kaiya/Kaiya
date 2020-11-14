@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Papers on Kaiya Xiong&#39;s Blog</title>
+    <link>https://kaiyai.com/tags/papers/</link>
+    <description>Recent content in Papers on Kaiya Xiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Jul 2018 01:10:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://kaiyai.com/tags/papers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>高级软件工程论文总结</title>
+      <link>https://kaiyai.com/post/summary_zh/</link>
+      <pubDate>Mon, 23 Jul 2018 01:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/summary_zh/</guid>
+      <description>Summary reports of Advanced Software Engineering Papers😂.</description>
+    </item>
+    
+    <item>
+      <title>Survey on Security and Privacy of Machine Learning</title>
+      <link>https://kaiyai.com/post/survey/</link>
+      <pubDate>Wed, 18 Jul 2018 09:10:00 +0800</pubDate>
+      
+      <guid>https://kaiyai.com/post/survey/</guid>
+      <description>Survey on Security and Privacy of Machine Learning</description>
+    </item>
+    
+  </channel>
+</rss>
