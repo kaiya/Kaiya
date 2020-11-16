@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用Youtube-dl下载Youtube 4K视频 - Kaiya Xiong&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Kaiya Xiong" />
+  <meta name="description" content="Download Youtube Videos using Youtube-dl." />
+
+  <meta name="keywords" content="Kaiya, Xiong, Blog" />
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.1 Kaiya Xiong" />
+
+
+<link rel="canonical" href="https://kaiyai.com/post/youtube-dl/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="red">
+
+
+<link rel="shortcut icon" href="https://kaiyai.com/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Kaiya Xiong">
+<meta name="application-name" content="Kaiya Xiong">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="https://kaiyai.com/browserconfig.xml">
+
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+
+
+
+
+
+<script type="text/javascript">
+  var isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+  if (!isMacLike) {
+    document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.131/athelas.css" integrity="sha256-r8sVA/dGn9IGeRefQ6b/9RmNHaDYit01McJYTDpAlXk=" crossorigin="anonymous">');
+    
+    document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.133/helvetica.css" integrity="sha256-bgVD/85EuQkNbDlP2zAfpV3ESWMF9TmnlC1D6C9zx/E=" crossorigin="anonymous">');
+
+  }
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@latest/dist/even.min.css" crossorigin="anonymous">
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/lightGallery/lightgallery.css" integrity="sha256-I7W1szkra2spImPcJCYn/edugJ6o6mM/ghWbDjFIr5E=" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+ 
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.140/dist/Valine.min.js" integrity="sha256-phg8ASsS1ken5UHDd7301txl1qOJU+dLF3TK1LtpTaE=" crossorigin="anonymous"></script>
+
+
+
+
+<meta property="og:title" content="使用Youtube-dl下载Youtube 4K视频" />
+<meta property="og:description" content="Download Youtube Videos using Youtube-dl." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kaiyai.com/post/youtube-dl/" />
+<meta property="article:published_time" content="2020-09-23T14:03:09&#43;08:00"/>
+<meta property="article:modified_time" content="2020-09-23T14:03:09&#43;08:00"/>
+
+<meta itemprop="name" content="使用Youtube-dl下载Youtube 4K视频">
+<meta itemprop="description" content="Download Youtube Videos using Youtube-dl.">
+
+
+<meta itemprop="datePublished" content="2020-09-23T14:03:09&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-23T14:03:09&#43;08:00" />
+<meta itemprop="wordCount" content="1546">
+
+
+
+<meta itemprop="keywords" content="Tech,Tools,zh-CN," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Youtube-dl下载Youtube 4K视频"/>
+<meta name="twitter:description" content="Download Youtube Videos using Youtube-dl."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kaiya</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo_backup">
+    <img alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTI2cHgiIGhlaWdodD0iNTRweCIgdmlld0JveD0iMCAwIDEyNiA1NCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNDguMiAoNDczMjcpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPkthaXlhPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZm9udC1mYW1pbHk9IkFwcGxlLUNoYW5jZXJ5LCBBcHBsZSBDaGFuY2VyeSIgZm9udC1zaXplPSI0OCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+CiAgICAgICAgPHRleHQgaWQ9IkthaXlhIiBmaWxsPSIjMzQ0OTVFIj4KICAgICAgICAgICAgPHRzcGFuIHg9Ii0xLjk3MjY1NjI1IiB5PSIzNCI+S2FpeWE8L3RzcGFuPgogICAgICAgIDwvdGV4dD4KICAgIDwvZz4KPC9zdmc+" />
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用Youtube-dl下载Youtube 4K视频</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-09-23 </span>
+        <div class="post-category">
+            
+              <a href="/categories/tech/"> Tech </a>
+            
+              <a href="/categories/tools/"> Tools </a>
+            
+          </div>
+        <span class="more-meta"> 1546 words </span>
+        <span class="more-meta"> 4 mins read </span>
+
+        
+        
+        <span id="/post/youtube-dl/" class="leancloud_visitors" data-flag-title="使用Youtube-dl下载Youtube 4K视频">
+            <span class="leancloud-visitors-count more-meta">0</span>
+            <span class="post-meta-item-text">times read</span>
+        </span>
+
+        
+        
+
+
+        
+
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#现有方式">现有方式</a></li>
+<li><a href="#youtube-dl的使用">Youtube-dl的使用</a>
+<ul>
+<li><a href="#环境准备">环境准备</a></li>
+<li><a href="#youtube-dl">Youtube-dl</a></li>
+<li><a href="#ffmpeg">FFmpeg</a></li>
+</ul></li>
+<li><a href="#开始下载视频">开始下载视频</a>
+<ul>
+<li><a href="#最简单的下载命令">最简单的下载命令：</a></li>
+<li><a href="#配置代理">配置代理</a></li>
+<li><a href="#选择画质">选择画质</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+      
+      
+        
+
+        
+
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+
+<h3 id="前言">前言</h3>
+
+<p>Youtube作为非常火🔥的视频平台，它有很多内容质量非常高的视频。Youtube官方并没有提供下载的方法，如果我们想下载它上面的视频该怎么办呢？如果你在网络上搜索，你可以看到很多Youtube视频下载的方法，当然这些方法都各有优缺点，如不能下载分辨率大于1080P的视频等。</p>
+
+<p>众所周知，Youtube在国内是无法使用的。如果你想高速畅快地下载Youtube上的高清视频，一个快速的XX是必须的~</p>
+
+<h3 id="现有方式">现有方式</h3>
+
+<ol>
+<li><p><a href="http://www.clipconverter.cc/">clipconverter.cc</a></p>
+
+<p>这是一个在线下载视频的网站，你只需要将Youtube的视频链接粘贴进来，然后选择需要的格式、分辨率，等它转码后，点击下载即可。这个是我以前需要下载Youtube视频时最常用的工具，但是最近貌似抽风了，几乎无法使用。</p></li>
+
+<li><p><a href="https://www.4kdownload.com/">4K video Downloader</a></p>
+
+<p>这个工具必须要下载他们的客户端，我下载过几次。。但是我把视频链接粘贴过来之后，它就一直解析链接中。。一直在解析。。然后等了半天告诉我，解析失败&hellip;. 这个工具我前后下载过几次，从来没有使用成功过。也不知道是不是我使用的方式不对🌚</p></li>
+</ol>
+
+<h3 id="youtube-dl的使用">Youtube-dl的使用</h3>
+
+<p><a href="https://github.com/ytdl-org/youtube-dl">Youtube-dl</a>是一个基于命令行的下载工具，对小白童鞋不是很友好（可以考虑基于这个工具开发个可视化网站🤣</p>
+
+<h4 id="环境准备">环境准备</h4>
+
+<p>由于这个工具是基于Python语言开发的，需要安装Python的环境。到<a href="https://www.python.org/">Python</a>下载安装包安装即可（当然也可以使用Anaconda、miniconda、virtualenv等安装，在此不赘述）。</p>
+
+<h4 id="youtube-dl">Youtube-dl</h4>
+
+<ol>
+<li>下载</li>
+</ol>
+
+<p>下载方式有很多，直接下载已编译好的压缩包（解压后将目录地址放到环境变量PATH中即可）、pip安装、Homebrew安装（macOS系统）等方式均可。
+由于前面已经准备好Python环境，使用pip安装还是非常方便的：</p>
+
+<pre><code class="language-bash">sudo -H pip install --upgrade youtube-dl
+</code></pre>
+
+<ol>
+<li>配置</li>
+</ol>
+
+<p>默认的配置文件位置如下（或者通过<code>--config-location</code>选项指定配置文件位置）：</p>
+
+<ul>
+<li><p>Win: <code>%APPDATA%\youtube-dl\config.txt</code> 或 <code>C:\Users\&lt;user name&gt;\youtube-dl.conf</code></p></li>
+
+<li><p>Linux和Mac: <code>/etc/youtube-dl.conf</code> 或 <code>~/.config/youtube-dl/config</code></p></li>
+</ul>
+
+<p>代理配置如下：</p>
+
+<pre><code class="language-bash"># Use this proxy
+--proxy 127.0.0.1:8087
+</code></pre>
+
+<h4 id="ffmpeg">FFmpeg</h4>
+
+<p>使用此工具下载Youtube高清视频时，视频画面和音频是分离开的，所以需要FFmpeg工具完成合并。在<a href="https://www.ffmpeg.org/">FFmpeg</a>下载</p>
+
+<p>下载完可执行文件后，将其放到系统PATH路径包含的路径里，如Linux和Mac可以放到<code>/usr/local/bin</code>里面，或者将可执行文件的路径添加到PATH变量中。</p>
+
+<h3 id="开始下载视频">开始下载视频</h3>
+
+<h4 id="最简单的下载命令">最简单的下载命令：</h4>
+
+<pre><code class="language-bash">youtube-dl &lt;url&gt;
+</code></pre>
+
+<p>比如</p>
+
+<pre><code class="language-bash">youtube-dl https://www.youtube.com/watch?v=3M0Bhy19Ta4
+</code></pre>
+
+<h4 id="配置代理">配置代理</h4>
+
+<pre><code class="language-bash">youtube-dl --proxy &quot;http://127.0.0.1:1087&quot; &lt;url&gt;
+</code></pre>
+
+<h4 id="选择画质">选择画质</h4>
+
+<ol>
+<li>第一种方式：直接选择最优画质</li>
+</ol>
+
+<pre><code class="language-bash">youtube-dl -f bestvideo+bestaudio &lt;url&gt;
+</code></pre>
+
+<ol>
+<li>第二种方式：先查出来可选画质列表，再选择指定画质资源
+首先使用<code>-F</code>参数列出所有可选分辨率列表：
+<code>bash
+youtube-dl -F &lt;url&gt;
+或
+youtube-dl --list-formats &lt;url&gt;
+</code></li>
+</ol>
+
+<p>输出如下：</p>
+
+<pre><code class="language-bash">(base) ☁  abdm [master] ⚡ youtube-dl -F --proxy &quot;socks5://127.0.0.1:1080/&quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+[youtube] 3M0Bhy19Ta4: Downloading webpage
+[info] Available formats for 3M0Bhy19Ta4:
+format code  extension  resolution note
+249          webm       audio only tiny   56k , opus @ 50k (48000Hz), 1.47MiB
+250          webm       audio only tiny   73k , opus @ 70k (48000Hz), 1.90MiB
+140          m4a        audio only tiny  127k , m4a_dash container, mp4a.40.2@128k (44100Hz), 3.59MiB
+251          webm       audio only tiny  141k , opus @160k (48000Hz), 3.72MiB
+278          webm       256x144    144p   97k , webm container, vp9, 24fps, video only, 1.53MiB
+160          mp4        256x144    144p  110k , avc1.4d400c, 24fps, video only, 706.04KiB
+242          webm       426x240    240p  232k , vp9, 24fps, video only, 1.80MiB
+133          mp4        426x240    240p  245k , avc1.4d4015, 24fps, video only, 1.29MiB
+243          webm       640x360    360p  404k , vp9, 24fps, video only, 3.43MiB
+134          mp4        640x360    360p  634k , avc1.4d401e, 24fps, video only, 3.24MiB
+244          webm       854x480    480p  747k , vp9, 24fps, video only, 5.76MiB
+135          mp4        854x480    480p 1160k , avc1.4d401e, 24fps, video only, 6.36MiB
+247          webm       1280x720   720p 1663k , vp9, 24fps, video only, 12.10MiB
+136          mp4        1280x720   720p 2321k , avc1.4d401f, 24fps, video only, 11.96MiB
+248          webm       1920x1080  1080p 3090k , vp9, 24fps, video only, 22.00MiB
+137          mp4        1920x1080  1080p 4360k , avc1.640028, 24fps, video only, 21.53MiB
+271          webm       2560x1440  1440p 8981k , vp9, 24fps, video only, 53.97MiB
+313          webm       3840x2160  2160p 17969k , vp9, 24fps, video only, 171.59MiB
+18           mp4        640x360    360p  347k , avc1.42001E, 24fps, mp4a.40.2@ 96k (44100Hz), 9.80MiB
+22           mp4        1280x720   720p  550k , avc1.64001F, 24fps, mp4a.40.2@192k (44100Hz) (best)
+</code></pre>
+
+<p>输出的结果中第一列为格式代码</p>
+
+<p>选择指定格式下载：</p>
+
+<pre><code class="language-bash">youtube-dl -f 313 --proxy &quot;socks5://127.0.0.1:1080/&quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+</code></pre>
+
+<p>可以下载指定格式代码为313的<code>313          webm       3840x2160  2160p 17969k , vp9, 24fps, video only, 171.59MiB</code>这个视频资源。</p>
+
+<p>然后下载音频文件：</p>
+
+<pre><code class="language-bash">youtube-dl -f 140 --proxy &quot;socks5://127.0.0.1:1080/&quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+</code></pre>
+
+<p>然后再使用FFmpeg进行合并。</p>
+
+<p>另外，此工具也提供了一种简单的方式 <code>youtube-dl -f 视频格式代码+音频格式代码</code>，注意 必须视频格式代码在前，音频格式代码在后。
+如：</p>
+
+<pre><code class="language-bash">youtube-dl -f 313+140 --proxy &quot;socks5://127.0.0.1:1080/&quot; https://www.youtube.com/watch\?v\=3M0Bhy19Ta4
+</code></pre>
+
+<p>使用这种方式进行下载时，工具会自动检测FFmpeg是否存在在系统PATH中，如果存在的话，会自动调用FFmpeg进行视频和音频的合并。</p>
+
+<hr />
+
+<p>Update:</p>
+
+<p>Youtube-dl has received a DMCA takedown from RIAA @2020-10-23&hellip;&hellip;</p>
+
+<p><a href="https://news.ycombinator.com/item?id=24872911">link</a></p>
+
+<p>or <a href="https://github.com/github/dmca/blob/master/2020/10/2020-10-23-RIAA.md">here</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Kaiya Xiong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2020-09-23</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/wechat-qr-code.png">
+        <span>wechat</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/kaiya/kaiya/img/reward/alipay-qr-code.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/tech/">Tech</a>
+          
+          <a href="/tags/tools/">Tools</a>
+          
+          <a href="/tags/zh-cn/">zh-CN</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/selenium/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Using Selenium in Python</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/awesomephotos/">
+            <span class="next-text nav-default">Awesome Photos</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2656698844588033"
+     data-ad-slot="3770953699"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+  
+  <div id="vcomments"></div>
+  <script >
+        new Valine({
+            el: '#vcomments',
+            appId: '3c0xfbo8yoskdw4h4h1cibztymoj642pd0mwqe2t77xjhux9',
+            appKey: '3eegko5mhab583oaws9xy2mz77axth44kfogq9lvbhgmfmv1',
+            visitor: true, 
+            lang:'en', 
+            path: document.location.pathname
+        })
+  </script>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:me@kaiyai.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/4922822" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/KaiyaXiong" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/KaiyaXiong" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/kaiyaxiong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Kaiya" class="iconfont icon-github" title="github"></a>
+      <a href="http://weibo.com/773846787" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://zhihu.com/people/KaiyaXiong" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/people/83405959/" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://kaiyai.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> & Hosted by <a class="hexo-link" href="https://coding.me">Coding Pages</a>
+  </span>
+
+  
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kaiya Xiong</span>
+      
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/lib/highlight/highlight.pack.js" integrity="sha256-pIhK75qIrmwqLEJ+9SeMInTme57ycwwLdc9dbRk4jdA=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/even.min.js" integrity="sha256-DCRiiKWBbojZM6ae/BaHZBiq3Dj0zHa4vhgOG1CcRJs=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@4.1.5/lazysizes.min.js" integrity="sha256-I3otyfIRoV0atkNQtZLaP4amnmkQOq0YK5R5RFBd5/0=" crossorigin="anonymous"></script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/kaiya/kaiya@0.0.64/dist/instantclick.min.js" integrity="sha256-SVgP0duWZXZFPVIX+woWPFhpnHcxG5IXS6zvZAVoa3Y=" crossorigin="anonymous" data-no-instant></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+ if (isInitialLoad === false) {
+  if (typeof MathJax !== 'undefined') 
+   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  if (typeof prettyPrint !== 'undefined') 
+   prettyPrint();
+  if (typeof _hmt !== 'undefined') 
+   _hmt.push(['_trackPageview', location.pathname + location.search]);
+  if (typeof ga !== 'undefined') 
+    ga('send', 'pageview', location.pathname + location.search);
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+ }
+});
+InstantClick.init();
+</script>
+
+
+</body>
+</html>
