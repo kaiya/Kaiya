@@ -3,5 +3,22 @@
     "env": {
       "HUGO_VERSION": "0.55.1"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/images/(.*)",
+      "headers": { "cache-control": "s-maxage=604800" },
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "headers": {"cache-control": "max-age=2592000"},
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "headers": {"cache-control": "public, immutable, max-age=315360000"},
+      "dest": "manifest.json"
+    }
+  ]
 }

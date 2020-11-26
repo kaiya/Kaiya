@@ -139,3 +139,10 @@ Youtube-dl has received a DMCA takedown from RIAA @2020-10-23......
 [link](https://news.ycombinator.com/item?id=24872911)
 
 or [here](https://github.com/github/dmca/blob/master/2020/10/2020-10-23-RIAA.md)
+
+
+Update Again!
+
+Youtube-dl is BACK!!!
+
+[https://github.blog/2020-11-16-standing-up-for-developers-youtube-dl-is-back/](https://github.blog/2020-11-16-standing-up-for-developers-youtube-dl-is-back/)
