@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kaiya Xiong&#39;s Blog</title><link>https://kaiyai.com/</link><description>Recent content on Kaiya Xiong&#39;s Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 01 Oct 2020 18:10:20 +0800</lastBuildDate><atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://kaiyai.com/about/</link><pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate><guid>https://kaiyai.com/about/</guid><description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kaiya Xiong&#39;s Blog</title><link>https://kaiyai.com/</link><description>Recent content on Kaiya Xiong&#39;s Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Aug 2021 22:03:09 +0800</lastBuildDate><atom:link href="https://kaiyai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://kaiyai.com/about/</link><pubDate>Wed, 01 Aug 2018 21:38:52 +0800</pubDate><guid>https://kaiyai.com/about/</guid><description>&lt;p&gt;My name is Kaiya Xiong, I&amp;rsquo;m a graduate student of Jinan University, major in Software Engineering.&lt;/p&gt;
 &lt;p&gt;My research interest:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Security and Privacy of Machine Learning(Focused on &lt;strong&gt;Adversarial Examples&lt;/strong&gt;)&lt;/li&gt;
@@ -17,7 +17,18 @@
 &lt;li&gt;Email: eGlvbmdrYWl5YUBnbWFpbC5jb20=&lt;/li&gt;
 &lt;li&gt;Phone: Kzg2MTMxNjgzMDE4ODQ=&lt;/li&gt;
 &lt;li&gt;Wechat: KzE1MjAzMTQxOTk0&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Using Selenium in Python</title><link>https://kaiyai.com/post/selenium/</link><pubDate>Thu, 01 Oct 2020 18:10:20 +0800</pubDate><guid>https://kaiyai.com/post/selenium/</guid><description>
+&lt;/ul&gt;</description></item><item><title>iPhone AirDrop到Mac自动更改默认存储位置</title><link>https://kaiyai.com/post/airdrop2photos/</link><pubDate>Mon, 16 Aug 2021 22:03:09 +0800</pubDate><guid>https://kaiyai.com/post/airdrop2photos/</guid><description>&lt;p&gt;&amp;ndash;
+&amp;gt;
+真的很喜欢缺省。&lt;/p&gt;
+&lt;p&gt;iPhone使用AirDrop传照片到Mac时，如果双方登陆的不是同一个iCloud账户，则会询问Mac是否接收，然后可以选择打开方式、存储位置等。&lt;/p&gt;
+&lt;p&gt;但是，如果两个设备登陆的是同一个iCloud账户，则会默认放到&lt;code&gt;下载&lt;/code&gt;文件夹里。&lt;/p&gt;
+&lt;p&gt;现在有个需求，上述情况，默认将AirDrop来的照片导入到&lt;code&gt;相簿.app&lt;/code&gt;中。&lt;/p&gt;
+&lt;p&gt;首先下载&lt;a href=&#34;https://imgs.azfs.com.cn/Quarantine%20Filter.action.zip&#34;&gt;脚本文件&lt;/a&gt;，并安装（信任即可&lt;/p&gt;
+&lt;p&gt;然后打开&lt;code&gt;Automator&lt;/code&gt;，新建&lt;code&gt;Folder Action&lt;/code&gt; ，选择接收文件夹为&lt;code&gt;下载&lt;/code&gt;文件夹。左侧搜索&lt;code&gt;Quar&lt;/code&gt;添加Quarantine Filter，并选择AirDrop File。如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://img.azfs.com.cn/16291262510895.jpg&#34; alt=&#34;-w1972&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;继续左侧搜索🔍添加&lt;code&gt;将文件添加进相簿&lt;/code&gt;，并选择&lt;code&gt;导入且不加入专辑&lt;/code&gt;，如下图所示。
+&lt;img src=&#34;http://img.azfs.com.cn/16291263679382.jpg&#34; alt=&#34;-w993&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;保存，测试，收工！&lt;/p&gt;</description></item><item><title>Using Selenium in Python</title><link>https://kaiyai.com/post/selenium/</link><pubDate>Thu, 01 Oct 2020 18:10:20 +0800</pubDate><guid>https://kaiyai.com/post/selenium/</guid><description>
 &lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
 &lt;p&gt;今年三月份写了个&lt;a href=&#34;../hermesnotifyer/&#34;&gt;爱马仕的上新提醒工具&lt;/a&gt;。一开始还运行的蛮好的，只要官方有上新，立马就会邮件通知到我。&lt;/p&gt;
 &lt;p&gt;燃鹅，过了几个月，我发现连续好久都没有上新了（我当时还以为国外疫情严重，爱马仕员工没有去公司所以才没有上新呢🤣）。我打开当时使用的接口一看，被封了。。接口加了验证码😢，我用SS看了一下，IP直接被Ban了😥。看来我这小工具已经惊动了官方了（害怕😨）。&lt;/p&gt;
@@ -387,4 +398,4 @@ time.sleep(1)
 莫非在等梦初醒，再去寻那梦中人。&lt;br /&gt;
 不愿再做曲中人，奈何越听越沉沦。&lt;br /&gt;
 既然已成曲中人，何必再听曲中曲。&lt;br /&gt;
-曲中人唱曲中曲，曲中人非曲中人。&lt;/p&gt;</description></item><item><title>众声喧哗，我只歌唱❤️</title><link>https://kaiyai.com/post/jackycheung/</link><pubDate>Sun, 31 Mar 2019 04:03:09 +0800</pubDate><guid>https://kaiyai.com/post/jackycheung/</guid><description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=450 src=&#34;//music.163.com/outchain/player?type=0&amp;id=2587836003&amp;auto=1&amp;height=430&#34;&gt;&lt;/iframe&gt;</description></item></channel></rss>
+曲中人唱曲中曲，曲中人非曲中人。&lt;/p&gt;</description></item></channel></rss>
