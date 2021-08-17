@@ -8,9 +8,9 @@ categories: ["Tech", "Tools"]
 author: 'Kaiya Xiong'
 summary: Automatically change the default location of AirDrop from iPhone to Mac.
 ---
---
->
-真的很喜欢缺省。
+
+---
+> 真的很喜欢缺省。
 
 iPhone使用AirDrop传照片到Mac时，如果双方登陆的不是同一个iCloud账户，则会询问Mac是否接收，然后可以选择打开方式、存储位置等。
 
@@ -22,9 +22,9 @@ iPhone使用AirDrop传照片到Mac时，如果双方登陆的不是同一个iClo
 
 然后打开`Automator`，新建`Folder Action` ，选择接收文件夹为`下载`文件夹。左侧搜索`Quar`添加Quarantine Filter，并选择AirDrop File。如下图。
 
-![-w1972](http://img.azfs.com.cn/16291262510895.jpg)
+![添加Quarantine Filter](https://imgs.azfs.com.cn/16291262510895.jpg)
 
 继续左侧搜索🔍添加`将文件添加进相簿`，并选择`导入且不加入专辑`，如下图所示。
-![-w993](http://img.azfs.com.cn/16291263679382.jpg)
+![导入到相簿](https://imgs.azfs.com.cn/16291263679382.jpg)
 
 保存，测试，收工！
