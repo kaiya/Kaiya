@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "0085b6a4586e606a",
+    "type": "split",
+    "children": [
+      {
+        "id": "c72044ce618b9d8c",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "345a60bb9cc956a4",
+    "type": "split",
+    "children": [
+      {
+        "id": "ce61566dac70281a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15d14ecc4b7ef28a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b8e2997a0bc29f6e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fcab646874585331",
+    "type": "split",
+    "children": [
+      {
+        "id": "f7c5dd37d7d0ec4e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dcb92a8ea66c455a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "c72044ce618b9d8c",
+  "lastOpenFiles": [
+    "Index.md.md",
+    "Untitled.md",
+    "Disqus.md",
+    "media/16291262510895.jpg",
+    "AirDrop2Photos.md"
+  ]
+}
